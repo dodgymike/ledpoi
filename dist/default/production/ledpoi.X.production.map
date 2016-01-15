@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=/opt/microchip/xc8/v1.35/dat/en_msgs.txt -cs \
   -h+dist/default/production/ledpoi.X.production.sym \
   --cmf=dist/default/production/ledpoi.X.production.cmf -z -Q18F2455 \
-  -o/tmp/xcXXK2g68 -Mdist/default/production/ledpoi.X.production.map -E1 \
+  -o/tmp/xcXKIzUXv -Mdist/default/production/ledpoi.X.production.map -E1 \
   -ver=XC8 -ASTACK=060h-07ffh -pstack=STACK -ACODE=00h-05FFFh \
   -ACONST=00h-05FFFh -ASMALLCONST=0800h-08FFhx88 -AMEDIUMCONST=0800h-05FFFh \
   -ACOMRAM=01h-05Fh -AABS1=00h-07FFh -ABIGRAM=01h-07FFh \
@@ -21,7 +21,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  /tmp/xcXFgfS7K.obj dist/default/production/ledpoi.X.production.obj 
+  /tmp/xcXmZyDOs.obj dist/default/production/ledpoi.X.production.obj 
 
 Object code version is 3.11
 
@@ -33,26 +33,26 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcXFgfS7K.obj
+/tmp/xcXmZyDOs.obj
                 end_init                              0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/production/ledpoi.X.production.obj
-                text2                              5F3C     5F3C       1E     2F9E       0
-                text1                              5F5A     5F5A       42     2FAD       0
-                text0                              5F9C     5F9C       64     2FCE       0
-                cstackCOMRAM                          1        1        E        1       1
-                cinit                              5F36     5F36        6     2F9B       0
+                text2                              5EA0     5EA0       1E     2F50       0
+                text1                              5F40     5F40       C0     2FA0       0
+                text0                              5EBE     5EBE       82     2F5F       0
+                cstackCOMRAM                          1        1       13        1       1
+                cinit                              5E9A     5E9A        6     2F4D       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 end_init                              0        0        4         0
-                text2                              5F3C     5F3C       1E         0
-                text1                              5F5A     5F5A       42         0
-                text0                              5F9C     5F9C       64         0
-                cinit                              5F36     5F36        6         0
+                text2                              5EA0     5EA0       1E         0
+                text1                              5F40     5F40       C0         0
+                text0                              5EBE     5EBE       82         0
+                cinit                              5E9A     5E9A        6         0
 
         CLASS   CONST          
 
@@ -61,7 +61,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                cstackCOMRAM                          1        1        E         1
+                cstackCOMRAM                          1        1       13         1
 
         CLASS   ABS1           
 
@@ -102,11 +102,11 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
-                cstackCOMRAM                   000001  00000E  00000F         1       1  COMRAM  
-                cinit                          005F36  000006  005F3C      2F9B       0  CODE    
-                text2                          005F3C  00001E  005F5A      2F9E       0  CODE    
-                text1                          005F5A  000042  005F9C      2FAD       0  CODE    
-                text0                          005F9C  000064  006000      2FCE       0  CODE    
+                cstackCOMRAM                   000001  000013  000014         1       1  COMRAM  
+                cinit                          005E9A  000006  005EA0      2F4D       0  CODE    
+                text2                          005EA0  00001E  005EBE      2F50       0  CODE    
+                text0                          005EBE  000082  005F40      2F5F       0  CODE    
+                text1                          005F40  0000C0  006000      2FA0       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -122,15 +122,15 @@ UNUSED ADDRESS RANGES
         BANK5            000500-0005FF              100
         BANK6            000600-0006FF              100
         BANK7            000700-0007FF              100
-        BIGRAM           00000F-0007FF              7F1
-        CODE             000004-005F35             5F32
-        COMRAM           00000F-00005F               51
-        CONST            000004-005F35             5F32
+        BIGRAM           000014-0007FF              7EC
+        CODE             000004-005E99             5E96
+        COMRAM           000014-00005F               4C
+        CONST            000004-005E99             5E96
         EEDATA           F00000-F000FF              100
-        MEDIUMCONST      000800-005F35             5736
+        MEDIUMCONST      000800-005E99             569A
         RAM              000060-0007FF              100
         SFR              000F60-000FFF               A0
-        SMALLCONST       000800-005F35              100
+        SMALLCONST       000800-005E99              100
         STACK            000060-0007FF              7A0
 
                                   Symbol Table
@@ -138,7 +138,7 @@ UNUSED ADDRESS RANGES
 ?_update_leds            cstackCOMRAM 000001
 Delay10KTCYx@i           cstackCOMRAM 000001
 _ADCON1                  (abs)        000FC1
-_Delay10KTCYx            text2        005F3C
+_Delay10KTCYx            text2        005EA0
 _PORTA                   (abs)        000F80
 _PORTB                   (abs)        000F81
 _PORTC                   (abs)        000F82
@@ -233,7 +233,7 @@ __Hrparam                rparam       000000
 __Hsfr                   sfr          000000
 __Hsmallconst            smallconst   000000
 __Hspace_0               (abs)        30000E
-__Hspace_1               (abs)        00000F
+__Hspace_1               (abs)        000014
 __Hspace_2               (abs)        000000
 __Hstack                 stack        000000
 __Hstruct                struct       000000
@@ -305,7 +305,7 @@ __Ltext0                 text0        000000
 __Ltext1                 text1        000000
 __Ltext2                 text2        000000
 __S0                     (abs)        30000E
-__S1                     (abs)        00000F
+__S1                     (abs)        000014
 __S2                     (abs)        000000
 ___inthi_sp              stack        000000
 ___intlo_sp              stack        000000
@@ -314,67 +314,69 @@ ___rparam_used           (abs)        000001
 ___sp                    stack        000000
 __accesstop              (abs)        000060
 __activetblptr           (abs)        000000
-__end_of_Delay10KTCYx    text2        005F5A
-__end_of__initialization cinit        005F36
-__end_of_main            text0        006000
-__end_of_update_leds     text1        005F9C
-__initialization         cinit        005F36
+__end_of_Delay10KTCYx    text2        005EBE
+__end_of__initialization cinit        005E9A
+__end_of_main            text0        005F40
+__end_of_update_leds     text1        006000
+__initialization         cinit        005E9A
 __mediumconst            mediumconst  000000
-__pcinit                 cinit        005F36
+__pcinit                 cinit        005E9A
 __pcstackCOMRAM          cstackCOMRAM 000001
-__ptext0                 text0        005F9C
-__ptext1                 text1        005F5A
-__ptext2                 text2        005F3C
+__ptext0                 text0        005EBE
+__ptext1                 text1        005F40
+__ptext2                 text2        005EA0
 __ramtop                 ramtop       000800
 __size_of_Delay10KTCYx   (abs)        000000
 __size_of_main           (abs)        000000
 __size_of_update_leds    (abs)        000000
 __smallconst             smallconst   000000
-_main                    text0        005F9C
-_update_leds             text1        005F5A
-end_of_initialization    cinit        005F36
+_main                    text0        005EBE
+_update_leds             text1        005F40
+end_of_initialization    cinit        005E9A
 intlevel0                text         000000
 intlevel1                text         000000
 intlevel2                text         000000
 intlevel3                text         000000
-main@leds                cstackCOMRAM 00000A
-main@porta               cstackCOMRAM 00000E
-main@portb               cstackCOMRAM 000008
-main@portc               cstackCOMRAM 000009
+main@direction           cstackCOMRAM 00000D
+main@leds                cstackCOMRAM 000010
+main@porta               cstackCOMRAM 00000F
+main@portb               cstackCOMRAM 00000B
+main@portc               cstackCOMRAM 00000C
 stackhi                  (abs)        0007FF
 stacklo                  (abs)        000060
 start                    init         000000
-start_initialization     cinit        005F36
-update_leds@porta        cstackCOMRAM 000007
-update_leds@portb        cstackCOMRAM 000001
+start_initialization     cinit        005E9A
+update_leds@direction    cstackCOMRAM 000005
+update_leds@leds         cstackCOMRAM 000001
 
 
 FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 30 in file "newmain.c"
+		line 36 in file "newmain.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  leds            4    9[COMRAM] unsigned long 
-  porta           1   13[COMRAM] unsigned char 
-  portc           1    8[COMRAM] unsigned char 
-  portb           1    7[COMRAM] unsigned char 
+  porta           1   14[COMRAM] unsigned char 
+  portc           1   11[COMRAM] unsigned char 
+  portb           1   10[COMRAM] unsigned char 
+  leds            4   15[COMRAM] unsigned long 
+  direction       2   12[COMRAM] unsigned int 
  Return value:  Size  Location     Type
 		None               void
  Registers used:
-		wreg, status,2, status,0, cstack
+		wreg, fsr2l, fsr2h, status,2, status,0, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
       Params:         0       0       0       0       0       0       0       0       0
-      Locals:         7       0       0       0       0       0       0       0       0
+      Locals:         9       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0
-      Totals:         7       0       0       0       0       0       0       0       0
-Total ram usage:        7 bytes
+      Totals:         9       0       0       0       0       0       0       0       0
+Total ram usage:        9 bytes
  Hardware stack levels required when called:    1
  This function calls:
 		_Delay10KTCYx
@@ -388,24 +390,25 @@ Total ram usage:        7 bytes
  Defined at:
 		line 12 in file "newmain.c"
  Parameters:    Size  Location     Type
-  porta           1    wreg     unsigned char 
-  portb           1    0[COMRAM] unsigned char 
+  leds            4    0[COMRAM] unsigned long 
+  direction       2    4[COMRAM] PTR unsigned int 
+		 -> main@direction(2), 
  Auto vars:     Size  Location     Type
-  porta           1    6[COMRAM] unsigned char 
+		None
  Return value:  Size  Location     Type
                   4    0[COMRAM] unsigned long 
  Registers used:
-		wreg, status,2, status,0
+		wreg, fsr2l, fsr2h, status,2, status,0
  Tracked objects:
 		On entry : 
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
-      Params:         4       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0
-      Temps:          2       0       0       0       0       0       0       0       0
-      Totals:         7       0       0       0       0       0       0       0       0
-Total ram usage:        7 bytes
+      Params:         6       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0
+      Temps:          4       0       0       0       0       0       0       0       0
+      Totals:        10       0       0       0       0       0       0       0       0
+Total ram usage:       10 bytes
  Hardware stack levels used:    1
  This function calls:
 		Nothing
@@ -416,7 +419,7 @@ Total ram usage:        7 bytes
 
  *************** function _Delay10KTCYx *****************
  Defined at:
-		line 24 in file "newmain.c"
+		line 30 in file "newmain.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -448,14 +451,14 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 newmain.c
-		_main          		CODE           	5F9C	0000	101
-		_update_leds   		CODE           	5F5A	0000	67
-		_Delay10KTCYx  		CODE           	5F3C	0000	31
+		_main          		CODE           	5EBE	0000	131
+		_update_leds   		CODE           	5F40	0000	193
+		_Delay10KTCYx  		CODE           	5EA0	0000	31
 
-newmain.c estimated size: 199
+newmain.c estimated size: 355
 
 shared
-		__initialization		CODE           	5F36	0000	1
+		__initialization		CODE           	5E9A	0000	1
 
 shared estimated size: 1
 

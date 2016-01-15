@@ -9,16 +9,22 @@
 //#include <delays.h>
 #include "config.h"
 
-unsigned long update_leds(unsigned char porta, unsigned char portb) {
-    if(porta > 0) {
-        porta = (porta >> 1);
-        portb = (portb >> 1);
-    } else {
-        porta = 0xff;
-        portb = 0xff;
+unsigned long update_leds(unsigned long leds, unsigned int *direction) {
+    if(leds <= 0b0000000000000011) {
+        leds = 0b0000000000000110;
+        *direction = 1;
+    } else if(leds >= 0b1100000000000000) {
+        *direction = 0;
+        leds = 0b0110000000000000;
     }
     
-    return (portb << 8) + porta;
+    if(*direction == 0) {
+        leds = (leds >> 1);
+    } else {
+        leds = (leds << 1);
+    }
+   
+    return leds;
 }
 
 void Delay10KTCYx() {
@@ -51,17 +57,20 @@ void main(void) {
 //    PORTAbits.RA6 = 1;
 //    PORTAbits.RA7 = 03;
     
-    PORTB=0;
-    PORTA=0;
-//    update_leds();
+//    PORTB=0;
+//    PORTA=0;
+////    update_leds();
+//    
+//    PORTB=0xf;
     
-    PORTB=0xf;
+    unsigned int direction = 1;
+    unsigned long leds = 0b0000000000000011;
 
     while(1) {
-        unsigned long leds = update_leds(PORTA, PORTB);
+        leds = update_leds(leds, &direction);
         
-        unsigned char porta = (leds >> 8) & 0xff;
-        unsigned char portb = leds & 0xff;
+        unsigned char portb = (leds >> 8) & 0xff;
+        unsigned char porta = leds & 0xff;
         unsigned char portc = (porta & 0b11100000) >> 5;
         
         PORTA = porta;
@@ -70,10 +79,6 @@ void main(void) {
         
         Delay10KTCYx();
     }
-    /*
-    */
-
-    
-    
+ 
     return;
 }

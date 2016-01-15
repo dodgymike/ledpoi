@@ -3821,160 +3821,180 @@ Version 3.2 HI-TECH Software Intermediate Code
 "80
 [p x EBTRB=OFF ]
 "12 newmain.c
-[v _update_leds `(ul ~T0 @X0 1 ef2`uc`uc ]
+[v _update_leds `(ul ~T0 @X0 1 ef2`ul`*ui ]
 {
-[; ;newmain.c: 12: unsigned long update_leds(unsigned char porta, unsigned char portb) {
+[; ;newmain.c: 12: unsigned long update_leds(unsigned long leds, unsigned int *direction) {
 [e :U _update_leds ]
-[v _porta `uc ~T0 @X0 1 r1 ]
-[v _portb `uc ~T0 @X0 1 r2 ]
+[v _leds `ul ~T0 @X0 1 r1 ]
+[v _direction `*ui ~T0 @X0 1 r2 ]
 [f ]
-[; ;newmain.c: 13: if(porta > 0) {
+[; ;newmain.c: 13: if(leds <= 0b0000000000000011) {
 "13
-[e $ ! > -> _porta `i -> 0 `i 505  ]
+[e $ ! <= _leds -> -> -> 3 `i `l `ul 505  ]
 {
-[; ;newmain.c: 14: porta = (porta >> 1);
+[; ;newmain.c: 14: leds = 0b0000000000000110;
 "14
-[e = _porta -> >> -> _porta `i -> 1 `i `uc ]
-[; ;newmain.c: 15: portb = (portb >> 1);
+[e = _leds -> -> -> 6 `i `l `ul ]
+[; ;newmain.c: 15: *direction = 1;
 "15
-[e = _portb -> >> -> _portb `i -> 1 `i `uc ]
+[e = *U _direction -> -> 1 `i `ui ]
 "16
 }
-[; ;newmain.c: 16: } else {
+[; ;newmain.c: 16: } else if(leds >= 0b1100000000000000) {
 [e $U 506  ]
 [e :U 505 ]
+[e $ ! >= _leds -> -> 49152 `ui `ul 507  ]
 {
-[; ;newmain.c: 17: porta = 0xff;
+[; ;newmain.c: 17: *direction = 0;
 "17
-[e = _porta -> -> 255 `i `uc ]
-[; ;newmain.c: 18: portb = 0xff;
+[e = *U _direction -> -> 0 `i `ui ]
+[; ;newmain.c: 18: leds = 0b0110000000000000;
 "18
-[e = _portb -> -> 255 `i `uc ]
+[e = _leds -> -> -> 24576 `i `l `ul ]
 "19
 }
+[e :U 507 ]
+"21
 [e :U 506 ]
 [; ;newmain.c: 19: }
-[; ;newmain.c: 21: return (portb << 8) + porta;
-"21
-[e ) -> -> + << -> _portb `i -> 8 `i -> _porta `i `l `ul ]
-[e $UE 504  ]
-[; ;newmain.c: 22: }
+[; ;newmain.c: 21: if(*direction == 0) {
+[e $ ! == *U _direction -> -> 0 `i `ui 508  ]
+{
+[; ;newmain.c: 22: leds = (leds >> 1);
 "22
-[e :UE 504 ]
+[e = _leds >> _leds -> 1 `i ]
+"23
 }
-"24
-[v _Delay10KTCYx `(v ~T0 @X0 1 ef ]
-{
-[; ;newmain.c: 24: void Delay10KTCYx() {
-[e :U _Delay10KTCYx ]
-[f ]
-[; ;newmain.c: 25: for(int i = 0; i < 10000; i++) {
-"25
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 10000 `i 508  ]
+[; ;newmain.c: 23: } else {
 [e $U 509  ]
 [e :U 508 ]
 {
-"27
-}
+[; ;newmain.c: 24: leds = (leds << 1);
+"24
+[e = _leds << _leds -> 1 `i ]
 "25
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 10000 `i 508  ]
-[e :U 509 ]
-"27
 }
-[; ;newmain.c: 27: }
+[e :U 509 ]
+[; ;newmain.c: 25: }
+[; ;newmain.c: 27: return leds;
+"27
+[e ) _leds ]
+[e $UE 504  ]
 [; ;newmain.c: 28: }
 "28
-[e :UE 507 ]
+[e :UE 504 ]
 }
 "30
+[v _Delay10KTCYx `(v ~T0 @X0 1 ef ]
+{
+[; ;newmain.c: 30: void Delay10KTCYx() {
+[e :U _Delay10KTCYx ]
+[f ]
+[; ;newmain.c: 31: for(int i = 0; i < 10000; i++) {
+"31
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 10000 `i 511  ]
+[e $U 512  ]
+[e :U 511 ]
+{
+"33
+}
+"31
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 10000 `i 511  ]
+[e :U 512 ]
+"33
+}
+[; ;newmain.c: 33: }
+[; ;newmain.c: 34: }
+"34
+[e :UE 510 ]
+}
+"36
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;newmain.c: 30: void main(void) {
+[; ;newmain.c: 36: void main(void) {
 [e :U _main ]
 [f ]
-[; ;newmain.c: 31: TRISA=0;
-"31
+[; ;newmain.c: 37: TRISA=0;
+"37
 [e = _TRISA -> -> 0 `i `uc ]
-[; ;newmain.c: 32: TRISB=0;
-"32
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;newmain.c: 33: TRISC=0;
-"33
-[e = _TRISC -> -> 0 `i `uc ]
-[; ;newmain.c: 34: PORTA=0xff;
-"34
-[e = _PORTA -> -> 255 `i `uc ]
-[; ;newmain.c: 35: PORTB=0xff;
-"35
-[e = _PORTB -> -> 255 `i `uc ]
-[; ;newmain.c: 36: PORTC=0xff;
-"36
-[e = _PORTC -> -> 255 `i `uc ]
-[; ;newmain.c: 38: ADCON1=0b00001111;
+[; ;newmain.c: 38: TRISB=0;
 "38
-[e = _ADCON1 -> -> 15 `i `uc ]
-[; ;newmain.c: 39: T1CONbits.TMR1CS = 0;
+[e = _TRISB -> -> 0 `i `uc ]
+[; ;newmain.c: 39: TRISC=0;
 "39
-[e = . . _T1CONbits 1 1 -> -> 0 `i `uc ]
-[; ;newmain.c: 40: T1CONbits.T1OSCEN = 0;
+[e = _TRISC -> -> 0 `i `uc ]
+[; ;newmain.c: 40: PORTA=0xff;
 "40
+[e = _PORTA -> -> 255 `i `uc ]
+[; ;newmain.c: 41: PORTB=0xff;
+"41
+[e = _PORTB -> -> 255 `i `uc ]
+[; ;newmain.c: 42: PORTC=0xff;
+"42
+[e = _PORTC -> -> 255 `i `uc ]
+[; ;newmain.c: 44: ADCON1=0b00001111;
+"44
+[e = _ADCON1 -> -> 15 `i `uc ]
+[; ;newmain.c: 45: T1CONbits.TMR1CS = 0;
+"45
+[e = . . _T1CONbits 1 1 -> -> 0 `i `uc ]
+[; ;newmain.c: 46: T1CONbits.T1OSCEN = 0;
+"46
 [e = . . _T1CONbits 1 3 -> -> 0 `i `uc ]
-[; ;newmain.c: 54: PORTB=0;
-"54
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;newmain.c: 55: PORTA=0;
-"55
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;newmain.c: 58: PORTB=0xf;
-"58
-[e = _PORTB -> -> 15 `i `uc ]
-[; ;newmain.c: 60: while(1) {
-"60
-[e :U 513 ]
-{
-"61
-[v _leds `ul ~T0 @X0 1 a ]
-[; ;newmain.c: 61: unsigned long leds = update_leds(PORTA, PORTB);
-[e = _leds ( _update_leds (2 , _PORTA _PORTB ]
-"63
-[v _porta `uc ~T0 @X0 1 a ]
-[; ;newmain.c: 63: unsigned char porta = (leds >> 8) & 0xff;
-[e = _porta -> & >> _leds -> 8 `i -> -> -> 255 `i `l `ul `uc ]
-"64
-[v _portb `uc ~T0 @X0 1 a ]
-[; ;newmain.c: 64: unsigned char portb = leds & 0xff;
-[e = _portb -> & _leds -> -> -> 255 `i `l `ul `uc ]
-"65
-[v _portc `uc ~T0 @X0 1 a ]
-[; ;newmain.c: 65: unsigned char portc = (porta & 0b11100000) >> 5;
-[e = _portc -> >> & -> _porta `i -> 224 `i -> 5 `i `uc ]
-[; ;newmain.c: 67: PORTA = porta;
+"66
+[v _direction `ui ~T0 @X0 1 a ]
+[; ;newmain.c: 66: unsigned int direction = 1;
+[e = _direction -> -> 1 `i `ui ]
 "67
-[e = _PORTA _porta ]
-[; ;newmain.c: 68: PORTB = portb;
-"68
-[e = _PORTB _portb ]
-[; ;newmain.c: 69: PORTC = portc;
+[v _leds `ul ~T0 @X0 1 a ]
+[; ;newmain.c: 67: unsigned long leds = 0b0000000000000011;
+[e = _leds -> -> -> 3 `i `l `ul ]
+[; ;newmain.c: 69: while(1) {
 "69
-[e = _PORTC _portc ]
-[; ;newmain.c: 71: Delay10KTCYx();
-"71
-[e ( _Delay10KTCYx ..  ]
+[e :U 516 ]
+{
+[; ;newmain.c: 70: leds = update_leds(leds, &direction);
+"70
+[e = _leds ( _update_leds (2 , _leds &U _direction ]
 "72
-}
-[e :U 512 ]
-"60
-[e $U 513  ]
-[e :U 514 ]
-[; ;newmain.c: 72: }
-[; ;newmain.c: 78: return;
+[v _portb `uc ~T0 @X0 1 a ]
+[; ;newmain.c: 72: unsigned char portb = (leds >> 8) & 0xff;
+[e = _portb -> & >> _leds -> 8 `i -> -> -> 255 `i `l `ul `uc ]
+"73
+[v _porta `uc ~T0 @X0 1 a ]
+[; ;newmain.c: 73: unsigned char porta = leds & 0xff;
+[e = _porta -> & _leds -> -> -> 255 `i `l `ul `uc ]
+"74
+[v _portc `uc ~T0 @X0 1 a ]
+[; ;newmain.c: 74: unsigned char portc = (porta & 0b11100000) >> 5;
+[e = _portc -> >> & -> _porta `i -> 224 `i -> 5 `i `uc ]
+[; ;newmain.c: 76: PORTA = porta;
+"76
+[e = _PORTA _porta ]
+[; ;newmain.c: 77: PORTB = portb;
+"77
+[e = _PORTB _portb ]
+[; ;newmain.c: 78: PORTC = portc;
 "78
-[e $UE 511  ]
-[; ;newmain.c: 79: }
-"79
-[e :UE 511 ]
+[e = _PORTC _portc ]
+[; ;newmain.c: 80: Delay10KTCYx();
+"80
+[e ( _Delay10KTCYx ..  ]
+"81
+}
+[e :U 515 ]
+"69
+[e $U 516  ]
+[e :U 517 ]
+[; ;newmain.c: 81: }
+[; ;newmain.c: 83: return;
+"83
+[e $UE 514  ]
+[; ;newmain.c: 84: }
+"84
+[e :UE 514 ]
 }

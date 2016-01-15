@@ -4902,13 +4902,23 @@ extern __nonreentrant void _delay3(unsigned char);
 #pragma config EBTRB = OFF
 
 # 12 "newmain.c"
-unsigned long update_leds(unsigned char porta, unsigned char portb) {
-if(porta > 0) {
+unsigned long update_leds(unsigned char porta, unsigned char portb, unsigned int *direction) {
+if(porta <= 0b00000011) {
+porta = 0b00000011;
+portb = 0b00000011;
+*direction = 1;
+} else if(porta >= 0b11000000) {
+*direction = 0;
+porta = 0b11000000;
+portb = 0b11000000;
+}
+
+if(*direction == 0) {
 porta = (porta >> 1);
 portb = (portb >> 1);
 } else {
-porta = 0xff;
-portb = 0xff;
+porta = (porta << 1);
+portb = (portb << 1);
 }
 
 return (portb << 8) + porta;
@@ -4932,15 +4942,11 @@ ADCON1=0b00001111;
 T1CONbits.TMR1CS = 0;
 T1CONbits.T1OSCEN = 0;
 
-# 54
-PORTB=0;
-PORTA=0;
-
-
-PORTB=0xf;
+# 70
+unsigned int direction = 1;
 
 while(1) {
-unsigned long leds = update_leds(PORTA, PORTB);
+unsigned long leds = update_leds(PORTA, PORTB, &direction);
 
 unsigned char porta = (leds >> 8) & 0xff;
 unsigned char portb = leds & 0xff;
@@ -4953,6 +4959,6 @@ PORTC = portc;
 Delay10KTCYx();
 }
 
-# 78
+# 90
 return;
 }
