@@ -9,26 +9,101 @@
 //#include <delays.h>
 #include "config.h"
 
-unsigned long update_leds(unsigned long leds, unsigned int *direction) {
-    if(leds <= 0b0000000000000011) {
-        leds = 0b0000000000000110;
-        *direction = 1;
-    } else if(leds >= 0b1100000000000000) {
-        *direction = 0;
-        leds = 0b0110000000000000;
+//unsigned long patterns[] = {
+//    0b1111111111111111,
+//    0b1111111001111111,
+//    0b1111110000111111,
+//    0b1111100000011111,
+//    0b1111000000001111,
+//    0b1110000000000111,
+//    0b1100000000000011,
+//    0b1110000000000111,
+//    0b1111000000001111,
+//    0b1111100000011111,
+//    0b1111110000111111,
+//    0b1111111001111111
+//};
+unsigned long patterns[4][12] = {
+    {
+    0b1111111111111111,
+    0b1111111111111111,
+    0b1111111111111111,
+    0b1111111111111111,
+    0b1100000000000011,
+    0b1100000000000011,
+    0b1100000000000011,
+    0b1100000000000011,
+    0b1100000000000011,
+    0b1100000000000011,
+    0b1100000000000011,
+    0b1111111111111111
+    },
+    {
+    0b1111111111111111,
+    0b1111111011111111,
+    0b1111111011111111,
+    0b1111110001111111,
+    0b1111000000011111,
+    0b1000000000000011,
+    0b1111000000011111,
+    0b1111110001111111,
+    0b1111111011111111,
+    0b1111111011111111,
+    0b1111111111111111,
+    0b1111111111111111,
+    },
+    {
+    0b1111111111111111,
+    0b1111111111111111,
+    0b1111111110001111,
+    0b1111110000000011,
+    0b1111000000000001,
+    0b1100000000000111,
+    0b1000000000001111,
+    0b1100000000000111,
+    0b1111000000000001,
+    0b1111110000000011,
+    0b1111111110001111,
+    0b1111111111111111
+    },
+    {
+    0b1111111111111111,
+    0b1111111001111111,
+    0b1111110000111111,
+    0b1111100000011111,
+    0b1111000000001111,
+    0b1110000000000111,
+    0b1100000000000011,
+    0b1110000000000111,
+    0b1111000000001111,
+    0b1111100000011111,
+    0b1111110000111111,
+    0b1111111001111111
     }
+};
+
+unsigned long update_leds(unsigned long pattern_group_index, unsigned long pattern_index) {
+//    if(leds <= 0b0000000000000011) {
+//        leds = 0b0000000000000110;
+//        *direction = 1;
+//    } else if(leds >= 0b1100000000000000) {
+//        *direction = 0;
+//        leds = 0b0110000000000000;
+//    }
+//    
+//    if(*direction == 0) {
+//        leds = (leds >> 1);
+//    } else {
+//        leds = (leds << 1);
+//    }
+//   
+//    return leds;
     
-    if(*direction == 0) {
-        leds = (leds >> 1);
-    } else {
-        leds = (leds << 1);
-    }
-   
-    return leds;
+    return patterns[pattern_group_index][pattern_index];
 }
 
-void Delay10KTCYx() {
-    for(int i = 0; i < 10000; i++) {
+void delay(int delay) {
+    for(int i = 0; i < delay; i++) {
         
     }
 }
@@ -66,8 +141,18 @@ void main(void) {
     unsigned int direction = 1;
     unsigned long leds = 0b0000000000000011;
 
+    unsigned long pattern_index = 0;
+    unsigned long pattern_group_index = 0;
+    
     while(1) {
-        leds = update_leds(leds, &direction);
+        leds = update_leds(pattern_group_index, pattern_index++);
+        if(pattern_index >=12) {
+            pattern_index = 0;
+            pattern_group_index++;
+        }
+        if(pattern_group_index >= 4) {
+            pattern_group_index = 0;
+        }
         
         unsigned char portb = (leds >> 8) & 0xff;
         unsigned char porta = leds & 0xff;
@@ -77,7 +162,7 @@ void main(void) {
         PORTB = portb;
         PORTC = portc;
         
-        Delay10KTCYx();
+        delay(500);
     }
  
     return;

@@ -21,13 +21,15 @@
 [v ___fldiv __fldiv `(d  1 e 3 0 ]
 "8 /opt/microchip/xc8/v1.35/sources/common/sprcmul.c
 [v ___flmul __flmul `(d  1 e 3 0 ]
+"15 /opt/microchip/xc8/v1.35/sources/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
 "15 /opt/microchip/xc8/v1.35/sources/common/Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"12 /home/mike/MPLABXProjects/ledpoi.X/newmain.c
+"85 /home/mike/MPLABXProjects/ledpoi.X/newmain.c
 [v _update_leds update_leds `(ul  1 e 4 0 ]
-"30
-[v _Delay10KTCYx Delay10KTCYx `(v  1 e 0 0 ]
-"36
+"105
+[v _delay delay `(v  1 e 0 0 ]
+"111
 [v _main main `(v  1 e 0 0 ]
 "2378 /opt/microchip/xc8/v1.35/include/pic18f2455.h
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
@@ -69,32 +71,50 @@
 ]
 [u S51 . 1 `S28 1 . 1 0 `S31 1 . 1 0 `S39 1 . 1 0 `S45 1 . 1 0 `S48 1 . 1 0 ]
 [v _T1CONbits T1CONbits `VES51  1 e 1 @4045 ]
-"36 /home/mike/MPLABXProjects/ledpoi.X/newmain.c
+"26 /home/mike/MPLABXProjects/ledpoi.X/newmain.c
+[v _patterns patterns `[4][12]ul  1 e 192 0 ]
+"111
 [v _main main `(v  1 e 0 0 ]
 {
-"73
-[v main@porta porta `uc  1 a 1 14 ]
-"74
-[v main@portc portc `uc  1 a 1 11 ]
-"72
-[v main@portb portb `uc  1 a 1 10 ]
-"67
-[v main@leds leds `ul  1 a 4 15 ]
-"66
-[v main@direction direction `ui  1 a 2 12 ]
-"84
+"158
+[v main@porta porta `uc  1 a 1 24 ]
+"159
+[v main@portc portc `uc  1 a 1 19 ]
+"157
+[v main@portb portb `uc  1 a 1 18 ]
+"145
+[v main@pattern_group_index pattern_group_index `ul  1 a 4 29 ]
+"144
+[v main@pattern_index pattern_index `ul  1 a 4 25 ]
+"142
+[v main@leds leds `ul  1 a 4 20 ]
+"141
+[v main@direction direction `ui  1 a 2 16 ]
+"169
 } 0
-"12
+"85
 [v _update_leds update_leds `(ul  1 e 4 0 ]
 {
-[v update_leds@leds leds `ul  1 p 4 0 ]
-[v update_leds@direction direction `*.39ui  1 p 2 4 ]
-"28
+[v update_leds@pattern_group_index pattern_group_index `ul  1 p 4 6 ]
+[v update_leds@pattern_index pattern_index `ul  1 p 4 10 ]
+"103
 } 0
-"30
-[v _Delay10KTCYx Delay10KTCYx `(v  1 e 0 0 ]
+"15 /opt/microchip/xc8/v1.35/sources/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
 {
-"31
-[v Delay10KTCYx@i i `i  1 a 2 0 ]
-"34
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"105 /home/mike/MPLABXProjects/ledpoi.X/newmain.c
+[v _delay delay `(v  1 e 0 0 ]
+{
+"106
+[v delay@i i `i  1 a 2 3 ]
+"105
+[v delay@delay delay `i  1 p 2 0 ]
+"109
 } 0

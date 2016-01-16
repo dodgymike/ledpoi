@@ -1,475 +1,781 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.35 build -356382666 
-                                                                                               Fri Jan 15 15:17:05 2016
+                                                                                               Sat Jan 16 20:34:39 2016
 
 Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080246
      1                           	processor	18F2455
      2                           	fnconf	rparam,??,?,0
      3                           	opt	pw 120
      4                           	opt	lm
-     5                           	psect	cinit,global,reloc=2,class=CODE,delta=1
-     6                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
-     7                           	psect	text0,global,reloc=2,class=CODE,delta=1
-     8                           	psect	text1,global,reloc=2,class=CODE,delta=1
-     9                           	psect	text2,global,reloc=2,class=CODE,delta=1
-    10                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
-    11                           	psect	rparam,global,class=COMRAM,space=1,delta=1
-    12  0000                     _ADCON1	set	4033
-    13  0000                     _PORTA	set	3968
-    14  0000                     _PORTB	set	3969
-    15  0000                     _PORTC	set	3970
-    16  0000                     _T1CONbits	set	4045
-    17  0000                     _TRISA	set	3986
-    18  0000                     _TRISB	set	3987
-    19  0000                     _TRISC	set	3988
-    20                           
-    21                           ; #config settings
-    22  0000                     
-    23                           	psect	cinit
-    24  005E9A                     __pcinit:
-    25                           	opt stack 0
-    26  005E9A                     start_initialization:
-    27                           	opt stack 0
-    28  005E9A                     __initialization:
-    29                           	opt stack 0
-    30  005E9A                     end_of_initialization:
-    31                           	opt stack 0
-    32  005E9A                     __end_of__initialization:
-    33                           	opt stack 0
-    34  005E9A  0100               	movlb	0
-    35  005E9C  EF5F  F02F         	goto	_main	;jump to C main() function
-    36                           
-    37                           	psect	cstackCOMRAM
-    38  000001                     __pcstackCOMRAM:
-    39                           	opt stack 0
-    40  000001                     ?_update_leds:
-    41                           	opt stack 0
-    42  000001                     Delay10KTCYx@i:
-    43                           	opt stack 0
-    44  000001                     update_leds@leds:
-    45                           	opt stack 0
-    46                           
-    47                           ; 4 bytes @ 0x0
-    48  000001                     	ds	4
-    49  000005                     update_leds@direction:
-    50                           	opt stack 0
-    51                           
-    52                           ; 2 bytes @ 0x4
-    53  000005                     	ds	2
-    54  000007                     ??_update_leds:
-    55                           
-    56                           ; 0 bytes @ 0x6
-    57  000007                     	ds	4
-    58  00000B                     main@portb:
-    59                           	opt stack 0
-    60                           
-    61                           ; 1 bytes @ 0xA
-    62  00000B                     	ds	1
-    63  00000C                     main@portc:
-    64                           	opt stack 0
-    65                           
-    66                           ; 1 bytes @ 0xB
-    67  00000C                     	ds	1
-    68  00000D                     main@direction:
-    69                           	opt stack 0
-    70                           
-    71                           ; 2 bytes @ 0xC
-    72  00000D                     	ds	2
-    73  00000F                     main@porta:
-    74                           	opt stack 0
-    75                           
-    76                           ; 1 bytes @ 0xE
-    77  00000F                     	ds	1
-    78  000010                     main@leds:
-    79                           	opt stack 0
-    80                           
-    81                           ; 4 bytes @ 0xF
-    82  000010                     	ds	4
-    83                           
-    84 ;;
-    85 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
-    86 ;;
-    87 ;; *************** function _main *****************
-    88 ;; Defined at:
-    89 ;;		line 36 in file "newmain.c"
-    90 ;; Parameters:    Size  Location     Type
-    91 ;;		None
-    92 ;; Auto vars:     Size  Location     Type
-    93 ;;  porta           1   14[COMRAM] unsigned char 
-    94 ;;  portc           1   11[COMRAM] unsigned char 
-    95 ;;  portb           1   10[COMRAM] unsigned char 
-    96 ;;  leds            4   15[COMRAM] unsigned long 
-    97 ;;  direction       2   12[COMRAM] unsigned int 
-    98 ;; Return value:  Size  Location     Type
-    99 ;;		None               void
-   100 ;; Registers used:
-   101 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
-   102 ;; Tracked objects:
-   103 ;;		On entry : 0/0
-   104 ;;		On exit  : 0/0
-   105 ;;		Unchanged: 0/0
-   106 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
-   107 ;;      Params:         0       0       0       0       0       0       0       0       0
-   108 ;;      Locals:         9       0       0       0       0       0       0       0       0
-   109 ;;      Temps:          0       0       0       0       0       0       0       0       0
-   110 ;;      Totals:         9       0       0       0       0       0       0       0       0
-   111 ;;Total ram usage:        9 bytes
-   112 ;; Hardware stack levels required when called:    1
-   113 ;; This function calls:
-   114 ;;		_Delay10KTCYx
-   115 ;;		_update_leds
-   116 ;; This function is called by:
-   117 ;;		Startup code after reset
-   118 ;; This function uses a non-reentrant model
-   119 ;;
-   120                           
-   121                           	psect	text0
-   122  005EBE                     __ptext0:
-   123                           	opt stack 0
-   124  005EBE                     _main:
-   125                           	opt stack 30
-   126                           
-   127                           ;newmain.c: 37: TRISA=0;
-   128                           
-   129                           ;incstack = 0
-   130  005EBE  0E00               	movlw	0
-   131  005EC0  6E92               	movwf	3986,c	;volatile
-   132                           
-   133                           ;newmain.c: 38: TRISB=0;
-   134  005EC2  0E00               	movlw	0
-   135  005EC4  6E93               	movwf	3987,c	;volatile
-   136                           
-   137                           ;newmain.c: 39: TRISC=0;
-   138  005EC6  0E00               	movlw	0
-   139  005EC8  6E94               	movwf	3988,c	;volatile
-   140                           
-   141                           ;newmain.c: 40: PORTA=0xff;
-   142  005ECA  6880               	setf	3968,c	;volatile
-   143                           
-   144                           ;newmain.c: 41: PORTB=0xff;
-   145  005ECC  6881               	setf	3969,c	;volatile
-   146                           
-   147                           ;newmain.c: 42: PORTC=0xff;
-   148  005ECE  6882               	setf	3970,c	;volatile
-   149                           
-   150                           ;newmain.c: 44: ADCON1=0b00001111;
-   151  005ED0  0E0F               	movlw	15
-   152  005ED2  6EC1               	movwf	4033,c	;volatile
-   153                           
-   154                           ;newmain.c: 45: T1CONbits.TMR1CS = 0;
-   155  005ED4  92CD               	bcf	4045,1,c	;volatile
-   156                           
-   157                           ;newmain.c: 46: T1CONbits.T1OSCEN = 0;
-   158  005ED6  96CD               	bcf	4045,3,c	;volatile
-   159                           
-   160                           ;newmain.c: 66: unsigned int direction = 1;
-   161  005ED8  0E00               	movlw	0
-   162  005EDA  6E0E               	movwf	main@direction+1,c
-   163  005EDC  0E01               	movlw	1
-   164  005EDE  6E0D               	movwf	main@direction,c
+     5                           	psect	idataBANK1,global,class=CODE,delta=1
+     6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     7                           	psect	dataBANK1,global,class=BANK1,space=1,delta=1
+     8                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
+     9                           	psect	text0,global,reloc=2,class=CODE,delta=1
+    10                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    11                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    13                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+    14                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    15  0000                     
+    16                           	psect	idataBANK1
+    17  005E36                     __pidataBANK1:
+    18                           	opt stack 0
+    19                           
+    20                           ;initializer for _patterns
+    21  005E36  FFFF               	dw	65535
+    22  005E38  0000               	dw	0
+    23  005E3A  FFFF               	dw	65535
+    24  005E3C  0000               	dw	0
+    25  005E3E  FFFF               	dw	65535
+    26  005E40  0000               	dw	0
+    27  005E42  FFFF               	dw	65535
+    28  005E44  0000               	dw	0
+    29  005E46  C003               	dw	49155
+    30  005E48  0000               	dw	0
+    31  005E4A  C003               	dw	49155
+    32  005E4C  0000               	dw	0
+    33  005E4E  C003               	dw	49155
+    34  005E50  0000               	dw	0
+    35  005E52  C003               	dw	49155
+    36  005E54  0000               	dw	0
+    37  005E56  C003               	dw	49155
+    38  005E58  0000               	dw	0
+    39  005E5A  C003               	dw	49155
+    40  005E5C  0000               	dw	0
+    41  005E5E  C003               	dw	49155
+    42  005E60  0000               	dw	0
+    43  005E62  FFFF               	dw	65535
+    44  005E64  0000               	dw	0
+    45  005E66  FFFF               	dw	65535
+    46  005E68  0000               	dw	0
+    47  005E6A  FEFF               	dw	65279
+    48  005E6C  0000               	dw	0
+    49  005E6E  FEFF               	dw	65279
+    50  005E70  0000               	dw	0
+    51  005E72  FC7F               	dw	64639
+    52  005E74  0000               	dw	0
+    53  005E76  F01F               	dw	61471
+    54  005E78  0000               	dw	0
+    55  005E7A  8003               	dw	32771
+    56  005E7C  0000               	dw	0
+    57  005E7E  F01F               	dw	61471
+    58  005E80  0000               	dw	0
+    59  005E82  FC7F               	dw	64639
+    60  005E84  0000               	dw	0
+    61  005E86  FEFF               	dw	65279
+    62  005E88  0000               	dw	0
+    63  005E8A  FEFF               	dw	65279
+    64  005E8C  0000               	dw	0
+    65  005E8E  FFFF               	dw	65535
+    66  005E90  0000               	dw	0
+    67  005E92  FFFF               	dw	65535
+    68  005E94  0000               	dw	0
+    69  005E96  FFFF               	dw	65535
+    70  005E98  0000               	dw	0
+    71  005E9A  FFFF               	dw	65535
+    72  005E9C  0000               	dw	0
+    73  005E9E  FF8F               	dw	65423
+    74  005EA0  0000               	dw	0
+    75  005EA2  FC03               	dw	64515
+    76  005EA4  0000               	dw	0
+    77  005EA6  F001               	dw	61441
+    78  005EA8  0000               	dw	0
+    79  005EAA  C007               	dw	49159
+    80  005EAC  0000               	dw	0
+    81  005EAE  800F               	dw	32783
+    82  005EB0  0000               	dw	0
+    83  005EB2  C007               	dw	49159
+    84  005EB4  0000               	dw	0
+    85  005EB6  F001               	dw	61441
+    86  005EB8  0000               	dw	0
+    87  005EBA  FC03               	dw	64515
+    88  005EBC  0000               	dw	0
+    89  005EBE  FF8F               	dw	65423
+    90  005EC0  0000               	dw	0
+    91  005EC2  FFFF               	dw	65535
+    92  005EC4  0000               	dw	0
+    93  005EC6  FFFF               	dw	65535
+    94  005EC8  0000               	dw	0
+    95  005ECA  FE7F               	dw	65151
+    96  005ECC  0000               	dw	0
+    97  005ECE  FC3F               	dw	64575
+    98  005ED0  0000               	dw	0
+    99  005ED2  F81F               	dw	63519
+   100  005ED4  0000               	dw	0
+   101  005ED6  F00F               	dw	61455
+   102  005ED8  0000               	dw	0
+   103  005EDA  E007               	dw	57351
+   104  005EDC  0000               	dw	0
+   105  005EDE  C003               	dw	49155
+   106  005EE0  0000               	dw	0
+   107  005EE2  E007               	dw	57351
+   108  005EE4  0000               	dw	0
+   109  005EE6  F00F               	dw	61455
+   110  005EE8  0000               	dw	0
+   111  005EEA  F81F               	dw	63519
+   112  005EEC  0000               	dw	0
+   113  005EEE  FC3F               	dw	64575
+   114  005EF0  0000               	dw	0
+   115  005EF2  FE7F               	dw	65151
+   116  005EF4  0000               	dw	0
+   117  0000                     _ADCON1	set	4033
+   118  0000                     _PORTA	set	3968
+   119  0000                     _PORTB	set	3969
+   120  0000                     _PORTC	set	3970
+   121  0000                     _T1CONbits	set	4045
+   122  0000                     _TRISA	set	3986
+   123  0000                     _TRISB	set	3987
+   124  0000                     _TRISC	set	3988
+   125                           
+   126                           ; #config settings
+   127  0000                     
+   128                           	psect	cinit
+   129  005DC2                     __pcinit:
+   130                           	opt stack 0
+   131  005DC2                     start_initialization:
+   132                           	opt stack 0
+   133  005DC2                     __initialization:
+   134                           	opt stack 0
+   135                           
+   136                           ; Initialize objects allocated to BANK1 (192 bytes)
+   137                           ; load TBLPTR registers with __pidataBANK1
+   138  005DC2  0E36               	movlw	low __pidataBANK1
+   139  005DC4  6EF6               	movwf	tblptrl,c
+   140  005DC6  0E5E               	movlw	high __pidataBANK1
+   141  005DC8  6EF7               	movwf	tblptrh,c
+   142  005DCA  0E00               	movlw	low (__pidataBANK1 shr (0+16))
+   143  005DCC  6EF8               	movwf	tblptru,c
+   144  005DCE  EE01  F000         	lfsr	0,__pdataBANK1
+   145  005DD2  EE10 F0C0          	lfsr	1,192
+   146  005DD6                     copy_data0:
+   147  005DD6  0009               	tblrd		*+
+   148  005DD8  CFF5 FFEE          	movff	tablat,postinc0
+   149  005DDC  50E5               	movf	postdec1,w,c
+   150  005DDE  50E1               	movf	fsr1l,w,c
+   151  005DE0  E1FA               	bnz	copy_data0
+   152  005DE2                     end_of_initialization:
+   153                           	opt stack 0
+   154  005DE2                     __end_of__initialization:
+   155                           	opt stack 0
+   156  005DE2  0100               	movlb	0
+   157  005DE4  EF7B  F02F         	goto	_main	;jump to C main() function
+   158                           tblptru	equ	0xFF8
+   159                           tblptrh	equ	0xFF7
+   160                           tblptrl	equ	0xFF6
+   161                           tablat	equ	0xFF5
+   162                           postinc0	equ	0xFEE
+   163                           postdec1	equ	0xFE5
+   164                           fsr1l	equ	0xFE1
    165                           
-   166                           ;newmain.c: 67: unsigned long leds = 0b0000000000000011;
-   167  005EE0  0E03               	movlw	3
-   168  005EE2  6E10               	movwf	main@leds,c
-   169  005EE4  0E00               	movlw	0
-   170  005EE6  6E11               	movwf	main@leds+1,c
-   171  005EE8  0E00               	movlw	0
-   172  005EEA  6E12               	movwf	main@leds+2,c
-   173  005EEC  0E00               	movlw	0
-   174  005EEE  6E13               	movwf	main@leds+3,c
-   175  005EF0                     l743:
-   176                           
-   177                           ;newmain.c: 70: leds = update_leds(leds, &direction);
-   178  005EF0  C010  F001         	movff	main@leds,update_leds@leds
-   179  005EF4  C011  F002         	movff	main@leds+1,update_leds@leds+1
-   180  005EF8  C012  F003         	movff	main@leds+2,update_leds@leds+2
-   181  005EFC  C013  F004         	movff	main@leds+3,update_leds@leds+3
-   182  005F00  0E0D               	movlw	low main@direction
-   183  005F02  6E05               	movwf	update_leds@direction,c
-   184  005F04  0E00               	movlw	high main@direction
-   185  005F06  6E06               	movwf	update_leds@direction+1,c
-   186  005F08  ECA0  F02F         	call	_update_leds	;wreg free
-   187  005F0C  C001  F010         	movff	?_update_leds,main@leds
-   188  005F10  C002  F011         	movff	?_update_leds+1,main@leds+1
-   189  005F14  C003  F012         	movff	?_update_leds+2,main@leds+2
-   190  005F18  C004  F013         	movff	?_update_leds+3,main@leds+3
-   191                           
-   192                           ;newmain.c: 72: unsigned char portb = (leds >> 8) & 0xff;
-   193  005F1C  C011  F00B         	movff	main@leds+1,main@portb
-   194                           
-   195                           ;newmain.c: 73: unsigned char porta = leds & 0xff;
-   196  005F20  C010  F00F         	movff	main@leds,main@porta
-   197                           
-   198                           ;newmain.c: 74: unsigned char portc = (porta & 0b11100000) >> 5;
-   199  005F24  380F               	swapf	main@porta,w,c
-   200  005F26  42E8               	rrncf	wreg,f,c
-   201  005F28  0B07               	andlw	7
-   202  005F2A  0B07               	andlw	7
-   203  005F2C  6E0C               	movwf	main@portc,c
-   204                           
-   205                           ;newmain.c: 76: PORTA = porta;
-   206  005F2E  C00F  FF80         	movff	main@porta,3968	;volatile
-   207                           
-   208                           ;newmain.c: 77: PORTB = portb;
-   209  005F32  C00B  FF81         	movff	main@portb,3969	;volatile
-   210                           
-   211                           ;newmain.c: 78: PORTC = portc;
-   212  005F36  C00C  FF82         	movff	main@portc,3970	;volatile
-   213                           
-   214                           ;newmain.c: 80: Delay10KTCYx();
-   215  005F3A  EC50  F02F         	call	_Delay10KTCYx	;wreg free
-   216  005F3E  D7D8               	goto	l743
-   217  005F40                     __end_of_main:
-   218                           	opt stack 0
-   219                           wreg	equ	0xFE8
-   220                           
-   221 ;; *************** function _update_leds *****************
-   222 ;; Defined at:
-   223 ;;		line 12 in file "newmain.c"
-   224 ;; Parameters:    Size  Location     Type
-   225 ;;  leds            4    0[COMRAM] unsigned long 
-   226 ;;  direction       2    4[COMRAM] PTR unsigned int 
-   227 ;;		 -> main@direction(2), 
-   228 ;; Auto vars:     Size  Location     Type
-   229 ;;		None
-   230 ;; Return value:  Size  Location     Type
-   231 ;;                  4    0[COMRAM] unsigned long 
-   232 ;; Registers used:
-   233 ;;		wreg, fsr2l, fsr2h, status,2, status,0
-   234 ;; Tracked objects:
-   235 ;;		On entry : 0/0
-   236 ;;		On exit  : 0/0
-   237 ;;		Unchanged: 0/0
-   238 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
-   239 ;;      Params:         6       0       0       0       0       0       0       0       0
-   240 ;;      Locals:         0       0       0       0       0       0       0       0       0
-   241 ;;      Temps:          4       0       0       0       0       0       0       0       0
-   242 ;;      Totals:        10       0       0       0       0       0       0       0       0
-   243 ;;Total ram usage:       10 bytes
-   244 ;; Hardware stack levels used:    1
-   245 ;; This function calls:
-   246 ;;		Nothing
-   247 ;; This function is called by:
-   248 ;;		_main
-   249 ;; This function uses a non-reentrant model
-   250 ;;
+   166                           	psect	dataBANK1
+   167  000100                     __pdataBANK1:
+   168                           	opt stack 0
+   169  000100                     _patterns:
+   170                           	opt stack 0
+   171  000100                     	ds	192
+   172                           tblptru	equ	0xFF8
+   173                           tblptrh	equ	0xFF7
+   174                           tblptrl	equ	0xFF6
+   175                           tablat	equ	0xFF5
+   176                           postinc0	equ	0xFEE
+   177                           postdec1	equ	0xFE5
+   178                           fsr1l	equ	0xFE1
+   179                           
+   180                           	psect	cstackCOMRAM
+   181  000001                     __pcstackCOMRAM:
+   182                           	opt stack 0
+   183  000001                     ?___wmul:
+   184                           	opt stack 0
+   185  000001                     delay@delay:
+   186                           	opt stack 0
+   187  000001                     ___wmul@multiplier:
+   188                           	opt stack 0
+   189                           
+   190                           ; 2 bytes @ 0x0
+   191  000001                     	ds	2
+   192  000003                     ??_delay:
+   193  000003                     ___wmul@multiplicand:
+   194                           	opt stack 0
+   195                           
+   196                           ; 2 bytes @ 0x2
+   197  000003                     	ds	1
+   198  000004                     delay@i:
+   199                           	opt stack 0
+   200                           
+   201                           ; 2 bytes @ 0x3
+   202  000004                     	ds	1
+   203  000005                     ___wmul@product:
+   204                           	opt stack 0
+   205                           
+   206                           ; 2 bytes @ 0x4
+   207  000005                     	ds	2
+   208  000007                     ?_update_leds:
+   209                           	opt stack 0
+   210  000007                     update_leds@pattern_group_index:
+   211                           	opt stack 0
+   212                           
+   213                           ; 4 bytes @ 0x6
+   214  000007                     	ds	4
+   215  00000B                     update_leds@pattern_index:
+   216                           	opt stack 0
+   217                           
+   218                           ; 4 bytes @ 0xA
+   219  00000B                     	ds	4
+   220  00000F                     ??_update_leds:
+   221                           
+   222                           ; 0 bytes @ 0xE
+   223  00000F                     	ds	2
+   224  000011                     main@direction:
+   225                           	opt stack 0
+   226                           
+   227                           ; 2 bytes @ 0x10
+   228  000011                     	ds	2
+   229  000013                     main@portb:
+   230                           	opt stack 0
+   231                           
+   232                           ; 1 bytes @ 0x12
+   233  000013                     	ds	1
+   234  000014                     main@portc:
+   235                           	opt stack 0
+   236                           
+   237                           ; 1 bytes @ 0x13
+   238  000014                     	ds	1
+   239  000015                     main@leds:
+   240                           	opt stack 0
+   241                           
+   242                           ; 4 bytes @ 0x14
+   243  000015                     	ds	4
+   244  000019                     main@porta:
+   245                           	opt stack 0
+   246                           
+   247                           ; 1 bytes @ 0x18
+   248  000019                     	ds	1
+   249  00001A                     main@pattern_index:
+   250                           	opt stack 0
    251                           
-   252                           	psect	text1
-   253  005F40                     __ptext1:
-   254                           	opt stack 0
-   255  005F40                     _update_leds:
-   256                           	opt stack 30
-   257                           
-   258                           ;newmain.c: 13: if(leds <= 0b0000000000000011) {
-   259                           
-   260                           ;incstack = 0
-   261  005F40  5004               	movf	update_leds@leds+3,w,c
-   262  005F42  1003               	iorwf	update_leds@leds+2,w,c
-   263  005F44  1002               	iorwf	update_leds@leds+1,w,c
-   264  005F46  E115               	bnz	l715
-   265  005F48  0E04               	movlw	4
-   266  005F4A  5C01               	subwf	update_leds@leds,w,c
-   267  005F4C  B0D8               	btfsc	status,0,c
-   268  005F4E  D011               	goto	l715
-   269                           
-   270                           ;newmain.c: 14: leds = 0b0000000000000110;
-   271  005F50  0E06               	movlw	6
-   272  005F52  6E01               	movwf	update_leds@leds,c
-   273  005F54  0E00               	movlw	0
-   274  005F56  6E02               	movwf	update_leds@leds+1,c
-   275  005F58  0E00               	movlw	0
-   276  005F5A  6E03               	movwf	update_leds@leds+2,c
-   277  005F5C  0E00               	movlw	0
-   278  005F5E  6E04               	movwf	update_leds@leds+3,c
-   279                           
-   280                           ;newmain.c: 15: *direction = 1;
-   281  005F60  C005  FFD9         	movff	update_leds@direction,fsr2l
-   282  005F64  C006  FFDA         	movff	update_leds@direction+1,fsr2h
-   283  005F68  0E01               	movlw	1
-   284  005F6A  6EDE               	movwf	postinc2,c
-   285  005F6C  0E00               	movlw	0
-   286  005F6E  6EDD               	movwf	postdec2,c
-   287                           
-   288                           ;newmain.c: 16: } else if(leds >= 0b1100000000000000) {
-   289  005F70  D017               	goto	l721
-   290  005F72                     l715:
-   291  005F72  5004               	movf	update_leds@leds+3,w,c
-   292  005F74  1003               	iorwf	update_leds@leds+2,w,c
-   293  005F76  E104               	bnz	u70
-   294  005F78  0EC0               	movlw	192
-   295  005F7A  5C02               	subwf	update_leds@leds+1,w,c
-   296  005F7C  A0D8               	btfss	status,0,c
-   297  005F7E  D010               	goto	l721
-   298  005F80                     u70:
-   299                           
-   300                           ;newmain.c: 17: *direction = 0;
-   301  005F80  C005  FFD9         	movff	update_leds@direction,fsr2l
-   302  005F84  C006  FFDA         	movff	update_leds@direction+1,fsr2h
-   303  005F88  0E00               	movlw	0
-   304  005F8A  6EDE               	movwf	postinc2,c
-   305  005F8C  0E00               	movlw	0
-   306  005F8E  6EDD               	movwf	postdec2,c
-   307                           
-   308                           ;newmain.c: 18: leds = 0b0110000000000000;
-   309  005F90  0E00               	movlw	0
-   310  005F92  6E01               	movwf	update_leds@leds,c
-   311  005F94  0E60               	movlw	96
-   312  005F96  6E02               	movwf	update_leds@leds+1,c
-   313  005F98  0E00               	movlw	0
-   314  005F9A  6E03               	movwf	update_leds@leds+2,c
-   315  005F9C  0E00               	movlw	0
-   316  005F9E  6E04               	movwf	update_leds@leds+3,c
-   317  005FA0                     l721:
-   318                           
-   319                           ;newmain.c: 19: }
-   320                           ;newmain.c: 21: if(*direction == 0) {
-   321  005FA0  C005  FFD9         	movff	update_leds@direction,fsr2l
-   322  005FA4  C006  FFDA         	movff	update_leds@direction+1,fsr2h
-   323  005FA8  50DE               	movf	postinc2,w,c
-   324  005FAA  10DE               	iorwf	postinc2,w,c
-   325  005FAC  A4D8               	btfss	status,2,c
-   326  005FAE  D016               	goto	l725
-   327                           
-   328                           ;newmain.c: 22: leds = (leds >> 1);
-   329  005FB0  C001  F007         	movff	update_leds@leds,??_update_leds
-   330  005FB4  C002  F008         	movff	update_leds@leds+1,??_update_leds+1
-   331  005FB8  C003  F009         	movff	update_leds@leds+2,??_update_leds+2
-   332  005FBC  C004  F00A         	movff	update_leds@leds+3,??_update_leds+3
-   333  005FC0  90D8               	bcf	status,0,c
-   334  005FC2  320A               	rrcf	??_update_leds+3,f,c
-   335  005FC4  3209               	rrcf	??_update_leds+2,f,c
-   336  005FC6  3208               	rrcf	??_update_leds+1,f,c
-   337  005FC8  3207               	rrcf	??_update_leds,f,c
-   338  005FCA  C007  F001         	movff	??_update_leds,update_leds@leds
-   339  005FCE  C008  F002         	movff	??_update_leds+1,update_leds@leds+1
-   340  005FD2  C009  F003         	movff	??_update_leds+2,update_leds@leds+2
-   341  005FD6  C00A  F004         	movff	??_update_leds+3,update_leds@leds+3
-   342                           
-   343                           ;newmain.c: 23: } else {
-   344  005FDA  D009               	goto	l727
-   345  005FDC                     l725:
-   346                           
-   347                           ;newmain.c: 24: leds = (leds << 1);
-   348  005FDC  90D8               	bcf	status,0,c
-   349  005FDE  3401               	rlcf	update_leds@leds,w,c
-   350  005FE0  6E01               	movwf	update_leds@leds,c
-   351  005FE2  3402               	rlcf	update_leds@leds+1,w,c
-   352  005FE4  6E02               	movwf	update_leds@leds+1,c
-   353  005FE6  3403               	rlcf	update_leds@leds+2,w,c
-   354  005FE8  6E03               	movwf	update_leds@leds+2,c
-   355  005FEA  3404               	rlcf	update_leds@leds+3,w,c
-   356  005FEC  6E04               	movwf	update_leds@leds+3,c
-   357  005FEE                     l727:
-   358                           
-   359                           ;newmain.c: 25: }
-   360                           ;newmain.c: 27: return leds;
-   361  005FEE  C001  F001         	movff	update_leds@leds,?_update_leds
-   362  005FF2  C002  F002         	movff	update_leds@leds+1,?_update_leds+1
-   363  005FF6  C003  F003         	movff	update_leds@leds+2,?_update_leds+2
-   364  005FFA  C004  F004         	movff	update_leds@leds+3,?_update_leds+3
-   365  005FFE  0012               	return	
-   366  006000                     __end_of_update_leds:
-   367                           	opt stack 0
-   368                           wreg	equ	0xFE8
-   369                           postinc2	equ	0xFDE
-   370                           postdec2	equ	0xFDD
-   371                           fsr2h	equ	0xFDA
-   372                           fsr2l	equ	0xFD9
-   373                           status	equ	0xFD8
-   374                           
-   375 ;; *************** function _Delay10KTCYx *****************
-   376 ;; Defined at:
-   377 ;;		line 30 in file "newmain.c"
-   378 ;; Parameters:    Size  Location     Type
-   379 ;;		None
-   380 ;; Auto vars:     Size  Location     Type
-   381 ;;  i               2    0[COMRAM] int 
-   382 ;; Return value:  Size  Location     Type
-   383 ;;		None               void
-   384 ;; Registers used:
-   385 ;;		wreg, status,2, status,0
-   386 ;; Tracked objects:
-   387 ;;		On entry : 0/0
-   388 ;;		On exit  : 0/0
-   389 ;;		Unchanged: 0/0
-   390 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
-   391 ;;      Params:         0       0       0       0       0       0       0       0       0
-   392 ;;      Locals:         2       0       0       0       0       0       0       0       0
-   393 ;;      Temps:          0       0       0       0       0       0       0       0       0
-   394 ;;      Totals:         2       0       0       0       0       0       0       0       0
-   395 ;;Total ram usage:        2 bytes
-   396 ;; Hardware stack levels used:    1
-   397 ;; This function calls:
-   398 ;;		Nothing
-   399 ;; This function is called by:
-   400 ;;		_main
-   401 ;; This function uses a non-reentrant model
-   402 ;;
-   403                           
-   404                           	psect	text2
-   405  005EA0                     __ptext2:
-   406                           	opt stack 0
-   407  005EA0                     _Delay10KTCYx:
-   408                           	opt stack 30
-   409                           
-   410                           ;newmain.c: 31: for(int i = 0; i < 10000; i++) {
-   411                           
-   412                           ;incstack = 0
-   413  005EA0  0E00               	movlw	0
-   414  005EA2  6E02               	movwf	Delay10KTCYx@i+1,c
-   415  005EA4  0E00               	movlw	0
-   416  005EA6  6E01               	movwf	Delay10KTCYx@i,c
-   417  005EA8                     l673:
-   418  005EA8  BE02               	btfsc	Delay10KTCYx@i+1,7,c
-   419  005EAA  D006               	goto	l677
-   420  005EAC  0E10               	movlw	16
-   421  005EAE  5C01               	subwf	Delay10KTCYx@i,w,c
-   422  005EB0  0E27               	movlw	39
-   423  005EB2  5802               	subwfb	Delay10KTCYx@i+1,w,c
-   424  005EB4  B0D8               	btfsc	status,0,c
-   425  005EB6  0012               	return	
-   426  005EB8                     l677:
-   427  005EB8  4A01               	infsnz	Delay10KTCYx@i,f,c
-   428  005EBA  2A02               	incf	Delay10KTCYx@i+1,f,c
-   429  005EBC  D7F5               	goto	l673
-   430  005EBE                     __end_of_Delay10KTCYx:
-   431                           	opt stack 0
-   432  0000                     wreg	equ	0xFE8
-   433                           postinc2	equ	0xFDE
-   434                           postdec2	equ	0xFDD
-   435                           fsr2h	equ	0xFDA
-   436                           fsr2l	equ	0xFD9
-   437                           status	equ	0xFD8
-   438                           wreg	equ	0xFE8
-   439                           postinc2	equ	0xFDE
-   440                           postdec2	equ	0xFDD
-   441                           fsr2h	equ	0xFDA
-   442                           fsr2l	equ	0xFD9
-   443                           status	equ	0xFD8
+   252                           ; 4 bytes @ 0x19
+   253  00001A                     	ds	4
+   254  00001E                     main@pattern_group_index:
+   255                           	opt stack 0
+   256                           
+   257                           ; 4 bytes @ 0x1D
+   258  00001E                     	ds	4
+   259                           tblptru	equ	0xFF8
+   260                           tblptrh	equ	0xFF7
+   261                           tblptrl	equ	0xFF6
+   262                           tablat	equ	0xFF5
+   263                           postinc0	equ	0xFEE
+   264                           postdec1	equ	0xFE5
+   265                           fsr1l	equ	0xFE1
+   266                           
+   267 ;;
+   268 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   269 ;;
+   270 ;; *************** function _main *****************
+   271 ;; Defined at:
+   272 ;;		line 111 in file "newmain.c"
+   273 ;; Parameters:    Size  Location     Type
+   274 ;;		None
+   275 ;; Auto vars:     Size  Location     Type
+   276 ;;  porta           1   24[COMRAM] unsigned char 
+   277 ;;  portc           1   19[COMRAM] unsigned char 
+   278 ;;  portb           1   18[COMRAM] unsigned char 
+   279 ;;  pattern_grou    4   29[COMRAM] unsigned long 
+   280 ;;  pattern_inde    4   25[COMRAM] unsigned long 
+   281 ;;  leds            4   20[COMRAM] unsigned long 
+   282 ;;  direction       2   16[COMRAM] unsigned int 
+   283 ;; Return value:  Size  Location     Type
+   284 ;;		None               void
+   285 ;; Registers used:
+   286 ;;		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+   287 ;; Tracked objects:
+   288 ;;		On entry : 0/0
+   289 ;;		On exit  : 0/0
+   290 ;;		Unchanged: 0/0
+   291 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   292 ;;      Params:         0       0       0       0       0       0       0       0       0
+   293 ;;      Locals:        17       0       0       0       0       0       0       0       0
+   294 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   295 ;;      Totals:        17       0       0       0       0       0       0       0       0
+   296 ;;Total ram usage:       17 bytes
+   297 ;; Hardware stack levels required when called:    2
+   298 ;; This function calls:
+   299 ;;		_delay
+   300 ;;		_update_leds
+   301 ;; This function is called by:
+   302 ;;		Startup code after reset
+   303 ;; This function uses a non-reentrant model
+   304 ;;
+   305                           
+   306                           	psect	text0
+   307  005EF6                     __ptext0:
+   308                           	opt stack 0
+   309  005EF6                     _main:
+   310                           	opt stack 29
+   311                           
+   312                           ;newmain.c: 112: TRISA=0;
+   313                           
+   314                           ;incstack = 0
+   315  005EF6  0E00               	movlw	0
+   316  005EF8  6E92               	movwf	3986,c	;volatile
+   317                           
+   318                           ;newmain.c: 113: TRISB=0;
+   319  005EFA  0E00               	movlw	0
+   320  005EFC  6E93               	movwf	3987,c	;volatile
+   321                           
+   322                           ;newmain.c: 114: TRISC=0;
+   323  005EFE  0E00               	movlw	0
+   324  005F00  6E94               	movwf	3988,c	;volatile
+   325                           
+   326                           ;newmain.c: 115: PORTA=0xff;
+   327  005F02  6880               	setf	3968,c	;volatile
+   328                           
+   329                           ;newmain.c: 116: PORTB=0xff;
+   330  005F04  6881               	setf	3969,c	;volatile
+   331                           
+   332                           ;newmain.c: 117: PORTC=0xff;
+   333  005F06  6882               	setf	3970,c	;volatile
+   334                           
+   335                           ;newmain.c: 119: ADCON1=0b00001111;
+   336  005F08  0E0F               	movlw	15
+   337  005F0A  6EC1               	movwf	4033,c	;volatile
+   338                           
+   339                           ;newmain.c: 120: T1CONbits.TMR1CS = 0;
+   340  005F0C  92CD               	bcf	4045,1,c	;volatile
+   341                           
+   342                           ;newmain.c: 121: T1CONbits.T1OSCEN = 0;
+   343  005F0E  96CD               	bcf	4045,3,c	;volatile
+   344                           
+   345                           ;newmain.c: 141: unsigned int direction = 1;
+   346  005F10  0E00               	movlw	0
+   347  005F12  6E12               	movwf	main@direction+1,c
+   348  005F14  0E01               	movlw	1
+   349  005F16  6E11               	movwf	main@direction,c
+   350                           
+   351                           ;newmain.c: 142: unsigned long leds = 0b0000000000000011;
+   352  005F18  0E03               	movlw	3
+   353  005F1A  6E15               	movwf	main@leds,c
+   354  005F1C  0E00               	movlw	0
+   355  005F1E  6E16               	movwf	main@leds+1,c
+   356  005F20  0E00               	movlw	0
+   357  005F22  6E17               	movwf	main@leds+2,c
+   358  005F24  0E00               	movlw	0
+   359  005F26  6E18               	movwf	main@leds+3,c
+   360                           
+   361                           ;newmain.c: 144: unsigned long pattern_index = 0;
+   362  005F28  0E00               	movlw	0
+   363  005F2A  6E1A               	movwf	main@pattern_index,c
+   364  005F2C  0E00               	movlw	0
+   365  005F2E  6E1B               	movwf	main@pattern_index+1,c
+   366  005F30  0E00               	movlw	0
+   367  005F32  6E1C               	movwf	main@pattern_index+2,c
+   368  005F34  0E00               	movlw	0
+   369  005F36  6E1D               	movwf	main@pattern_index+3,c
+   370                           
+   371                           ;newmain.c: 145: unsigned long pattern_group_index = 0;
+   372  005F38  0E00               	movlw	0
+   373  005F3A  6E1E               	movwf	main@pattern_group_index,c
+   374  005F3C  0E00               	movlw	0
+   375  005F3E  6E1F               	movwf	main@pattern_group_index+1,c
+   376  005F40  0E00               	movlw	0
+   377  005F42  6E20               	movwf	main@pattern_group_index+2,c
+   378  005F44  0E00               	movlw	0
+   379  005F46  6E21               	movwf	main@pattern_group_index+3,c
+   380  005F48                     l717:
+   381                           
+   382                           ;newmain.c: 148: leds = update_leds(pattern_group_index, pattern_index++);
+   383  005F48  C01E  F007         	movff	main@pattern_group_index,update_leds@pattern_group_index
+   384  005F4C  C01F  F008         	movff	main@pattern_group_index+1,update_leds@pattern_group_index+1
+   385  005F50  C020  F009         	movff	main@pattern_group_index+2,update_leds@pattern_group_index+2
+   386  005F54  C021  F00A         	movff	main@pattern_group_index+3,update_leds@pattern_group_index+3
+   387  005F58  C01A  F00B         	movff	main@pattern_index,update_leds@pattern_index
+   388  005F5C  C01B  F00C         	movff	main@pattern_index+1,update_leds@pattern_index+1
+   389  005F60  C01C  F00D         	movff	main@pattern_index+2,update_leds@pattern_index+2
+   390  005F64  C01D  F00E         	movff	main@pattern_index+3,update_leds@pattern_index+3
+   391  005F68  ECF4  F02E         	call	_update_leds	;wreg free
+   392  005F6C  C007  F015         	movff	?_update_leds,main@leds
+   393  005F70  C008  F016         	movff	?_update_leds+1,main@leds+1
+   394  005F74  C009  F017         	movff	?_update_leds+2,main@leds+2
+   395  005F78  C00A  F018         	movff	?_update_leds+3,main@leds+3
+   396  005F7C  0E01               	movlw	1
+   397  005F7E  261A               	addwf	main@pattern_index,f,c
+   398  005F80  0E00               	movlw	0
+   399  005F82  221B               	addwfc	main@pattern_index+1,f,c
+   400  005F84  221C               	addwfc	main@pattern_index+2,f,c
+   401  005F86  221D               	addwfc	main@pattern_index+3,f,c
+   402                           
+   403                           ;newmain.c: 149: if(pattern_index >=12) {
+   404  005F88  501D               	movf	main@pattern_index+3,w,c
+   405  005F8A  101C               	iorwf	main@pattern_index+2,w,c
+   406  005F8C  101B               	iorwf	main@pattern_index+1,w,c
+   407  005F8E  E104               	bnz	u50
+   408  005F90  0E0C               	movlw	12
+   409  005F92  5C1A               	subwf	main@pattern_index,w,c
+   410  005F94  A0D8               	btfss	status,0,c
+   411  005F96  D00E               	goto	l727
+   412  005F98                     u50:
+   413                           
+   414                           ;newmain.c: 150: pattern_index = 0;
+   415  005F98  0E00               	movlw	0
+   416  005F9A  6E1A               	movwf	main@pattern_index,c
+   417  005F9C  0E00               	movlw	0
+   418  005F9E  6E1B               	movwf	main@pattern_index+1,c
+   419  005FA0  0E00               	movlw	0
+   420  005FA2  6E1C               	movwf	main@pattern_index+2,c
+   421  005FA4  0E00               	movlw	0
+   422  005FA6  6E1D               	movwf	main@pattern_index+3,c
+   423                           
+   424                           ;newmain.c: 151: pattern_group_index++;
+   425  005FA8  0E01               	movlw	1
+   426  005FAA  261E               	addwf	main@pattern_group_index,f,c
+   427  005FAC  0E00               	movlw	0
+   428  005FAE  221F               	addwfc	main@pattern_group_index+1,f,c
+   429  005FB0  2220               	addwfc	main@pattern_group_index+2,f,c
+   430  005FB2  2221               	addwfc	main@pattern_group_index+3,f,c
+   431  005FB4                     l727:
+   432                           
+   433                           ;newmain.c: 152: }
+   434                           ;newmain.c: 153: if(pattern_group_index >= 4) {
+   435  005FB4  5021               	movf	main@pattern_group_index+3,w,c
+   436  005FB6  1020               	iorwf	main@pattern_group_index+2,w,c
+   437  005FB8  101F               	iorwf	main@pattern_group_index+1,w,c
+   438  005FBA  E104               	bnz	u60
+   439  005FBC  0E04               	movlw	4
+   440  005FBE  5C1E               	subwf	main@pattern_group_index,w,c
+   441  005FC0  A0D8               	btfss	status,0,c
+   442  005FC2  D008               	goto	l731
+   443  005FC4                     u60:
    444                           
-   445                           	psect	rparam
-   446  0000                     wreg	equ	0xFE8
-   447                           postinc2	equ	0xFDE
-   448                           postdec2	equ	0xFDD
-   449                           fsr2h	equ	0xFDA
-   450                           fsr2l	equ	0xFD9
-   451                           status	equ	0xFD8
+   445                           ;newmain.c: 154: pattern_group_index = 0;
+   446  005FC4  0E00               	movlw	0
+   447  005FC6  6E1E               	movwf	main@pattern_group_index,c
+   448  005FC8  0E00               	movlw	0
+   449  005FCA  6E1F               	movwf	main@pattern_group_index+1,c
+   450  005FCC  0E00               	movlw	0
+   451  005FCE  6E20               	movwf	main@pattern_group_index+2,c
+   452  005FD0  0E00               	movlw	0
+   453  005FD2  6E21               	movwf	main@pattern_group_index+3,c
+   454  005FD4                     l731:
+   455                           
+   456                           ;newmain.c: 155: }
+   457                           ;newmain.c: 157: unsigned char portb = (leds >> 8) & 0xff;
+   458  005FD4  C016  F013         	movff	main@leds+1,main@portb
+   459                           
+   460                           ;newmain.c: 158: unsigned char porta = leds & 0xff;
+   461  005FD8  C015  F019         	movff	main@leds,main@porta
+   462                           
+   463                           ;newmain.c: 159: unsigned char portc = (porta & 0b11100000) >> 5;
+   464  005FDC  3819               	swapf	main@porta,w,c
+   465  005FDE  42E8               	rrncf	wreg,f,c
+   466  005FE0  0B07               	andlw	7
+   467  005FE2  0B07               	andlw	7
+   468  005FE4  6E14               	movwf	main@portc,c
+   469                           
+   470                           ;newmain.c: 161: PORTA = porta;
+   471  005FE6  C019  FF80         	movff	main@porta,3968	;volatile
+   472                           
+   473                           ;newmain.c: 162: PORTB = portb;
+   474  005FEA  C013  FF81         	movff	main@portb,3969	;volatile
+   475                           
+   476                           ;newmain.c: 163: PORTC = portc;
+   477  005FEE  C014  FF82         	movff	main@portc,3970	;volatile
+   478                           
+   479                           ;newmain.c: 165: delay(500);
+   480  005FF2  0E01               	movlw	1
+   481  005FF4  6E02               	movwf	delay@delay+1,c
+   482  005FF6  0EF4               	movlw	244
+   483  005FF8  6E01               	movwf	delay@delay,c
+   484  005FFA  ECBC  F02E         	call	_delay	;wreg free
+   485  005FFE  D7A4               	goto	l717
+   486  006000                     __end_of_main:
+   487                           	opt stack 0
+   488                           tblptru	equ	0xFF8
+   489                           tblptrh	equ	0xFF7
+   490                           tblptrl	equ	0xFF6
+   491                           tablat	equ	0xFF5
+   492                           postinc0	equ	0xFEE
+   493                           wreg	equ	0xFE8
+   494                           postdec1	equ	0xFE5
+   495                           fsr1l	equ	0xFE1
+   496                           status	equ	0xFD8
+   497                           
+   498 ;; *************** function _update_leds *****************
+   499 ;; Defined at:
+   500 ;;		line 85 in file "newmain.c"
+   501 ;; Parameters:    Size  Location     Type
+   502 ;;  pattern_grou    4    6[COMRAM] unsigned long 
+   503 ;;  pattern_inde    4   10[COMRAM] unsigned long 
+   504 ;; Auto vars:     Size  Location     Type
+   505 ;;		None
+   506 ;; Return value:  Size  Location     Type
+   507 ;;                  4    6[COMRAM] unsigned long 
+   508 ;; Registers used:
+   509 ;;		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+   510 ;; Tracked objects:
+   511 ;;		On entry : 0/0
+   512 ;;		On exit  : 0/0
+   513 ;;		Unchanged: 0/0
+   514 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   515 ;;      Params:         8       0       0       0       0       0       0       0       0
+   516 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   517 ;;      Temps:          2       0       0       0       0       0       0       0       0
+   518 ;;      Totals:        10       0       0       0       0       0       0       0       0
+   519 ;;Total ram usage:       10 bytes
+   520 ;; Hardware stack levels used:    1
+   521 ;; Hardware stack levels required when called:    1
+   522 ;; This function calls:
+   523 ;;		___wmul
+   524 ;; This function is called by:
+   525 ;;		_main
+   526 ;; This function uses a non-reentrant model
+   527 ;;
+   528                           
+   529                           	psect	text1
+   530  005DE8                     __ptext1:
+   531                           	opt stack 0
+   532  005DE8                     _update_leds:
+   533                           	opt stack 29
+   534                           
+   535                           ;newmain.c: 102: return patterns[pattern_group_index][pattern_index];
+   536                           
+   537                           ;incstack = 0
+   538  005DE8  C007  F001         	movff	update_leds@pattern_group_index,___wmul@multiplier
+   539  005DEC  C008  F002         	movff	update_leds@pattern_group_index+1,___wmul@multiplier+1
+   540  005DF0  0E00               	movlw	0
+   541  005DF2  6E04               	movwf	___wmul@multiplicand+1,c
+   542  005DF4  0E30               	movlw	48
+   543  005DF6  6E03               	movwf	___wmul@multiplicand,c
+   544  005DF8  ECCE  F02E         	call	___wmul	;wreg free
+   545  005DFC  0E00               	movlw	low _patterns
+   546  005DFE  6E0F               	movwf	??_update_leds& (0+255),c
+   547  005E00  0E01               	movlw	high _patterns
+   548  005E02  6E10               	movwf	(??_update_leds+1)& (0+255),c
+   549  005E04  5001               	movf	?___wmul,w,c
+   550  005E06  260F               	addwf	??_update_leds,f,c
+   551  005E08  5002               	movf	?___wmul+1,w,c
+   552  005E0A  2210               	addwfc	??_update_leds+1,f,c
+   553  005E0C  90D8               	bcf	status,0,c
+   554  005E0E  340B               	rlcf	update_leds@pattern_index,w,c
+   555  005E10  6ED9               	movwf	fsr2l,c
+   556  005E12  340C               	rlcf	update_leds@pattern_index+1,w,c
+   557  005E14  6EDA               	movwf	fsr2h,c
+   558  005E16  90D8               	bcf	status,0,c
+   559  005E18  36D9               	rlcf	fsr2l,f,c
+   560  005E1A  36DA               	rlcf	fsr2h,f,c
+   561  005E1C  500F               	movf	??_update_leds,w,c
+   562  005E1E  26D9               	addwf	fsr2l,f,c
+   563  005E20  5010               	movf	??_update_leds+1,w,c
+   564  005E22  22DA               	addwfc	fsr2h,f,c
+   565  005E24  CFDE F007          	movff	postinc2,?_update_leds
+   566  005E28  CFDE F008          	movff	postinc2,?_update_leds+1
+   567  005E2C  CFDE F009          	movff	postinc2,?_update_leds+2
+   568  005E30  CFDE F00A          	movff	postinc2,?_update_leds+3
+   569  005E34  0012               	return	
+   570  005E36                     __end_of_update_leds:
+   571                           	opt stack 0
+   572                           tblptru	equ	0xFF8
+   573                           tblptrh	equ	0xFF7
+   574                           tblptrl	equ	0xFF6
+   575                           tablat	equ	0xFF5
+   576                           postinc0	equ	0xFEE
+   577                           wreg	equ	0xFE8
+   578                           postdec1	equ	0xFE5
+   579                           fsr1l	equ	0xFE1
+   580                           postinc2	equ	0xFDE
+   581                           fsr2h	equ	0xFDA
+   582                           fsr2l	equ	0xFD9
+   583                           status	equ	0xFD8
+   584                           
+   585 ;; *************** function ___wmul *****************
+   586 ;; Defined at:
+   587 ;;		line 15 in file "/opt/microchip/xc8/v1.35/sources/common/Umul16.c"
+   588 ;; Parameters:    Size  Location     Type
+   589 ;;  multiplier      2    0[COMRAM] unsigned int 
+   590 ;;  multiplicand    2    2[COMRAM] unsigned int 
+   591 ;; Auto vars:     Size  Location     Type
+   592 ;;  product         2    4[COMRAM] unsigned int 
+   593 ;; Return value:  Size  Location     Type
+   594 ;;                  2    0[COMRAM] unsigned int 
+   595 ;; Registers used:
+   596 ;;		wreg, status,2, status,0, prodl, prodh
+   597 ;; Tracked objects:
+   598 ;;		On entry : 0/0
+   599 ;;		On exit  : 0/0
+   600 ;;		Unchanged: 0/0
+   601 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   602 ;;      Params:         4       0       0       0       0       0       0       0       0
+   603 ;;      Locals:         2       0       0       0       0       0       0       0       0
+   604 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   605 ;;      Totals:         6       0       0       0       0       0       0       0       0
+   606 ;;Total ram usage:        6 bytes
+   607 ;; Hardware stack levels used:    1
+   608 ;; This function calls:
+   609 ;;		Nothing
+   610 ;; This function is called by:
+   611 ;;		_update_leds
+   612 ;; This function uses a non-reentrant model
+   613 ;;
+   614                           
+   615                           	psect	text2
+   616  005D9C                     __ptext2:
+   617                           	opt stack 0
+   618  005D9C                     ___wmul:
+   619                           	opt stack 29
+   620                           
+   621                           ;incstack = 0
+   622  005D9C  5001               	movf	___wmul@multiplier,w,c
+   623  005D9E  0203               	mulwf	___wmul@multiplicand,c
+   624  005DA0  CFF3 F005          	movff	prodl,___wmul@product
+   625  005DA4  CFF4 F006          	movff	prodh,___wmul@product+1
+   626  005DA8  5001               	movf	___wmul@multiplier,w,c
+   627  005DAA  0204               	mulwf	___wmul@multiplicand+1,c
+   628  005DAC  50F3               	movf	prodl,w,c
+   629  005DAE  2606               	addwf	___wmul@product+1,f,c
+   630  005DB0  5002               	movf	___wmul@multiplier+1,w,c
+   631  005DB2  0203               	mulwf	___wmul@multiplicand,c
+   632  005DB4  50F3               	movf	prodl,w,c
+   633  005DB6  2606               	addwf	___wmul@product+1,f,c
+   634  005DB8  C005  F001         	movff	___wmul@product,?___wmul
+   635  005DBC  C006  F002         	movff	___wmul@product+1,?___wmul+1
+   636  005DC0  0012               	return	
+   637  005DC2                     __end_of___wmul:
+   638                           	opt stack 0
+   639                           tblptru	equ	0xFF8
+   640                           tblptrh	equ	0xFF7
+   641                           tblptrl	equ	0xFF6
+   642                           tablat	equ	0xFF5
+   643                           prodh	equ	0xFF4
+   644                           prodl	equ	0xFF3
+   645                           postinc0	equ	0xFEE
+   646                           wreg	equ	0xFE8
+   647                           postdec1	equ	0xFE5
+   648                           fsr1l	equ	0xFE1
+   649                           postinc2	equ	0xFDE
+   650                           fsr2h	equ	0xFDA
+   651                           fsr2l	equ	0xFD9
+   652                           status	equ	0xFD8
+   653                           
+   654 ;; *************** function _delay *****************
+   655 ;; Defined at:
+   656 ;;		line 105 in file "newmain.c"
+   657 ;; Parameters:    Size  Location     Type
+   658 ;;  delay           2    0[COMRAM] int 
+   659 ;; Auto vars:     Size  Location     Type
+   660 ;;  i               2    3[COMRAM] int 
+   661 ;; Return value:  Size  Location     Type
+   662 ;;		None               void
+   663 ;; Registers used:
+   664 ;;		wreg, status,2, status,0
+   665 ;; Tracked objects:
+   666 ;;		On entry : 0/0
+   667 ;;		On exit  : 0/0
+   668 ;;		Unchanged: 0/0
+   669 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   670 ;;      Params:         2       0       0       0       0       0       0       0       0
+   671 ;;      Locals:         2       0       0       0       0       0       0       0       0
+   672 ;;      Temps:          1       0       0       0       0       0       0       0       0
+   673 ;;      Totals:         5       0       0       0       0       0       0       0       0
+   674 ;;Total ram usage:        5 bytes
+   675 ;; Hardware stack levels used:    1
+   676 ;; This function calls:
+   677 ;;		Nothing
+   678 ;; This function is called by:
+   679 ;;		_main
+   680 ;; This function uses a non-reentrant model
+   681 ;;
+   682                           
+   683                           	psect	text3
+   684  005D78                     __ptext3:
+   685                           	opt stack 0
+   686  005D78                     _delay:
+   687                           	opt stack 30
+   688                           
+   689                           ;newmain.c: 106: for(int i = 0; i < delay; i++) {
+   690                           
+   691                           ;incstack = 0
+   692  005D78  0E00               	movlw	0
+   693  005D7A  6E05               	movwf	delay@i+1,c
+   694  005D7C  0E00               	movlw	0
+   695  005D7E  6E04               	movwf	delay@i,c
+   696  005D80  D002               	goto	l703
+   697  005D82                     l701:
+   698  005D82  4A04               	infsnz	delay@i,f,c
+   699  005D84  2A05               	incf	delay@i+1,f,c
+   700  005D86                     l703:
+   701  005D86  5001               	movf	delay@delay,w,c
+   702  005D88  5C04               	subwf	delay@i,w,c
+   703  005D8A  5005               	movf	delay@i+1,w,c
+   704  005D8C  0A80               	xorlw	128
+   705  005D8E  6E03               	movwf	??_delay& (0+255),c
+   706  005D90  5002               	movf	delay@delay+1,w,c
+   707  005D92  0A80               	xorlw	128
+   708  005D94  5803               	subwfb	??_delay& (0+255),w,c
+   709  005D96  B0D8               	btfsc	status,0,c
+   710  005D98  0012               	return	
+   711  005D9A  D7F3               	goto	l701
+   712  005D9C                     __end_of_delay:
+   713                           	opt stack 0
+   714  0000                     tblptru	equ	0xFF8
+   715                           tblptrh	equ	0xFF7
+   716                           tblptrl	equ	0xFF6
+   717                           tablat	equ	0xFF5
+   718                           prodh	equ	0xFF4
+   719                           prodl	equ	0xFF3
+   720                           postinc0	equ	0xFEE
+   721                           wreg	equ	0xFE8
+   722                           postdec1	equ	0xFE5
+   723                           fsr1l	equ	0xFE1
+   724                           postinc2	equ	0xFDE
+   725                           fsr2h	equ	0xFDA
+   726                           fsr2l	equ	0xFD9
+   727                           status	equ	0xFD8
+   728                           tblptru	equ	0xFF8
+   729                           tblptrh	equ	0xFF7
+   730                           tblptrl	equ	0xFF6
+   731                           tablat	equ	0xFF5
+   732                           prodh	equ	0xFF4
+   733                           prodl	equ	0xFF3
+   734                           postinc0	equ	0xFEE
+   735                           wreg	equ	0xFE8
+   736                           postdec1	equ	0xFE5
+   737                           fsr1l	equ	0xFE1
+   738                           postinc2	equ	0xFDE
+   739                           fsr2h	equ	0xFDA
+   740                           fsr2l	equ	0xFD9
+   741                           status	equ	0xFD8
+   742                           
+   743                           	psect	rparam
+   744  0000                     tblptru	equ	0xFF8
+   745                           tblptrh	equ	0xFF7
+   746                           tblptrl	equ	0xFF6
+   747                           tablat	equ	0xFF5
+   748                           prodh	equ	0xFF4
+   749                           prodl	equ	0xFF3
+   750                           postinc0	equ	0xFEE
+   751                           wreg	equ	0xFE8
+   752                           postdec1	equ	0xFE5
+   753                           fsr1l	equ	0xFE1
+   754                           postinc2	equ	0xFDE
+   755                           fsr2h	equ	0xFDA
+   756                           fsr2l	equ	0xFD9
+   757                           status	equ	0xFD8
 
 
 Data Sizes:
     Strings     0
     Constant    0
-    Data        0
+    Data        192
     BSS         0
     Persistent  0
     Stack       0
 
 Auto Spaces:
     Space          Size  Autos    Used
-    COMRAM           95     19      19
+    COMRAM           95     33      33
     BANK0           160      0       0
-    BANK1           256      0       0
+    BANK1           256      0     192
     BANK2           256      0       0
     BANK3           256      0       0
     BANK4           256      0       0
@@ -479,13 +785,12 @@ Auto Spaces:
 
 Pointer List with Targets:
 
-    update_leds@direction	PTR unsigned int  size(2) Largest target is 2
-		 -> main@direction(COMRAM[2]), 
-
+    None.
 
 Critical Paths under _main in COMRAM
 
     _main->_update_leds
+    _update_leds->___wmul
 
 Critical Paths under _main in BANK0
 
@@ -524,90 +829,103 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
- (0) _main                                                 9     9      0     525
-                                             10 COMRAM     9     9      0
-                       _Delay10KTCYx
+ (0) _main                                                17    17      0     696
+                                             16 COMRAM    17    17      0
+                              _delay
                         _update_leds
  ---------------------------------------------------------------------------------
- (1) _update_leds                                         10     4      6     308
-                                              0 COMRAM    10     4      6
+ (1) _update_leds                                         10     2      8     375
+                                              6 COMRAM    10     2      8
+                             ___wmul
  ---------------------------------------------------------------------------------
- (1) _Delay10KTCYx                                         2     2      0      30
-                                              0 COMRAM     2     2      0
+ (2) ___wmul                                               6     2      4     245
+                                              0 COMRAM     6     2      4
  ---------------------------------------------------------------------------------
- Estimated maximum stack depth 1
+ (1) _delay                                                5     3      2      89
+                                              0 COMRAM     5     3      2
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
  ---------------------------------------------------------------------------------
 
  Call Graph Graphs:
 
  _main (ROOT)
-   _Delay10KTCYx
+   _delay
    _update_leds
+     ___wmul
 
  Address spaces:
 Name               Size   Autos  Total    Cost      Usage
-BITCOMRAM           5F      0       0       0        0.0%
+BIGRAM             7FF      0       0      21        0.0%
 EEDATA             100      0       0       0        0.0%
-NULL                 0      0       0       0        0.0%
-CODE                 0      0       0       0        0.0%
-COMRAM              5F     13      13       1       20.0%
-STACK                0      0       0       2        0.0%
-DATA                 0      0       0       3        0.0%
-BITBANK0            A0      0       0       4        0.0%
-BANK0               A0      0       0       5        0.0%
-BITBANK1           100      0       0       6        0.0%
-BANK1              100      0       0       7        0.0%
-BITBANK2           100      0       0       8        0.0%
-BANK2              100      0       0       9        0.0%
-BITBANK3           100      0       0      10        0.0%
-BANK3              100      0       0      11        0.0%
-BITBANK4           100      0       0      12        0.0%
-BANK4              100      0       0      13        0.0%
-BITBANK5           100      0       0      14        0.0%
-BANK5              100      0       0      15        0.0%
-BITBANK6           100      0       0      16        0.0%
-BANK6              100      0       0      17        0.0%
 BITBANK7           100      0       0      18        0.0%
 BANK7              100      0       0      19        0.0%
-ABS                  0      0       0      20        0.0%
-BIGRAM             7FF      0       0      21        0.0%
+BITBANK6           100      0       0      16        0.0%
+BANK6              100      0       0      17        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0      C0       7       75.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITCOMRAM           5F      0       0       0        0.0%
+COMRAM              5F     21      21       1       34.7%
 BITSFR               0      0       0      40        0.0%
 SFR                  0      0       0      40        0.0%
+STACK                0      0       0       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0      E1      20        0.0%
+DATA                 0      0      E1       3        0.0%
+CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.35 build -356382666 
-Symbol Table                                                                                   Fri Jan 15 15:17:05 2016
+Symbol Table                                                                                   Sat Jan 16 20:34:39 2016
 
-            _update_leds 5F40                       u70 5F80              __CFG_BOR$ON 000000  
-            __CFG_BORV$3 000000             __CFG_CP0$OFF 000000             __CFG_CP1$OFF 000000  
-           __CFG_CP2$OFF 000000                      l721 5FA0                      l715 5F72  
-                    l725 5FDC                      l727 5FEE                      l743 5EF0  
-                    l673 5EA8                      l677 5EB8             __CFG_CPB$OFF 000000  
-           __CFG_CPD$OFF 000000                      wreg 000FE8             __CFG_FOSC$HS 000000  
-           __CFG_LVP$OFF 000000             __CFG_WDT$OFF 000000                     _main 5EBE  
-                   fsr2h 000FDA                     fsr2l 000FD9                     start 0000  
-          __CFG_IESO$OFF 000000            __CFG_MCLRE$ON 000000             ___param_bank 000010  
-          __CFG_PLLDIV$1 000000           __CFG_CCP2MX$ON 000000                    ?_main 0001  
-                  _PORTA 000F80                    _PORTB 000F81                    _PORTC 000F82  
-          __CFG_USBDIV$1 000000                    _TRISA 000F92                    _TRISB 000F93  
-                  _TRISC 000F94    __size_of_Delay10KTCYx 001E            __CFG_PWRT$OFF 000000  
-          __CFG_WRT0$OFF 000000            __CFG_WRT1$OFF 000000            __CFG_WRT2$OFF 000000  
-         __CFG_EBTR0$OFF 000000           __CFG_FCMEN$OFF 000000           __CFG_EBTR1$OFF 000000  
-         __CFG_EBTR2$OFF 000000            __CFG_WRTB$OFF 000000            __CFG_WRTC$OFF 000000  
-          __CFG_WRTD$OFF 000000           __CFG_EBTRB$OFF 000000                    status 000FD8  
-        __initialization 5E9A             __end_of_main 5F40          update_leds@leds 0001  
-           _Delay10KTCYx 5EA0                   ??_main 000B            __activetblptr 000000  
-          main@direction 000D                   _ADCON1 000FC1           __CFG_XINST$OFF 000000  
-         __CFG_STVREN$ON 000000               __accesstop 0060  __end_of__initialization 5E9A  
-        __CFG_PBADEN$OFF 000000            ___rparam_used 000001             ?_update_leds 0001  
-         __pcstackCOMRAM 0001          __CFG_VREGEN$OFF 000000                  __Hparam 0000  
-                __Lparam 0000                  __pcinit 5E9A                  __ramtop 0800  
-                __ptext0 5EBE                  __ptext1 5F40                  __ptext2 5EA0  
-              _T1CONbits 000FCD     end_of_initialization 5E9A                  postdec2 000FDD  
-                postinc2 000FDE     __size_of_update_leds 00C0      start_initialization 5E9A  
-   update_leds@direction 0005         __CFG_LPT1OSC$OFF 000000            ?_Delay10KTCYx 0001  
-       __CFG_WDTPS$32768 000000           ??_Delay10KTCYx 0001                main@porta 000F  
-              main@portb 000B                main@portc 000C                 __Hrparam 0000  
-          ??_update_leds 0007                 __Lrparam 0000            Delay10KTCYx@i 0001  
-          __size_of_main 0082                 main@leds 0010      __end_of_update_leds 6000  
-  __CFG_CPUDIV$OSC1_PLL2 000000     __end_of_Delay10KTCYx 5EBE  
+                   _update_leds 5DE8                              u50 5F98                              u60 5FC4  
+                   __CFG_BOR$ON 000000             ___wmul@multiplicand 0003                     __CFG_BORV$3 000000  
+                  __CFG_CP0$OFF 000000                    __CFG_CP1$OFF 000000                    __CFG_CP2$OFF 000000  
+                           l701 5D82                             l703 5D86                             l731 5FD4  
+                           l717 5F48                             l727 5FB4                    __CFG_CPB$OFF 000000  
+                  __CFG_CPD$OFF 000000                             wreg 000FE8                    __CFG_FOSC$HS 000000  
+                  __CFG_LVP$OFF 000000                    __CFG_WDT$OFF 000000                            _main 5EF6  
+                          fsr2h 000FDA                            fsr1l 000FE1                            fsr2l 000FD9  
+                          prodh 000FF4                            prodl 000FF3                            start 0000  
+                 __CFG_IESO$OFF 000000                   __CFG_MCLRE$ON 000000                    ___param_bank 000010  
+                 __CFG_PLLDIV$1 000000                  __CFG_CCP2MX$ON 000000                           ?_main 0001  
+                         _PORTA 000F80                           _PORTB 000F81                           _PORTC 000F82  
+                 __CFG_USBDIV$1 000000                           _TRISA 000F92                           _TRISB 000F93  
+                         _TRISC 000F94                   __CFG_PWRT$OFF 000000                   __CFG_WRT0$OFF 000000  
+                 __CFG_WRT1$OFF 000000                   __CFG_WRT2$OFF 000000                  __CFG_EBTR0$OFF 000000  
+                __CFG_FCMEN$OFF 000000                  __CFG_EBTR1$OFF 000000                  __CFG_EBTR2$OFF 000000  
+                 __CFG_WRTB$OFF 000000                   __CFG_WRTC$OFF 000000                   __CFG_WRTD$OFF 000000  
+                __CFG_EBTRB$OFF 000000                           _delay 5D78                           tablat 000FF5  
+                         status 000FD8                 __initialization 5DC2                    __end_of_main 6000  
+                        ??_main 0011                   __activetblptr 000000                   main@direction 0011  
+                        ?_delay 0001                          _ADCON1 000FC1                  __CFG_XINST$OFF 000000  
+                        ___wmul 5D9C                  __CFG_STVREN$ON 000000                          delay@i 0004  
+                        tblptrh 000FF7                          tblptrl 000FF6                          tblptru 000FF8  
+      update_leds@pattern_index 000B                      __accesstop 0060         __end_of__initialization 5DE2  
+               __CFG_PBADEN$OFF 000000                   ___rparam_used 000001                    ?_update_leds 0007  
+                __pcstackCOMRAM 0001                    __pidataBANK1 5E36                   __end_of_delay 5D9C  
+       main@pattern_group_index 001E               main@pattern_index 001A                         ??_delay 0003  
+update_leds@pattern_group_index 0007                         ?___wmul 0001                 __CFG_VREGEN$OFF 000000  
+                       __Hparam 0000                         __Lparam 0000                 __size_of___wmul 0026  
+                       __pcinit 5DC2                         __ramtop 0800                         __ptext0 5EF6  
+                       __ptext1 5DE8                         __ptext2 5D9C                         __ptext3 5D78  
+                     _T1CONbits 000FCD                      delay@delay 0001            end_of_initialization 5DE2  
+                       postdec1 000FE5                         postinc0 000FEE                         postinc2 000FDE  
+          __size_of_update_leds 004E                  __end_of___wmul 5DC2             start_initialization 5DC2  
+                      ??___wmul 0005                     __pdataBANK1 0100                __CFG_LPT1OSC$OFF 000000  
+                __size_of_delay 0024                  ___wmul@product 0005                __CFG_WDTPS$32768 000000  
+             ___wmul@multiplier 0001                       main@porta 0019                       main@portb 0013  
+                     main@portc 0014                       copy_data0 5DD6                        __Hrparam 0000  
+                 ??_update_leds 000F                        __Lrparam 0000                   __size_of_main 010A  
+                      _patterns 0100                        main@leds 0015             __end_of_update_leds 5E36  
+         __CFG_CPUDIV$OSC1_PLL2 000000  
