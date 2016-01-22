@@ -34,6 +34,32 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S447 . . . . . . ]
 "6898
 [v _T1CONbits `VS447 ~T0 @X0 0 e@4045 ]
+"2384
+[s S182 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S182 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 ]
+"2393
+[s S183 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S183 . AN0 AN1 AN2 AN3 T0CKI AN4 OSC2 ]
+"2402
+[s S184 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S184 . . VREFM VREFP . LVDIN ]
+"2409
+[s S185 :5 `uc 1 :1 `uc 1 ]
+[n S185 . . HLVDIN ]
+"2413
+[s S186 :7 `uc 1 :1 `uc 1 ]
+[n S186 . . RA7 ]
+"2417
+[s S187 :7 `uc 1 :1 `uc 1 ]
+[n S187 . . RJPU ]
+"2421
+[s S188 :1 `uc 1 ]
+[n S188 . ULPWUIN ]
+"2383
+[u S181 `S182 1 `S183 1 `S184 1 `S185 1 `S186 1 `S187 1 `S188 1 ]
+[n S181 . . . . . . . . ]
+"2425
+[v _PORTAbits `VS181 ~T0 @X0 0 e@3968 ]
 [; ;pic18f2455.h: 49: extern volatile unsigned short UFRM @ 0xF66;
 "51 /opt/microchip/xc8/v1.35/include/pic18f2455.h
 [; ;pic18f2455.h: 51: asm("UFRM equ 0F66h");
@@ -4115,41 +4141,98 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 515 ]
 "157
-[v _portb `uc ~T0 @X0 1 a ]
-[; ;newmain.c: 155: }
-[; ;newmain.c: 157: unsigned char portb = (leds >> 8) & 0xff;
-[e = _portb -> & >> _leds -> 8 `i -> -> -> 255 `i `l `ul `uc ]
-"158
 [v _porta `uc ~T0 @X0 1 a ]
-[; ;newmain.c: 158: unsigned char porta = leds & 0xff;
-[e = _porta -> & _leds -> -> -> 255 `i `l `ul `uc ]
+[; ;newmain.c: 155: }
+[; ;newmain.c: 157: unsigned char porta = (leds >> 8) & 0xff;
+[e = _porta -> & >> _leds -> 8 `i -> -> -> 255 `i `l `ul `uc ]
+"158
+[v _portb `uc ~T0 @X0 1 a ]
+[; ;newmain.c: 158: unsigned char portb = leds & 0xff;
+[e = _portb -> & _leds -> -> -> 255 `i `l `ul `uc ]
 "159
 [v _portc `uc ~T0 @X0 1 a ]
 [; ;newmain.c: 159: unsigned char portc = (porta & 0b11100000) >> 5;
 [e = _portc -> >> & -> _porta `i -> 224 `i -> 5 `i `uc ]
-[; ;newmain.c: 161: PORTA = porta;
-"161
-[e = _PORTA _porta ]
-[; ;newmain.c: 162: PORTB = portb;
+[; ;newmain.c: 162: for(int i = 0; i < 8; i++) {
 "162
-[e = _PORTB _portb ]
-[; ;newmain.c: 163: PORTC = portc;
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 8 `i 516  ]
+[e $U 517  ]
+[e :U 516 ]
+{
+[; ;newmain.c: 163: PORTAbits.RA0 = porta & 0x01;
 "163
-[e = _PORTC _portc ]
-[; ;newmain.c: 165: delay(500);
+[e = . . _PORTAbits 0 0 -> & -> _porta `i -> 1 `i `uc ]
+[; ;newmain.c: 164: PORTAbits.RA3 = portb & 0x01;
+"164
+[e = . . _PORTAbits 0 3 -> & -> _portb `i -> 1 `i `uc ]
+[; ;newmain.c: 165: delay(2);
 "165
-[e ( _delay (1 -> 500 `i ]
+[e ( _delay (1 -> 2 `i ]
+[; ;newmain.c: 166: PORTAbits.RA1 = 1;
 "166
+[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
+[; ;newmain.c: 167: PORTAbits.RA4 = 1;
+"167
+[e = . . _PORTAbits 0 4 -> -> 1 `i `uc ]
+[; ;newmain.c: 168: delay(5);
+"168
+[e ( _delay (1 -> 5 `i ]
+[; ;newmain.c: 169: PORTAbits.RA1 = 0;
+"169
+[e = . . _PORTAbits 0 1 -> -> 0 `i `uc ]
+[; ;newmain.c: 170: PORTAbits.RA4 = 0;
+"170
+[e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
+[; ;newmain.c: 171: delay(5);
+"171
+[e ( _delay (1 -> 5 `i ]
+[; ;newmain.c: 173: porta = (porta >> 1);
+"173
+[e = _porta -> >> -> _porta `i -> 1 `i `uc ]
+[; ;newmain.c: 174: portb = (portb >> 1);
+"174
+[e = _portb -> >> -> _portb `i -> 1 `i `uc ]
+"175
+}
+"162
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 8 `i 516  ]
+[e :U 517 ]
+"175
+}
+[; ;newmain.c: 175: }
+[; ;newmain.c: 177: PORTAbits.RA2 = 1;
+"177
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
+[; ;newmain.c: 178: PORTAbits.RA5 = 1;
+"178
+[e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
+[; ;newmain.c: 179: delay(5);
+"179
+[e ( _delay (1 -> 5 `i ]
+[; ;newmain.c: 180: PORTAbits.RA2 = 0;
+"180
+[e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
+[; ;newmain.c: 181: PORTAbits.RA5 = 0;
+"181
+[e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
+[; ;newmain.c: 183: delay(300);
+"183
+[e ( _delay (1 -> 300 `i ]
+"184
 }
 [e :U 511 ]
 "147
 [e $U 512  ]
 [e :U 513 ]
-[; ;newmain.c: 166: }
-[; ;newmain.c: 168: return;
-"168
+[; ;newmain.c: 184: }
+[; ;newmain.c: 186: return;
+"186
 [e $UE 510  ]
-[; ;newmain.c: 169: }
-"169
+[; ;newmain.c: 187: }
+"187
 [e :UE 510 ]
 }

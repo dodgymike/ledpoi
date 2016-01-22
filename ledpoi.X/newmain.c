@@ -154,15 +154,33 @@ void main(void) {
             pattern_group_index = 0;
         }
         
-        unsigned char portb = (leds >> 8) & 0xff;
-        unsigned char porta = leds & 0xff;
+        unsigned char porta = (leds >> 8) & 0xff;
+        unsigned char portb = leds & 0xff;
         unsigned char portc = (porta & 0b11100000) >> 5;
         
-        PORTA = porta;
-        PORTB = portb;
-        PORTC = portc;
+        // clock out the porta into the shift register
+        for(int i = 0; i < 8; i++) {
+            PORTAbits.RA0 = porta & 0x01;
+            PORTAbits.RA3 = portb & 0x01;
+            delay(2);
+            PORTAbits.RA1 = 1;
+            PORTAbits.RA4 = 1;
+            delay(5);
+            PORTAbits.RA1 = 0;
+            PORTAbits.RA4 = 0;
+            delay(5);
+            
+            porta = (porta >> 1);
+            portb = (portb >> 1);
+        }
         
-        delay(500);
+        PORTAbits.RA2 = 1;
+        PORTAbits.RA5 = 1;
+        delay(5);
+        PORTAbits.RA2 = 0;
+        PORTAbits.RA5 = 0;
+
+        delay(300);
     }
  
     return;
