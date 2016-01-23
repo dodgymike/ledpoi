@@ -21,15 +21,13 @@
 [v ___fldiv __fldiv `(d  1 e 3 0 ]
 "8 /opt/microchip/xc8/v1.35/sources/common/sprcmul.c
 [v ___flmul __flmul `(d  1 e 3 0 ]
-"15 /opt/microchip/xc8/v1.35/sources/common/Umul16.c
-[v ___wmul __wmul `(ui  1 e 2 0 ]
 "15 /opt/microchip/xc8/v1.35/sources/common/Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"85 /home/mike/source/ledpoi/ledpoi.X/newmain.c
+"198 /home/mike/source/ledpoi/ledpoi.X/newmain.c
 [v _update_leds update_leds `(ul  1 e 4 0 ]
-"105
+"218
 [v _delay delay `(v  1 e 0 0 ]
-"111
+"224
 [v _main main `(v  1 e 0 0 ]
 "2378 /opt/microchip/xc8/v1.35/include/pic18f2455.h
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
@@ -108,51 +106,43 @@
 [u S51 . 1 `S28 1 . 1 0 `S31 1 . 1 0 `S39 1 . 1 0 `S45 1 . 1 0 `S48 1 . 1 0 ]
 [v _T1CONbits T1CONbits `VES51  1 e 1 @4045 ]
 "26 /home/mike/source/ledpoi/ledpoi.X/newmain.c
-[v _patterns patterns `[4][12]ul  1 e 192 0 ]
-"111
+[v _patterns patterns `[5][32]ul  1 e 640 0 ]
+"224
 [v _main main `(v  1 e 0 0 ]
 {
-"162
-[v main@i i `i  1 a 2 24 ]
-"157
-[v main@porta porta `uc  1 a 1 35 ]
-"158
-[v main@portb portb `uc  1 a 1 34 ]
-"159
-[v main@portc portc `uc  1 a 1 19 ]
-"145
-[v main@pattern_group_index pattern_group_index `ul  1 a 4 30 ]
-"144
-[v main@pattern_index pattern_index `ul  1 a 4 26 ]
-"142
-[v main@leds leds `ul  1 a 4 20 ]
-"141
-[v main@direction direction `ui  1 a 2 17 ]
-"187
+"276
+[v main@i i `i  1 a 2 15 ]
+"273
+[v main@portd portd `uc  1 a 1 28 ]
+"272
+[v main@portc portc `uc  1 a 1 27 ]
+"271
+[v main@portb portb `uc  1 a 1 26 ]
+"270
+[v main@porta porta `uc  1 a 1 25 ]
+"255
+[v main@leds leds `ul  1 a 4 29 ]
+"258
+[v main@pattern_group_index pattern_group_index `ul  1 a 4 21 ]
+"257
+[v main@pattern_index pattern_index `ul  1 a 4 17 ]
+"254
+[v main@direction direction `ui  1 a 2 13 ]
+"301
 } 0
-"85
+"198
 [v _update_leds update_leds `(ul  1 e 4 0 ]
 {
-[v update_leds@pattern_group_index pattern_group_index `ul  1 p 4 6 ]
-[v update_leds@pattern_index pattern_index `ul  1 p 4 10 ]
-"103
+[v update_leds@pattern_group_index pattern_group_index `ul  1 p 4 0 ]
+[v update_leds@pattern_index pattern_index `ul  1 p 4 4 ]
+"216
 } 0
-"15 /opt/microchip/xc8/v1.35/sources/common/Umul16.c
-[v ___wmul __wmul `(ui  1 e 2 0 ]
-{
-"17
-[v ___wmul@product product `ui  1 a 2 4 ]
-"15
-[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
-[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
-"53
-} 0
-"105 /home/mike/source/ledpoi/ledpoi.X/newmain.c
+"218
 [v _delay delay `(v  1 e 0 0 ]
 {
-"106
+"219
 [v delay@i i `i  1 a 2 3 ]
-"105
+"218
 [v delay@delay delay `i  1 p 2 0 ]
-"109
+"222
 } 0
