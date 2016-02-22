@@ -1470,6 +1470,19 @@ Wire Wire Line
 	1500 850  1500 700 
 Connection ~ 1400 850 
 Wire Wire Line
-	3000 750  1500 750 
+	1300 750  3000 750 
 Connection ~ 1500 750 
+$Comp
+L VCC #PWR?
+U 1 1 56CABC2B
+P 1300 650
+F 0 "#PWR?" H 1300 750 30  0001 C CNN
+F 1 "VCC" H 1300 750 30  0000 C CNN
+F 2 "" H 1300 650 60  0000 C CNN
+F 3 "" H 1300 650 60  0000 C CNN
+	1    1300 650 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1300 650  1300 750 
 $EndSCHEMATC
