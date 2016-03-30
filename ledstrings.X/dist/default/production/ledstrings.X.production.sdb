@@ -1,0 +1,110 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F2455 ]
+[d frameptr 4065 ]
+"62 /opt/microchip/xc8/v1.35/sources/common/float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 /opt/microchip/xc8/v1.35/sources/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 /opt/microchip/xc8/v1.35/sources/common/ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 /opt/microchip/xc8/v1.35/sources/common/ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"20 /opt/microchip/xc8/v1.35/sources/common/ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"10 /opt/microchip/xc8/v1.35/sources/common/sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 /opt/microchip/xc8/v1.35/sources/common/sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 /opt/microchip/xc8/v1.35/sources/common/sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 /opt/microchip/xc8/v1.35/sources/common/Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"18 /home/mike/source/ledpoi/ledstrings.X/newmain.c
+[v _main main `(v  1 e 0 0 ]
+"2378 /opt/microchip/xc8/v1.35/include/pic18f2455.h
+[v _PORTA PORTA `VEuc  1 e 1 @3968 ]
+[s S81 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+]
+"2425
+[s S89 . 1 `uc 1 AN0 1 0 :1:0 
+`uc 1 AN1 1 0 :1:1 
+`uc 1 AN2 1 0 :1:2 
+`uc 1 AN3 1 0 :1:3 
+`uc 1 T0CKI 1 0 :1:4 
+`uc 1 AN4 1 0 :1:5 
+`uc 1 OSC2 1 0 :1:6 
+]
+[s S97 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 VREFM 1 0 :1:2 
+`uc 1 VREFP 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 LVDIN 1 0 :1:5 
+]
+[s S103 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 HLVDIN 1 0 :1:5 
+]
+[s S106 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 RA7 1 0 :1:7 
+]
+[s S109 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 RJPU 1 0 :1:7 
+]
+[s S112 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+]
+[u S114 . 1 `S81 1 . 1 0 `S89 1 . 1 0 `S97 1 . 1 0 `S103 1 . 1 0 `S106 1 . 1 0 `S109 1 . 1 0 `S112 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES114  1 e 1 @3968 ]
+"2534
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+"2643
+[v _PORTC PORTC `VEuc  1 e 1 @3970 ]
+"3411
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"3608
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"3829
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+"6013
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+[s S28 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_T1SYNC 1 0 :1:2 
+]
+"6898
+[s S31 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 TMR1CS 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+`uc 1 T1RUN 1 0 :1:6 
+`uc 1 RD16 1 0 :1:7 
+]
+[s S39 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T1SYNC 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+]
+[s S45 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SOSCEN 1 0 :1:3 
+]
+[s S48 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 T1RD16 1 0 :1:7 
+]
+[u S51 . 1 `S28 1 . 1 0 `S31 1 . 1 0 `S39 1 . 1 0 `S45 1 . 1 0 `S48 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES51  1 e 1 @4045 ]
+"18 /home/mike/source/ledpoi/ledstrings.X/newmain.c
+[v _main main `(v  1 e 0 0 ]
+{
+"1331
+[v main@i i `i  1 a 2 0 ]
+"1337
+} 0
