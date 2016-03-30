@@ -15,6 +15,18 @@ void delay(int delay) {
     }
 }
 
+void halfOne() {
+                    // 1
+            PORTAbits.RA0=1;
+            PORTAbits.RA0=1;
+            PORTAbits.RA0=1;
+            PORTAbits.RA0=1;
+            PORTAbits.RA0=1;
+            PORTAbits.RA0=0;
+            PORTAbits.RA0=0;
+            PORTAbits.RA0=0;
+}
+
 void one() {
                 // 1
             PORTAbits.RA0=1;
@@ -24,6 +36,19 @@ void one() {
             PORTAbits.RA0=1;
             PORTAbits.RA0=1;
             PORTAbits.RA0=1;
+            PORTAbits.RA0=1;
+            PORTAbits.RA0=1;
+            PORTAbits.RA0=1;
+            PORTAbits.RA0=0;
+            PORTAbits.RA0=0;
+            PORTAbits.RA0=0;
+            PORTAbits.RA0=0;
+            PORTAbits.RA0=0;
+            PORTAbits.RA0=0;
+}
+
+void halfZero() {
+                // 0
             PORTAbits.RA0=1;
             PORTAbits.RA0=1;
             PORTAbits.RA0=1;
@@ -54,7 +79,6 @@ void zero() {
             PORTAbits.RA0=0;
             PORTAbits.RA0=0;
             PORTAbits.RA0=0;
-
 }
 
 void main(void) {
@@ -69,35 +93,34 @@ void main(void) {
     T1CONbits.TMR1CS = 0;
     T1CONbits.T1OSCEN = 0;
     
+    short ledState0[24] = { 0, 1, 0, 1,  0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 }; 
+    
     while(1) {
         for(int ledCount = 0; ledCount < 12; ledCount++) {
-            // first LED
-            zero();
-            zero();
-            zero();
-            zero();
-            zero();
-            zero();
-            zero();
-            zero();
-
-            one();
-            zero();
-            one();
-            zero();
-            one();
-            zero();
-            one();
-            zero();
-
-            one();
-            zero();
-            one();
-            zero();
-            one();
-            zero();
-            one();
-            zero();
+            (ledState0[0] == 0) ? zero() : one();
+            (ledState0[1] == 0) ? zero() : one();
+            (ledState0[2] == 0) ? zero() : one();
+            (ledState0[3] == 0) ? zero() : one();
+            (ledState0[4] == 0) ? zero() : one();
+            (ledState0[5] == 0) ? zero() : one();
+            (ledState0[6] == 0) ? zero() : one();
+            (ledState0[7] == 0) ? zero() : one();
+            (ledState0[8] == 0) ? zero() : one();
+            (ledState0[9] == 0) ? zero() : one();
+            (ledState0[10] == 0) ? zero() : one();
+            (ledState0[11] == 0) ? zero() : one();
+            (ledState0[12] == 0) ? zero() : one();
+            (ledState0[13] == 0) ? zero() : one();
+            (ledState0[14] == 0) ? zero() : one();
+            (ledState0[15] == 0) ? zero() : one();
+            (ledState0[16] == 0) ? zero() : one();
+            (ledState0[17] == 0) ? zero() : one();
+            (ledState0[18] == 0) ? zero() : one();
+            (ledState0[19] == 0) ? zero() : one();
+            (ledState0[20] == 0) ? zero() : one();
+            (ledState0[21] == 0) ? zero() : one();
+            (ledState0[22] == 0) ? zero() : one();
+            (ledState0[23] == 0) ? zero() : one();
         }
         
         for(int i = 0; i < 1000; i++) {

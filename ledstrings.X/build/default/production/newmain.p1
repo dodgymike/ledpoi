@@ -3876,10 +3876,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 504 ]
 }
 "18
-[v _one `(v ~T0 @X0 1 ef ]
+[v _halfOne `(v ~T0 @X0 1 ef ]
 {
-[; ;newmain.c: 18: void one() {
-[e :U _one ]
+[; ;newmain.c: 18: void halfOne() {
+[e :U _halfOne ]
 [f ]
 [; ;newmain.c: 20: PORTAbits.RA0=1;
 "20
@@ -3896,260 +3896,364 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;newmain.c: 24: PORTAbits.RA0=1;
 "24
 [e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-[; ;newmain.c: 25: PORTAbits.RA0=1;
+[; ;newmain.c: 25: PORTAbits.RA0=0;
 "25
-[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-[; ;newmain.c: 26: PORTAbits.RA0=1;
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[; ;newmain.c: 26: PORTAbits.RA0=0;
 "26
-[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-[; ;newmain.c: 27: PORTAbits.RA0=1;
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[; ;newmain.c: 27: PORTAbits.RA0=0;
 "27
-[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-[; ;newmain.c: 28: PORTAbits.RA0=1;
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[; ;newmain.c: 28: }
 "28
-[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-[; ;newmain.c: 29: PORTAbits.RA0=1;
-"29
-[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-[; ;newmain.c: 30: PORTAbits.RA0=0;
-"30
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-[; ;newmain.c: 31: PORTAbits.RA0=0;
-"31
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-[; ;newmain.c: 32: PORTAbits.RA0=0;
-"32
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-[; ;newmain.c: 33: PORTAbits.RA0=0;
-"33
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-[; ;newmain.c: 34: PORTAbits.RA0=0;
-"34
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-[; ;newmain.c: 35: PORTAbits.RA0=0;
-"35
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-[; ;newmain.c: 37: }
-"37
 [e :UE 509 ]
 }
-"39
-[v _zero `(v ~T0 @X0 1 ef ]
+"30
+[v _one `(v ~T0 @X0 1 ef ]
 {
-[; ;newmain.c: 39: void zero() {
-[e :U _zero ]
+[; ;newmain.c: 30: void one() {
+[e :U _one ]
 [f ]
+[; ;newmain.c: 32: PORTAbits.RA0=1;
+"32
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;newmain.c: 33: PORTAbits.RA0=1;
+"33
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;newmain.c: 34: PORTAbits.RA0=1;
+"34
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;newmain.c: 35: PORTAbits.RA0=1;
+"35
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;newmain.c: 36: PORTAbits.RA0=1;
+"36
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;newmain.c: 37: PORTAbits.RA0=1;
+"37
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;newmain.c: 38: PORTAbits.RA0=1;
+"38
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;newmain.c: 39: PORTAbits.RA0=1;
+"39
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;newmain.c: 40: PORTAbits.RA0=1;
+"40
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
 [; ;newmain.c: 41: PORTAbits.RA0=1;
 "41
 [e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-[; ;newmain.c: 42: PORTAbits.RA0=1;
+[; ;newmain.c: 42: PORTAbits.RA0=0;
 "42
-[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-[; ;newmain.c: 43: PORTAbits.RA0=1;
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[; ;newmain.c: 43: PORTAbits.RA0=0;
 "43
-[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-[; ;newmain.c: 44: PORTAbits.RA0=1;
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[; ;newmain.c: 44: PORTAbits.RA0=0;
 "44
-[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-[; ;newmain.c: 45: PORTAbits.RA0=1;
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[; ;newmain.c: 45: PORTAbits.RA0=0;
 "45
-[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
 [; ;newmain.c: 46: PORTAbits.RA0=0;
 "46
 [e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
 [; ;newmain.c: 47: PORTAbits.RA0=0;
 "47
 [e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-[; ;newmain.c: 48: PORTAbits.RA0=0;
+[; ;newmain.c: 48: }
 "48
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-[; ;newmain.c: 49: PORTAbits.RA0=0;
-"49
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-[; ;newmain.c: 50: PORTAbits.RA0=0;
+[e :UE 510 ]
+}
 "50
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-[; ;newmain.c: 51: PORTAbits.RA0=0;
-"51
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-[; ;newmain.c: 52: PORTAbits.RA0=0;
+[v _halfZero `(v ~T0 @X0 1 ef ]
+{
+[; ;newmain.c: 50: void halfZero() {
+[e :U _halfZero ]
+[f ]
+[; ;newmain.c: 52: PORTAbits.RA0=1;
 "52
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-[; ;newmain.c: 53: PORTAbits.RA0=0;
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;newmain.c: 53: PORTAbits.RA0=1;
 "53
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-[; ;newmain.c: 54: PORTAbits.RA0=0;
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;newmain.c: 54: PORTAbits.RA0=1;
 "54
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
 [; ;newmain.c: 55: PORTAbits.RA0=0;
 "55
 [e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
 [; ;newmain.c: 56: PORTAbits.RA0=0;
 "56
 [e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-[; ;newmain.c: 58: }
+[; ;newmain.c: 57: PORTAbits.RA0=0;
+"57
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[; ;newmain.c: 58: PORTAbits.RA0=0;
 "58
-[e :UE 510 ]
-}
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[; ;newmain.c: 59: PORTAbits.RA0=0;
+"59
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[; ;newmain.c: 60: PORTAbits.RA0=0;
 "60
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[; ;newmain.c: 62: }
+"62
+[e :UE 511 ]
+}
+"64
+[v _zero `(v ~T0 @X0 1 ef ]
+{
+[; ;newmain.c: 64: void zero() {
+[e :U _zero ]
+[f ]
+[; ;newmain.c: 66: PORTAbits.RA0=1;
+"66
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;newmain.c: 67: PORTAbits.RA0=1;
+"67
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;newmain.c: 68: PORTAbits.RA0=1;
+"68
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;newmain.c: 69: PORTAbits.RA0=1;
+"69
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;newmain.c: 70: PORTAbits.RA0=1;
+"70
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;newmain.c: 71: PORTAbits.RA0=0;
+"71
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[; ;newmain.c: 72: PORTAbits.RA0=0;
+"72
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[; ;newmain.c: 73: PORTAbits.RA0=0;
+"73
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[; ;newmain.c: 74: PORTAbits.RA0=0;
+"74
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[; ;newmain.c: 75: PORTAbits.RA0=0;
+"75
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[; ;newmain.c: 76: PORTAbits.RA0=0;
+"76
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[; ;newmain.c: 77: PORTAbits.RA0=0;
+"77
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[; ;newmain.c: 78: PORTAbits.RA0=0;
+"78
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[; ;newmain.c: 79: PORTAbits.RA0=0;
+"79
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[; ;newmain.c: 80: PORTAbits.RA0=0;
+"80
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[; ;newmain.c: 81: PORTAbits.RA0=0;
+"81
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[; ;newmain.c: 82: }
+"82
+[e :UE 512 ]
+}
+"84
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;newmain.c: 60: void main(void) {
+[; ;newmain.c: 84: void main(void) {
 [e :U _main ]
 [f ]
-[; ;newmain.c: 61: TRISA=0;
-"61
+[; ;newmain.c: 85: TRISA=0;
+"85
 [e = _TRISA -> -> 0 `i `uc ]
-[; ;newmain.c: 62: TRISB=0;
-"62
+[; ;newmain.c: 86: TRISB=0;
+"86
 [e = _TRISB -> -> 0 `i `uc ]
-[; ;newmain.c: 63: TRISC=0;
-"63
+[; ;newmain.c: 87: TRISC=0;
+"87
 [e = _TRISC -> -> 0 `i `uc ]
-[; ;newmain.c: 64: PORTA=0xff;
-"64
+[; ;newmain.c: 88: PORTA=0xff;
+"88
 [e = _PORTA -> -> 255 `i `uc ]
-[; ;newmain.c: 65: PORTB=0xff;
-"65
+[; ;newmain.c: 89: PORTB=0xff;
+"89
 [e = _PORTB -> -> 255 `i `uc ]
-[; ;newmain.c: 66: PORTC=0xff;
-"66
+[; ;newmain.c: 90: PORTC=0xff;
+"90
 [e = _PORTC -> -> 255 `i `uc ]
-[; ;newmain.c: 68: ADCON1=0b00001111;
-"68
+[; ;newmain.c: 92: ADCON1=0b00001111;
+"92
 [e = _ADCON1 -> -> 15 `i `uc ]
-[; ;newmain.c: 69: T1CONbits.TMR1CS = 0;
-"69
+[; ;newmain.c: 93: T1CONbits.TMR1CS = 0;
+"93
 [e = . . _T1CONbits 1 1 -> -> 0 `i `uc ]
-[; ;newmain.c: 70: T1CONbits.T1OSCEN = 0;
-"70
+[; ;newmain.c: 94: T1CONbits.T1OSCEN = 0;
+"94
 [e = . . _T1CONbits 1 3 -> -> 0 `i `uc ]
-[; ;newmain.c: 72: while(1) {
-"72
-[e :U 513 ]
+[v F3971 `s ~T0 @X0 -> 24 `i s ]
+[i F3971
+:U ..
+"96
+-> -> 0 `i `s
+-> -> 1 `i `s
+-> -> 0 `i `s
+-> -> 1 `i `s
+-> -> 0 `i `s
+-> -> 1 `i `s
+-> -> 0 `i `s
+-> -> 1 `i `s
+-> -> 0 `i `s
+-> -> 1 `i `s
+-> -> 0 `i `s
+-> -> 1 `i `s
+-> -> 0 `i `s
+-> -> 1 `i `s
+-> -> 0 `i `s
+-> -> 1 `i `s
+-> -> 0 `i `s
+-> -> 1 `i `s
+-> -> 0 `i `s
+-> -> 1 `i `s
+-> -> 0 `i `s
+-> -> 1 `i `s
+-> -> 0 `i `s
+-> -> 1 `i `s
+..
+]
+[v _ledState0 `s ~T0 @X0 -> 24 `i a ]
+[; ;newmain.c: 96: short ledState0[24] = { 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 };
+[e = _ledState0 F3971 ]
+[; ;newmain.c: 98: while(1) {
+"98
+[e :U 515 ]
 {
-[; ;newmain.c: 73: for(int ledCount = 0; ledCount < 12; ledCount++) {
-"73
+[; ;newmain.c: 99: for(int ledCount = 0; ledCount < 12; ledCount++) {
+"99
 {
 [v _ledCount `i ~T0 @X0 1 a ]
 [e = _ledCount -> 0 `i ]
-[e $ < _ledCount -> 12 `i 515  ]
-[e $U 516  ]
-[e :U 515 ]
+[e $ < _ledCount -> 12 `i 517  ]
+[e $U 518  ]
+[e :U 517 ]
 {
-[; ;newmain.c: 75: zero();
-"75
-[e ( _zero ..  ]
-[; ;newmain.c: 76: zero();
-"76
-[e ( _zero ..  ]
-[; ;newmain.c: 77: zero();
-"77
-[e ( _zero ..  ]
-[; ;newmain.c: 78: zero();
-"78
-[e ( _zero ..  ]
-[; ;newmain.c: 79: zero();
-"79
-[e ( _zero ..  ]
-[; ;newmain.c: 80: zero();
-"80
-[e ( _zero ..  ]
-[; ;newmain.c: 81: zero();
-"81
-[e ( _zero ..  ]
-[; ;newmain.c: 82: zero();
-"82
-[e ( _zero ..  ]
-[; ;newmain.c: 84: one();
-"84
-[e ( _one ..  ]
-[; ;newmain.c: 85: zero();
-"85
-[e ( _zero ..  ]
-[; ;newmain.c: 86: one();
-"86
-[e ( _one ..  ]
-[; ;newmain.c: 87: zero();
-"87
-[e ( _zero ..  ]
-[; ;newmain.c: 88: one();
-"88
-[e ( _one ..  ]
-[; ;newmain.c: 89: zero();
-"89
-[e ( _zero ..  ]
-[; ;newmain.c: 90: one();
-"90
-[e ( _one ..  ]
-[; ;newmain.c: 91: zero();
-"91
-[e ( _zero ..  ]
-[; ;newmain.c: 93: one();
-"93
-[e ( _one ..  ]
-[; ;newmain.c: 94: zero();
-"94
-[e ( _zero ..  ]
-[; ;newmain.c: 95: one();
-"95
-[e ( _one ..  ]
-[; ;newmain.c: 96: zero();
-"96
-[e ( _zero ..  ]
-[; ;newmain.c: 97: one();
-"97
-[e ( _one ..  ]
-[; ;newmain.c: 98: zero();
-"98
-[e ( _zero ..  ]
-[; ;newmain.c: 99: one();
-"99
-[e ( _one ..  ]
-[; ;newmain.c: 100: zero();
+[; ;newmain.c: 100: (ledState0[0] == 0) ? zero() : one();
 "100
-[e ( _zero ..  ]
+[e ? == -> *U + &U _ledState0 * -> -> -> 0 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 101: (ledState0[1] == 0) ? zero() : one();
 "101
-}
-"73
-[e ++ _ledCount -> 1 `i ]
-[e $ < _ledCount -> 12 `i 515  ]
-[e :U 516 ]
-"101
-}
-[; ;newmain.c: 101: }
-[; ;newmain.c: 103: for(int i = 0; i < 1000; i++) {
+[e ? == -> *U + &U _ledState0 * -> -> -> 1 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 102: (ledState0[2] == 0) ? zero() : one();
+"102
+[e ? == -> *U + &U _ledState0 * -> -> -> 2 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 103: (ledState0[3] == 0) ? zero() : one();
 "103
+[e ? == -> *U + &U _ledState0 * -> -> -> 3 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 104: (ledState0[4] == 0) ? zero() : one();
+"104
+[e ? == -> *U + &U _ledState0 * -> -> -> 4 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 105: (ledState0[5] == 0) ? zero() : one();
+"105
+[e ? == -> *U + &U _ledState0 * -> -> -> 5 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 106: (ledState0[6] == 0) ? zero() : one();
+"106
+[e ? == -> *U + &U _ledState0 * -> -> -> 6 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 107: (ledState0[7] == 0) ? zero() : one();
+"107
+[e ? == -> *U + &U _ledState0 * -> -> -> 7 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 108: (ledState0[8] == 0) ? zero() : one();
+"108
+[e ? == -> *U + &U _ledState0 * -> -> -> 8 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 109: (ledState0[9] == 0) ? zero() : one();
+"109
+[e ? == -> *U + &U _ledState0 * -> -> -> 9 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 110: (ledState0[10] == 0) ? zero() : one();
+"110
+[e ? == -> *U + &U _ledState0 * -> -> -> 10 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 111: (ledState0[11] == 0) ? zero() : one();
+"111
+[e ? == -> *U + &U _ledState0 * -> -> -> 11 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 112: (ledState0[12] == 0) ? zero() : one();
+"112
+[e ? == -> *U + &U _ledState0 * -> -> -> 12 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 113: (ledState0[13] == 0) ? zero() : one();
+"113
+[e ? == -> *U + &U _ledState0 * -> -> -> 13 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 114: (ledState0[14] == 0) ? zero() : one();
+"114
+[e ? == -> *U + &U _ledState0 * -> -> -> 14 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 115: (ledState0[15] == 0) ? zero() : one();
+"115
+[e ? == -> *U + &U _ledState0 * -> -> -> 15 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 116: (ledState0[16] == 0) ? zero() : one();
+"116
+[e ? == -> *U + &U _ledState0 * -> -> -> 16 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 117: (ledState0[17] == 0) ? zero() : one();
+"117
+[e ? == -> *U + &U _ledState0 * -> -> -> 17 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 118: (ledState0[18] == 0) ? zero() : one();
+"118
+[e ? == -> *U + &U _ledState0 * -> -> -> 18 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 119: (ledState0[19] == 0) ? zero() : one();
+"119
+[e ? == -> *U + &U _ledState0 * -> -> -> 19 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 120: (ledState0[20] == 0) ? zero() : one();
+"120
+[e ? == -> *U + &U _ledState0 * -> -> -> 20 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 121: (ledState0[21] == 0) ? zero() : one();
+"121
+[e ? == -> *U + &U _ledState0 * -> -> -> 21 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 122: (ledState0[22] == 0) ? zero() : one();
+"122
+[e ? == -> *U + &U _ledState0 * -> -> -> 22 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 123: (ledState0[23] == 0) ? zero() : one();
+"123
+[e ? == -> *U + &U _ledState0 * -> -> -> 23 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
+"124
+}
+"99
+[e ++ _ledCount -> 1 `i ]
+[e $ < _ledCount -> 12 `i 517  ]
+[e :U 518 ]
+"124
+}
+[; ;newmain.c: 124: }
+[; ;newmain.c: 126: for(int i = 0; i < 1000; i++) {
+"126
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 1000 `i 518  ]
-[e $U 519  ]
-[e :U 518 ]
+[e $ < _i -> 1000 `i 520  ]
+[e $U 521  ]
+[e :U 520 ]
 {
-[; ;newmain.c: 104: PORTAbits.RA0=0;
-"104
+[; ;newmain.c: 127: PORTAbits.RA0=0;
+"127
 [e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-"105
+"128
 }
-"103
+"126
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 1000 `i 518  ]
-[e :U 519 ]
-"105
+[e $ < _i -> 1000 `i 520  ]
+[e :U 521 ]
+"128
 }
-"106
+"129
 }
-[e :U 512 ]
-"72
-[e $U 513  ]
 [e :U 514 ]
-[; ;newmain.c: 105: }
-[; ;newmain.c: 106: }
-[; ;newmain.c: 108: return;
-"108
-[e $UE 511  ]
-[; ;newmain.c: 109: }
-"109
-[e :UE 511 ]
+"98
+[e $U 515  ]
+[e :U 516 ]
+[; ;newmain.c: 128: }
+[; ;newmain.c: 129: }
+[; ;newmain.c: 131: return;
+"131
+[e $UE 513  ]
+[; ;newmain.c: 132: }
+"132
+[e :UE 513 ]
 }

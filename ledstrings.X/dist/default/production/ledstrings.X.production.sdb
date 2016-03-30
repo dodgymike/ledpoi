@@ -23,11 +23,11 @@
 [v ___flmul __flmul `(d  1 e 3 0 ]
 "15 /opt/microchip/xc8/v1.35/sources/common/Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"18 /home/mike/source/ledpoi/ledstrings.X/newmain.c
+"30 /home/mike/source/ledpoi/ledstrings.X/newmain.c
 [v _one one `(v  1 e 0 0 ]
-"39
+"64
 [v _zero zero `(v  1 e 0 0 ]
-"60
+"84
 [v _main main `(v  1 e 0 0 ]
 "2378 /opt/microchip/xc8/v1.35/include/pic18f2455.h
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
@@ -105,22 +105,26 @@
 ]
 [u S126 . 1 `S103 1 . 1 0 `S106 1 . 1 0 `S114 1 . 1 0 `S120 1 . 1 0 `S123 1 . 1 0 ]
 [v _T1CONbits T1CONbits `VES126  1 e 1 @4045 ]
-"60 /home/mike/source/ledpoi/ledstrings.X/newmain.c
+"84 /home/mike/source/ledpoi/ledstrings.X/newmain.c
 [v _main main `(v  1 e 0 0 ]
 {
-"103
-[v main@i i `i  1 a 2 2 ]
-"73
-[v main@ledCount ledCount `i  1 a 2 0 ]
-"109
+"126
+[v main@i i `i  1 a 2 50 ]
+"99
+[v main@ledCount ledCount `i  1 a 2 48 ]
+"96
+[v main@ledState0 ledState0 `[24]s  1 a 48 0 ]
+"94
+[v main@F3971 F3971 `[24]s  1 s 48 F3971 ]
+"132
 } 0
-"39
+"64
 [v _zero zero `(v  1 e 0 0 ]
 {
-"58
+"82
 } 0
-"18
+"30
 [v _one one `(v  1 e 0 0 ]
 {
-"37
+"48
 } 0
