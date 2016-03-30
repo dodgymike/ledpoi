@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.35 build -356382666 
-                                                                                               Wed Mar 30 23:40:16 2016
+                                                                                               Wed Mar 30 23:47:50 2016
 
 Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080246
      1                           	processor	18F2455
@@ -19,34 +19,34 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
     13                           	psect	rparam,global,class=COMRAM,space=1,delta=1
     14  0000                     
     15                           	psect	idataBANK0
-    16  005DAA                     __pidataBANK0:
+    16  005CEC                     __pidataBANK0:
     17                           	opt stack 0
     18                           
     19                           ;initializer for main@F3971
-    20  005DAA  0000               	dw	0
-    21  005DAC  0001               	dw	1
-    22  005DAE  0000               	dw	0
-    23  005DB0  0001               	dw	1
-    24  005DB2  0000               	dw	0
-    25  005DB4  0001               	dw	1
-    26  005DB6  0000               	dw	0
-    27  005DB8  0001               	dw	1
-    28  005DBA  0000               	dw	0
-    29  005DBC  0001               	dw	1
-    30  005DBE  0000               	dw	0
-    31  005DC0  0001               	dw	1
-    32  005DC2  0000               	dw	0
-    33  005DC4  0001               	dw	1
-    34  005DC6  0000               	dw	0
-    35  005DC8  0001               	dw	1
-    36  005DCA  0000               	dw	0
-    37  005DCC  0001               	dw	1
-    38  005DCE  0000               	dw	0
-    39  005DD0  0001               	dw	1
-    40  005DD2  0000               	dw	0
-    41  005DD4  0001               	dw	1
-    42  005DD6  0000               	dw	0
-    43  005DD8  0001               	dw	1
+    20  005CEC  0000               	dw	0
+    21  005CEE  0001               	dw	1
+    22  005CF0  0000               	dw	0
+    23  005CF2  0001               	dw	1
+    24  005CF4  0000               	dw	0
+    25  005CF6  0001               	dw	1
+    26  005CF8  0000               	dw	0
+    27  005CFA  0001               	dw	1
+    28  005CFC  0000               	dw	0
+    29  005CFE  0001               	dw	1
+    30  005D00  0000               	dw	0
+    31  005D02  0001               	dw	1
+    32  005D04  0000               	dw	0
+    33  005D06  0001               	dw	1
+    34  005D08  0000               	dw	0
+    35  005D0A  0001               	dw	1
+    36  005D0C  0000               	dw	0
+    37  005D0E  0001               	dw	1
+    38  005D10  0000               	dw	0
+    39  005D12  0001               	dw	1
+    40  005D14  0000               	dw	0
+    41  005D16  0001               	dw	1
+    42  005D18  0000               	dw	0
+    43  005D1A  0001               	dw	1
     44  0000                     _ADCON1	set	4033
     45  0000                     _PORTA	set	3968
     46  0000                     _PORTAbits	set	3968
@@ -60,35 +60,35 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
     54                           ; #config settings
     55  0000                     
     56                           	psect	cinit
-    57  005D84                     __pcinit:
+    57  005CC6                     __pcinit:
     58                           	opt stack 0
-    59  005D84                     start_initialization:
+    59  005CC6                     start_initialization:
     60                           	opt stack 0
-    61  005D84                     __initialization:
+    61  005CC6                     __initialization:
     62                           	opt stack 0
     63                           
     64                           ; Initialize objects allocated to BANK0 (48 bytes)
     65                           ; load TBLPTR registers with __pidataBANK0
-    66  005D84  0EAA               	movlw	low __pidataBANK0
-    67  005D86  6EF6               	movwf	tblptrl,c
-    68  005D88  0E5D               	movlw	high __pidataBANK0
-    69  005D8A  6EF7               	movwf	tblptrh,c
-    70  005D8C  0E00               	movlw	low (__pidataBANK0 shr (0+16))
-    71  005D8E  6EF8               	movwf	tblptru,c
-    72  005D90  EE00  F060         	lfsr	0,__pdataBANK0
-    73  005D94  EE10 F030          	lfsr	1,48
-    74  005D98                     copy_data0:
-    75  005D98  0009               	tblrd		*+
-    76  005D9A  CFF5 FFEE          	movff	tablat,postinc0
-    77  005D9E  50E5               	movf	postdec1,w,c
-    78  005DA0  50E1               	movf	fsr1l,w,c
-    79  005DA2  E1FA               	bnz	copy_data0
-    80  005DA4                     end_of_initialization:
+    66  005CC6  0EEC               	movlw	low __pidataBANK0
+    67  005CC8  6EF6               	movwf	tblptrl,c
+    68  005CCA  0E5C               	movlw	high __pidataBANK0
+    69  005CCC  6EF7               	movwf	tblptrh,c
+    70  005CCE  0E00               	movlw	low (__pidataBANK0 shr (0+16))
+    71  005CD0  6EF8               	movwf	tblptru,c
+    72  005CD2  EE00  F060         	lfsr	0,__pdataBANK0
+    73  005CD6  EE10 F030          	lfsr	1,48
+    74  005CDA                     copy_data0:
+    75  005CDA  0009               	tblrd		*+
+    76  005CDC  CFF5 FFEE          	movff	tablat,postinc0
+    77  005CE0  50E5               	movf	postdec1,w,c
+    78  005CE2  50E1               	movf	fsr1l,w,c
+    79  005CE4  E1FA               	bnz	copy_data0
+    80  005CE6                     end_of_initialization:
     81                           	opt stack 0
-    82  005DA4                     __end_of__initialization:
+    82  005CE6                     __end_of__initialization:
     83                           	opt stack 0
-    84  005DA4  0100               	movlb	0
-    85  005DA6  EFED  F02E         	goto	_main	;jump to C main() function
+    84  005CE6  0100               	movlb	0
+    85  005CE8  EF8E  F02E         	goto	_main	;jump to C main() function
     86                           tblptru	equ	0xFF8
     87                           tblptrh	equ	0xFF7
     88                           tblptrl	equ	0xFF6
@@ -114,661 +114,815 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    108                           	psect	cstackCOMRAM
    109  000001                     __pcstackCOMRAM:
    110                           	opt stack 0
-   111  000001                     main@ledState0:
-   112                           	opt stack 0
-   113                           
-   114                           ; 48 bytes @ 0x0
-   115  000001                     	ds	48
-   116  000031                     main@ledCount:
-   117                           	opt stack 0
-   118                           
-   119                           ; 2 bytes @ 0x30
-   120  000031                     	ds	2
-   121  000033                     main@i:
-   122                           	opt stack 0
-   123                           
-   124                           ; 2 bytes @ 0x32
-   125  000033                     	ds	2
-   126                           tblptru	equ	0xFF8
-   127                           tblptrh	equ	0xFF7
-   128                           tblptrl	equ	0xFF6
-   129                           tablat	equ	0xFF5
-   130                           postinc0	equ	0xFEE
-   131                           postdec1	equ	0xFE5
-   132                           fsr1l	equ	0xFE1
-   133                           
-   134 ;;
-   135 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
-   136 ;;
-   137 ;; *************** function _main *****************
-   138 ;; Defined at:
-   139 ;;		line 84 in file "newmain.c"
-   140 ;; Parameters:    Size  Location     Type
-   141 ;;		None
-   142 ;; Auto vars:     Size  Location     Type
-   143 ;;  i               2   50[COMRAM] int 
-   144 ;;  ledCount        2   48[COMRAM] int 
-   145 ;;  ledState0      48    0[COMRAM] short [24]
-   146 ;; Return value:  Size  Location     Type
-   147 ;;		None               void
-   148 ;; Registers used:
-   149 ;;		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, cstack
-   150 ;; Tracked objects:
-   151 ;;		On entry : 0/0
-   152 ;;		On exit  : 0/0
-   153 ;;		Unchanged: 0/0
-   154 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
-   155 ;;      Params:         0       0       0       0       0       0       0       0       0
-   156 ;;      Locals:        52       0       0       0       0       0       0       0       0
-   157 ;;      Temps:          0       0       0       0       0       0       0       0       0
-   158 ;;      Totals:        52       0       0       0       0       0       0       0       0
-   159 ;;Total ram usage:       52 bytes
-   160 ;; Hardware stack levels required when called:    1
-   161 ;; This function calls:
-   162 ;;		_one
-   163 ;;		_zero
-   164 ;; This function is called by:
-   165 ;;		Startup code after reset
-   166 ;; This function uses a non-reentrant model
-   167 ;;
-   168                           
-   169                           	psect	text0
-   170  005DDA                     __ptext0:
-   171                           	opt stack 0
-   172  005DDA                     _main:
-   173                           	opt stack 30
-   174                           
-   175                           ;newmain.c: 85: TRISA=0;
-   176                           
-   177                           ;incstack = 0
-   178  005DDA  0E00               	movlw	0
-   179  005DDC  6E92               	movwf	3986,c	;volatile
-   180                           
-   181                           ;newmain.c: 86: TRISB=0;
-   182  005DDE  0E00               	movlw	0
-   183  005DE0  6E93               	movwf	3987,c	;volatile
-   184                           
-   185                           ;newmain.c: 87: TRISC=0;
-   186  005DE2  0E00               	movlw	0
-   187  005DE4  6E94               	movwf	3988,c	;volatile
-   188                           
-   189                           ;newmain.c: 88: PORTA=0xff;
-   190  005DE6  6880               	setf	3968,c	;volatile
-   191                           
-   192                           ;newmain.c: 89: PORTB=0xff;
-   193  005DE8  6881               	setf	3969,c	;volatile
-   194                           
-   195                           ;newmain.c: 90: PORTC=0xff;
-   196  005DEA  6882               	setf	3970,c	;volatile
-   197                           
-   198                           ;newmain.c: 92: ADCON1=0b00001111;
-   199  005DEC  0E0F               	movlw	15
-   200  005DEE  6EC1               	movwf	4033,c	;volatile
-   201                           
-   202                           ;newmain.c: 93: T1CONbits.TMR1CS = 0;
-   203  005DF0  92CD               	bcf	4045,1,c	;volatile
+   111  000001                     ??_main:
+   112                           
+   113                           ; 0 bytes @ 0x0
+   114  000001                     	ds	4
+   115  000005                     main@ledState0:
+   116                           	opt stack 0
+   117                           
+   118                           ; 48 bytes @ 0x4
+   119  000005                     	ds	48
+   120  000035                     main@curBit:
+   121                           	opt stack 0
+   122                           
+   123                           ; 2 bytes @ 0x34
+   124  000035                     	ds	2
+   125  000037                     main@tempLedColour:
+   126                           	opt stack 0
+   127                           
+   128                           ; 4 bytes @ 0x36
+   129  000037                     	ds	4
+   130  00003B                     main@ledCount:
+   131                           	opt stack 0
+   132                           
+   133                           ; 2 bytes @ 0x3A
+   134  00003B                     	ds	2
+   135  00003D                     main@i:
+   136                           	opt stack 0
+   137                           
+   138                           ; 2 bytes @ 0x3C
+   139  00003D                     	ds	2
+   140  00003F                     main@ledColour:
+   141                           	opt stack 0
+   142                           
+   143                           ; 4 bytes @ 0x3E
+   144  00003F                     	ds	4
+   145  000043                     main@bitIndex:
+   146                           	opt stack 0
+   147                           
+   148                           ; 2 bytes @ 0x42
+   149  000043                     	ds	2
+   150                           tblptru	equ	0xFF8
+   151                           tblptrh	equ	0xFF7
+   152                           tblptrl	equ	0xFF6
+   153                           tablat	equ	0xFF5
+   154                           postinc0	equ	0xFEE
+   155                           postdec1	equ	0xFE5
+   156                           fsr1l	equ	0xFE1
+   157                           
+   158 ;;
+   159 ;;Main: autosize = 0, tempsize = 4, incstack = 0, save=0
+   160 ;;
+   161 ;; *************** function _main *****************
+   162 ;; Defined at:
+   163 ;;		line 84 in file "newmain.c"
+   164 ;; Parameters:    Size  Location     Type
+   165 ;;		None
+   166 ;; Auto vars:     Size  Location     Type
+   167 ;;  curBit          2   52[COMRAM] int 
+   168 ;;  i               2   60[COMRAM] int 
+   169 ;;  ledCount        2   58[COMRAM] int 
+   170 ;;  bitIndex        2   66[COMRAM] int 
+   171 ;;  tempLedColou    4   54[COMRAM] long 
+   172 ;;  ledState0      48    4[COMRAM] short [24]
+   173 ;;  ledColour       4   62[COMRAM] long 
+   174 ;; Return value:  Size  Location     Type
+   175 ;;		None               void
+   176 ;; Registers used:
+   177 ;;		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, cstack
+   178 ;; Tracked objects:
+   179 ;;		On entry : 0/0
+   180 ;;		On exit  : 0/0
+   181 ;;		Unchanged: 0/0
+   182 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   183 ;;      Params:         0       0       0       0       0       0       0       0       0
+   184 ;;      Locals:        64       0       0       0       0       0       0       0       0
+   185 ;;      Temps:          4       0       0       0       0       0       0       0       0
+   186 ;;      Totals:        68       0       0       0       0       0       0       0       0
+   187 ;;Total ram usage:       68 bytes
+   188 ;; Hardware stack levels required when called:    1
+   189 ;; This function calls:
+   190 ;;		_one
+   191 ;;		_zero
+   192 ;; This function is called by:
+   193 ;;		Startup code after reset
+   194 ;; This function uses a non-reentrant model
+   195 ;;
+   196                           
+   197                           	psect	text0
+   198  005D1C                     __ptext0:
+   199                           	opt stack 0
+   200  005D1C                     _main:
+   201                           	opt stack 30
+   202                           
+   203                           ;newmain.c: 85: TRISA=0;
    204                           
-   205                           ;newmain.c: 94: T1CONbits.T1OSCEN = 0;
-   206  005DF2  96CD               	bcf	4045,3,c	;volatile
-   207                           
-   208                           ;newmain.c: 96: short ledState0[24] = { 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 
-      +                          0, 1, 0, 1, 0, 1, 0, 1 };
-   209  005DF4  EE20  F060         	lfsr	2,main@F3971
-   210  005DF8  EE10  F001         	lfsr	1,main@ledState0
-   211  005DFC  0E2F               	movlw	47
-   212  005DFE                     u311:
-   213  005DFE  CFDB FFE3          	movff	plusw2,plusw1
-   214  005E02  06E8               	decf	wreg,f,c
-   215  005E04  E2FC               	bc	u311
-   216  005E06                     l952:
-   217                           
-   218                           ;newmain.c: 99: for(int ledCount = 0; ledCount < 12; ledCount++) {
-   219  005E06  0E00               	movlw	0
-   220  005E08  6E32               	movwf	main@ledCount+1,c
-   221  005E0A  0E00               	movlw	0
-   222  005E0C  6E31               	movwf	main@ledCount,c
-   223  005E0E  BE32               	btfsc	main@ledCount+1,7,c
-   224  005E10  D008               	goto	l958
-   225  005E12  5032               	movf	main@ledCount+1,w,c
-   226  005E14  E105               	bnz	u320
-   227  005E16  0E0C               	movlw	12
-   228  005E18  5C31               	subwf	main@ledCount,w,c
-   229  005E1A  B0D8               	btfsc	status,0,c
-   230  005E1C  D0E1               	goto	l1106
-   231  005E1E  D001               	goto	l958
-   232  005E20                     u320:
-   233  005E20  D0DF               	goto	l1106
-   234  005E22                     l958:
+   205                           ;incstack = 0
+   206  005D1C  0E00               	movlw	0
+   207  005D1E  6E92               	movwf	3986,c	;volatile
+   208                           
+   209                           ;newmain.c: 86: TRISB=0;
+   210  005D20  0E00               	movlw	0
+   211  005D22  6E93               	movwf	3987,c	;volatile
+   212                           
+   213                           ;newmain.c: 87: TRISC=0;
+   214  005D24  0E00               	movlw	0
+   215  005D26  6E94               	movwf	3988,c	;volatile
+   216                           
+   217                           ;newmain.c: 88: PORTA=0xff;
+   218  005D28  6880               	setf	3968,c	;volatile
+   219                           
+   220                           ;newmain.c: 89: PORTB=0xff;
+   221  005D2A  6881               	setf	3969,c	;volatile
+   222                           
+   223                           ;newmain.c: 90: PORTC=0xff;
+   224  005D2C  6882               	setf	3970,c	;volatile
+   225                           
+   226                           ;newmain.c: 92: ADCON1=0b00001111;
+   227  005D2E  0E0F               	movlw	15
+   228  005D30  6EC1               	movwf	4033,c	;volatile
+   229                           
+   230                           ;newmain.c: 93: T1CONbits.TMR1CS = 0;
+   231  005D32  92CD               	bcf	4045,1,c	;volatile
+   232                           
+   233                           ;newmain.c: 94: T1CONbits.T1OSCEN = 0;
+   234  005D34  96CD               	bcf	4045,3,c	;volatile
    235                           
-   236                           ;newmain.c: 100: (ledState0[0] == 0) ? zero() : one();
-   237  005E22  5001               	movf	main@ledState0,w,c
-   238  005E24  1002               	iorwf	main@ledState0+1,w,c
-   239  005E26  A4D8               	btfss	status,2,c
-   240  005E28  D003               	goto	l962
-   241  005E2A  ECB1  F02E         	call	_zero	;wreg free
-   242  005E2E  D002               	goto	l964
-   243  005E30                     l962:
-   244  005E30  ECA0  F02E         	call	_one	;wreg free
-   245  005E34                     l964:
-   246                           
-   247                           ;newmain.c: 101: (ledState0[1] == 0) ? zero() : one();
-   248  005E34  5003               	movf	main@ledState0+2,w,c
-   249  005E36  1004               	iorwf	main@ledState0+3,w,c
-   250  005E38  A4D8               	btfss	status,2,c
-   251  005E3A  D003               	goto	l968
-   252  005E3C  ECB1  F02E         	call	_zero	;wreg free
-   253  005E40  D002               	goto	l970
-   254  005E42                     l968:
-   255  005E42  ECA0  F02E         	call	_one	;wreg free
-   256  005E46                     l970:
-   257                           
-   258                           ;newmain.c: 102: (ledState0[2] == 0) ? zero() : one();
-   259  005E46  5005               	movf	main@ledState0+4,w,c
-   260  005E48  1006               	iorwf	main@ledState0+5,w,c
-   261  005E4A  A4D8               	btfss	status,2,c
-   262  005E4C  D003               	goto	l974
-   263  005E4E  ECB1  F02E         	call	_zero	;wreg free
-   264  005E52  D002               	goto	l976
-   265  005E54                     l974:
-   266  005E54  ECA0  F02E         	call	_one	;wreg free
-   267  005E58                     l976:
-   268                           
-   269                           ;newmain.c: 103: (ledState0[3] == 0) ? zero() : one();
-   270  005E58  5007               	movf	main@ledState0+6,w,c
-   271  005E5A  1008               	iorwf	main@ledState0+7,w,c
-   272  005E5C  A4D8               	btfss	status,2,c
-   273  005E5E  D003               	goto	l980
-   274  005E60  ECB1  F02E         	call	_zero	;wreg free
-   275  005E64  D002               	goto	l982
-   276  005E66                     l980:
-   277  005E66  ECA0  F02E         	call	_one	;wreg free
-   278  005E6A                     l982:
-   279                           
-   280                           ;newmain.c: 104: (ledState0[4] == 0) ? zero() : one();
-   281  005E6A  5009               	movf	main@ledState0+8,w,c
-   282  005E6C  100A               	iorwf	main@ledState0+9,w,c
-   283  005E6E  A4D8               	btfss	status,2,c
-   284  005E70  D003               	goto	l986
-   285  005E72  ECB1  F02E         	call	_zero	;wreg free
-   286  005E76  D002               	goto	l988
-   287  005E78                     l986:
-   288  005E78  ECA0  F02E         	call	_one	;wreg free
-   289  005E7C                     l988:
-   290                           
-   291                           ;newmain.c: 105: (ledState0[5] == 0) ? zero() : one();
-   292  005E7C  500B               	movf	main@ledState0+10,w,c
-   293  005E7E  100C               	iorwf	main@ledState0+11,w,c
-   294  005E80  A4D8               	btfss	status,2,c
-   295  005E82  D003               	goto	l992
-   296  005E84  ECB1  F02E         	call	_zero	;wreg free
-   297  005E88  D002               	goto	l994
-   298  005E8A                     l992:
-   299  005E8A  ECA0  F02E         	call	_one	;wreg free
-   300  005E8E                     l994:
-   301                           
-   302                           ;newmain.c: 106: (ledState0[6] == 0) ? zero() : one();
-   303  005E8E  500D               	movf	main@ledState0+12,w,c
-   304  005E90  100E               	iorwf	main@ledState0+13,w,c
-   305  005E92  A4D8               	btfss	status,2,c
-   306  005E94  D003               	goto	l998
-   307  005E96  ECB1  F02E         	call	_zero	;wreg free
-   308  005E9A  D002               	goto	l1000
-   309  005E9C                     l998:
-   310  005E9C  ECA0  F02E         	call	_one	;wreg free
-   311  005EA0                     l1000:
+   236                           ;newmain.c: 96: short ledState0[24] = { 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 
+      +                          0, 1, 0, 1, 0, 1, 0, 1 };
+   237  005D36  EE20  F060         	lfsr	2,main@F3971
+   238  005D3A  EE10  F005         	lfsr	1,main@ledState0
+   239  005D3E  0E2F               	movlw	47
+   240  005D40                     u341:
+   241  005D40  CFDB FFE3          	movff	plusw2,plusw1
+   242  005D44  06E8               	decf	wreg,f,c
+   243  005D46  E2FC               	bc	u341
+   244                           
+   245                           ;newmain.c: 98: long ledColour = 0;
+   246  005D48  0E00               	movlw	0
+   247  005D4A  6E3F               	movwf	main@ledColour,c
+   248  005D4C  0E00               	movlw	0
+   249  005D4E  6E40               	movwf	main@ledColour+1,c
+   250  005D50  0E00               	movlw	0
+   251  005D52  6E41               	movwf	main@ledColour+2,c
+   252  005D54  0E00               	movlw	0
+   253  005D56  6E42               	movwf	main@ledColour+3,c
+   254  005D58                     l981:
+   255                           
+   256                           ;newmain.c: 101: ledColour++;
+   257  005D58  0E01               	movlw	1
+   258  005D5A  263F               	addwf	main@ledColour,f,c
+   259  005D5C  0E00               	movlw	0
+   260  005D5E  2240               	addwfc	main@ledColour+1,f,c
+   261  005D60  2241               	addwfc	main@ledColour+2,f,c
+   262  005D62  2242               	addwfc	main@ledColour+3,f,c
+   263                           
+   264                           ;newmain.c: 102: if(ledColour > 0b010101010101010101010101) {
+   265  005D64  BE42               	btfsc	main@ledColour+3,7,c
+   266  005D66  D012               	goto	l987
+   267  005D68  5042               	movf	main@ledColour+3,w,c
+   268  005D6A  E108               	bnz	u350
+   269  005D6C  0E56               	movlw	86
+   270  005D6E  5C3F               	subwf	main@ledColour,w,c
+   271  005D70  0E55               	movlw	85
+   272  005D72  5840               	subwfb	main@ledColour+1,w,c
+   273  005D74  0E55               	movlw	85
+   274  005D76  5841               	subwfb	main@ledColour+2,w,c
+   275  005D78  A0D8               	btfss	status,0,c
+   276  005D7A  D008               	goto	l987
+   277  005D7C                     u350:
+   278                           
+   279                           ;newmain.c: 103: ledColour = 0;
+   280  005D7C  0E00               	movlw	0
+   281  005D7E  6E3F               	movwf	main@ledColour,c
+   282  005D80  0E00               	movlw	0
+   283  005D82  6E40               	movwf	main@ledColour+1,c
+   284  005D84  0E00               	movlw	0
+   285  005D86  6E41               	movwf	main@ledColour+2,c
+   286  005D88  0E00               	movlw	0
+   287  005D8A  6E42               	movwf	main@ledColour+3,c
+   288  005D8C                     l987:
+   289                           
+   290                           ;newmain.c: 104: }
+   291                           ;newmain.c: 106: long tempLedColour = ledColour;
+   292  005D8C  C03F  F037         	movff	main@ledColour,main@tempLedColour
+   293  005D90  C040  F038         	movff	main@ledColour+1,main@tempLedColour+1
+   294  005D94  C041  F039         	movff	main@ledColour+2,main@tempLedColour+2
+   295  005D98  C042  F03A         	movff	main@ledColour+3,main@tempLedColour+3
+   296                           
+   297                           ;newmain.c: 107: for(int bitIndex = 0; bitIndex < 24; bitIndex++) {
+   298  005D9C  0E00               	movlw	0
+   299  005D9E  6E44               	movwf	main@bitIndex+1,c
+   300  005DA0  0E00               	movlw	0
+   301  005DA2  6E43               	movwf	main@bitIndex,c
+   302  005DA4                     l989:
+   303  005DA4  BE44               	btfsc	main@bitIndex+1,7,c
+   304  005DA6  D006               	goto	l993
+   305  005DA8  5044               	movf	main@bitIndex+1,w,c
+   306  005DAA  E12D               	bnz	l1003
+   307  005DAC  0E18               	movlw	24
+   308  005DAE  5C43               	subwf	main@bitIndex,w,c
+   309  005DB0  B0D8               	btfsc	status,0,c
+   310  005DB2  D029               	goto	l1003
+   311  005DB4                     l993:
    312                           
-   313                           ;newmain.c: 107: (ledState0[7] == 0) ? zero() : one();
-   314  005EA0  500F               	movf	main@ledState0+14,w,c
-   315  005EA2  1010               	iorwf	main@ledState0+15,w,c
-   316  005EA4  A4D8               	btfss	status,2,c
-   317  005EA6  D003               	goto	l1004
-   318  005EA8  ECB1  F02E         	call	_zero	;wreg free
-   319  005EAC  D002               	goto	l1006
-   320  005EAE                     l1004:
-   321  005EAE  ECA0  F02E         	call	_one	;wreg free
-   322  005EB2                     l1006:
-   323                           
-   324                           ;newmain.c: 108: (ledState0[8] == 0) ? zero() : one();
-   325  005EB2  5011               	movf	main@ledState0+16,w,c
-   326  005EB4  1012               	iorwf	main@ledState0+17,w,c
-   327  005EB6  A4D8               	btfss	status,2,c
-   328  005EB8  D003               	goto	l1010
-   329  005EBA  ECB1  F02E         	call	_zero	;wreg free
-   330  005EBE  D002               	goto	l1012
-   331  005EC0                     l1010:
-   332  005EC0  ECA0  F02E         	call	_one	;wreg free
-   333  005EC4                     l1012:
-   334                           
-   335                           ;newmain.c: 109: (ledState0[9] == 0) ? zero() : one();
-   336  005EC4  5013               	movf	main@ledState0+18,w,c
-   337  005EC6  1014               	iorwf	main@ledState0+19,w,c
-   338  005EC8  A4D8               	btfss	status,2,c
-   339  005ECA  D003               	goto	l1016
-   340  005ECC  ECB1  F02E         	call	_zero	;wreg free
-   341  005ED0  D002               	goto	l1018
-   342  005ED2                     l1016:
-   343  005ED2  ECA0  F02E         	call	_one	;wreg free
-   344  005ED6                     l1018:
-   345                           
-   346                           ;newmain.c: 110: (ledState0[10] == 0) ? zero() : one();
-   347  005ED6  5015               	movf	main@ledState0+20,w,c
-   348  005ED8  1016               	iorwf	main@ledState0+21,w,c
-   349  005EDA  A4D8               	btfss	status,2,c
-   350  005EDC  D003               	goto	l1022
-   351  005EDE  ECB1  F02E         	call	_zero	;wreg free
-   352  005EE2  D002               	goto	l1024
-   353  005EE4                     l1022:
-   354  005EE4  ECA0  F02E         	call	_one	;wreg free
-   355  005EE8                     l1024:
-   356                           
-   357                           ;newmain.c: 111: (ledState0[11] == 0) ? zero() : one();
-   358  005EE8  5017               	movf	main@ledState0+22,w,c
-   359  005EEA  1018               	iorwf	main@ledState0+23,w,c
-   360  005EEC  A4D8               	btfss	status,2,c
-   361  005EEE  D003               	goto	l1028
-   362  005EF0  ECB1  F02E         	call	_zero	;wreg free
-   363  005EF4  D002               	goto	l1030
-   364  005EF6                     l1028:
-   365  005EF6  ECA0  F02E         	call	_one	;wreg free
-   366  005EFA                     l1030:
-   367                           
-   368                           ;newmain.c: 112: (ledState0[12] == 0) ? zero() : one();
-   369  005EFA  5019               	movf	main@ledState0+24,w,c
-   370  005EFC  101A               	iorwf	main@ledState0+25,w,c
-   371  005EFE  A4D8               	btfss	status,2,c
-   372  005F00  D003               	goto	l1034
-   373  005F02  ECB1  F02E         	call	_zero	;wreg free
-   374  005F06  D002               	goto	l1036
-   375  005F08                     l1034:
-   376  005F08  ECA0  F02E         	call	_one	;wreg free
-   377  005F0C                     l1036:
-   378                           
-   379                           ;newmain.c: 113: (ledState0[13] == 0) ? zero() : one();
-   380  005F0C  501B               	movf	main@ledState0+26,w,c
-   381  005F0E  101C               	iorwf	main@ledState0+27,w,c
-   382  005F10  A4D8               	btfss	status,2,c
-   383  005F12  D003               	goto	l1040
-   384  005F14  ECB1  F02E         	call	_zero	;wreg free
-   385  005F18  D002               	goto	l1042
-   386  005F1A                     l1040:
-   387  005F1A  ECA0  F02E         	call	_one	;wreg free
-   388  005F1E                     l1042:
-   389                           
-   390                           ;newmain.c: 114: (ledState0[14] == 0) ? zero() : one();
-   391  005F1E  501D               	movf	main@ledState0+28,w,c
-   392  005F20  101E               	iorwf	main@ledState0+29,w,c
-   393  005F22  A4D8               	btfss	status,2,c
-   394  005F24  D003               	goto	l1046
-   395  005F26  ECB1  F02E         	call	_zero	;wreg free
-   396  005F2A  D002               	goto	l1048
-   397  005F2C                     l1046:
-   398  005F2C  ECA0  F02E         	call	_one	;wreg free
-   399  005F30                     l1048:
-   400                           
-   401                           ;newmain.c: 115: (ledState0[15] == 0) ? zero() : one();
-   402  005F30  501F               	movf	main@ledState0+30,w,c
-   403  005F32  1020               	iorwf	main@ledState0+31,w,c
-   404  005F34  A4D8               	btfss	status,2,c
-   405  005F36  D003               	goto	l1052
-   406  005F38  ECB1  F02E         	call	_zero	;wreg free
-   407  005F3C  D002               	goto	l1054
-   408  005F3E                     l1052:
-   409  005F3E  ECA0  F02E         	call	_one	;wreg free
-   410  005F42                     l1054:
-   411                           
-   412                           ;newmain.c: 116: (ledState0[16] == 0) ? zero() : one();
-   413  005F42  5021               	movf	main@ledState0+32,w,c
-   414  005F44  1022               	iorwf	main@ledState0+33,w,c
-   415  005F46  A4D8               	btfss	status,2,c
-   416  005F48  D003               	goto	l1058
-   417  005F4A  ECB1  F02E         	call	_zero	;wreg free
-   418  005F4E  D002               	goto	l1060
-   419  005F50                     l1058:
-   420  005F50  ECA0  F02E         	call	_one	;wreg free
-   421  005F54                     l1060:
-   422                           
-   423                           ;newmain.c: 117: (ledState0[17] == 0) ? zero() : one();
-   424  005F54  5023               	movf	main@ledState0+34,w,c
-   425  005F56  1024               	iorwf	main@ledState0+35,w,c
-   426  005F58  A4D8               	btfss	status,2,c
-   427  005F5A  D003               	goto	l1064
-   428  005F5C  ECB1  F02E         	call	_zero	;wreg free
-   429  005F60  D002               	goto	l1066
-   430  005F62                     l1064:
-   431  005F62  ECA0  F02E         	call	_one	;wreg free
-   432  005F66                     l1066:
-   433                           
-   434                           ;newmain.c: 118: (ledState0[18] == 0) ? zero() : one();
-   435  005F66  5025               	movf	main@ledState0+36,w,c
-   436  005F68  1026               	iorwf	main@ledState0+37,w,c
-   437  005F6A  A4D8               	btfss	status,2,c
-   438  005F6C  D003               	goto	l1070
-   439  005F6E  ECB1  F02E         	call	_zero	;wreg free
-   440  005F72  D002               	goto	l1072
-   441  005F74                     l1070:
-   442  005F74  ECA0  F02E         	call	_one	;wreg free
-   443  005F78                     l1072:
-   444                           
-   445                           ;newmain.c: 119: (ledState0[19] == 0) ? zero() : one();
-   446  005F78  5027               	movf	main@ledState0+38,w,c
-   447  005F7A  1028               	iorwf	main@ledState0+39,w,c
-   448  005F7C  A4D8               	btfss	status,2,c
-   449  005F7E  D003               	goto	l1076
-   450  005F80  ECB1  F02E         	call	_zero	;wreg free
-   451  005F84  D002               	goto	l1078
-   452  005F86                     l1076:
-   453  005F86  ECA0  F02E         	call	_one	;wreg free
-   454  005F8A                     l1078:
-   455                           
-   456                           ;newmain.c: 120: (ledState0[20] == 0) ? zero() : one();
-   457  005F8A  5029               	movf	main@ledState0+40,w,c
-   458  005F8C  102A               	iorwf	main@ledState0+41,w,c
-   459  005F8E  A4D8               	btfss	status,2,c
-   460  005F90  D003               	goto	l1082
-   461  005F92  ECB1  F02E         	call	_zero	;wreg free
-   462  005F96  D002               	goto	l1084
-   463  005F98                     l1082:
-   464  005F98  ECA0  F02E         	call	_one	;wreg free
-   465  005F9C                     l1084:
-   466                           
-   467                           ;newmain.c: 121: (ledState0[21] == 0) ? zero() : one();
-   468  005F9C  502B               	movf	main@ledState0+42,w,c
-   469  005F9E  102C               	iorwf	main@ledState0+43,w,c
-   470  005FA0  A4D8               	btfss	status,2,c
-   471  005FA2  D003               	goto	l1088
-   472  005FA4  ECB1  F02E         	call	_zero	;wreg free
-   473  005FA8  D002               	goto	l1090
-   474  005FAA                     l1088:
-   475  005FAA  ECA0  F02E         	call	_one	;wreg free
-   476  005FAE                     l1090:
-   477                           
-   478                           ;newmain.c: 122: (ledState0[22] == 0) ? zero() : one();
-   479  005FAE  502D               	movf	main@ledState0+44,w,c
-   480  005FB0  102E               	iorwf	main@ledState0+45,w,c
-   481  005FB2  A4D8               	btfss	status,2,c
-   482  005FB4  D003               	goto	l1094
-   483  005FB6  ECB1  F02E         	call	_zero	;wreg free
-   484  005FBA  D002               	goto	l1096
-   485  005FBC                     l1094:
-   486  005FBC  ECA0  F02E         	call	_one	;wreg free
-   487  005FC0                     l1096:
-   488                           
-   489                           ;newmain.c: 123: (ledState0[23] == 0) ? zero() : one();
-   490  005FC0  502F               	movf	main@ledState0+46,w,c
-   491  005FC2  1030               	iorwf	main@ledState0+47,w,c
-   492  005FC4  A4D8               	btfss	status,2,c
-   493  005FC6  D003               	goto	l1100
-   494  005FC8  ECB1  F02E         	call	_zero	;wreg free
-   495  005FCC  D002               	goto	l1102
-   496  005FCE                     l1100:
-   497  005FCE  ECA0  F02E         	call	_one	;wreg free
-   498  005FD2                     l1102:
-   499  005FD2  4A31               	infsnz	main@ledCount,f,c
-   500  005FD4  2A32               	incf	main@ledCount+1,f,c
-   501  005FD6  BE32               	btfsc	main@ledCount+1,7,c
-   502  005FD8  D724               	goto	l958
-   503  005FDA  5032               	movf	main@ledCount+1,w,c
-   504  005FDC  E101               	bnz	l1106
-   505  005FDE  D71B               	goto	L1
-   506  005FE0                     l1106:
-   507                           
-   508                           ;newmain.c: 124: }
-   509                           ;newmain.c: 126: for(int i = 0; i < 1000; i++) {
-   510  005FE0  0E00               	movlw	0
-   511  005FE2  6E34               	movwf	main@i+1,c
-   512  005FE4  0E00               	movlw	0
-   513  005FE6  6E33               	movwf	main@i,c
-   514  005FE8                     l1108:
-   515  005FE8  BE34               	btfsc	main@i+1,7,c
-   516  005FEA  D006               	goto	l140
-   517  005FEC  0EE8               	movlw	232
-   518  005FEE  5C33               	subwf	main@i,w,c
-   519  005FF0  0E03               	movlw	3
-   520  005FF2  5834               	subwfb	main@i+1,w,c
-   521  005FF4  B0D8               	btfsc	status,0,c
-   522  005FF6  D707               	goto	l952
-   523  005FF8                     l140:
-   524                           
-   525                           ;newmain.c: 127: PORTAbits.RA0=0;
-   526  005FF8  9080               	bcf	3968,0,c	;volatile
-   527  005FFA  4A33               	infsnz	main@i,f,c
-   528  005FFC  2A34               	incf	main@i+1,f,c
-   529  005FFE  D7F4               	goto	l1108
-   530  006000                     __end_of_main:
-   531                           	opt stack 0
-   532                           tblptru	equ	0xFF8
-   533                           tblptrh	equ	0xFF7
-   534                           tblptrl	equ	0xFF6
-   535                           tablat	equ	0xFF5
-   536                           postinc0	equ	0xFEE
-   537                           wreg	equ	0xFE8
-   538                           postdec1	equ	0xFE5
-   539                           plusw1	equ	0xFE3
-   540                           fsr1l	equ	0xFE1
-   541                           plusw2	equ	0xFDB
-   542                           status	equ	0xFD8
-   543                           
-   544 ;; *************** function _zero *****************
-   545 ;; Defined at:
-   546 ;;		line 64 in file "newmain.c"
-   547 ;; Parameters:    Size  Location     Type
-   548 ;;		None
-   549 ;; Auto vars:     Size  Location     Type
-   550 ;;		None
-   551 ;; Return value:  Size  Location     Type
-   552 ;;		None               void
-   553 ;; Registers used:
-   554 ;;		None
-   555 ;; Tracked objects:
-   556 ;;		On entry : 0/0
-   557 ;;		On exit  : 0/0
-   558 ;;		Unchanged: 0/0
-   559 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
-   560 ;;      Params:         0       0       0       0       0       0       0       0       0
-   561 ;;      Locals:         0       0       0       0       0       0       0       0       0
-   562 ;;      Temps:          0       0       0       0       0       0       0       0       0
-   563 ;;      Totals:         0       0       0       0       0       0       0       0       0
-   564 ;;Total ram usage:        0 bytes
-   565 ;; Hardware stack levels used:    1
-   566 ;; This function calls:
-   567 ;;		Nothing
-   568 ;; This function is called by:
-   569 ;;		_main
-   570 ;; This function uses a non-reentrant model
-   571 ;;
-   572                           
-   573                           	psect	text1
-   574  005D62                     __ptext1:
-   575                           	opt stack 0
-   576  005D62                     _zero:
-   577                           	opt stack 30
+   313                           ;newmain.c: 108: int curBit = tempLedColour & 0b1;
+   314  005DB4  0E01               	movlw	1
+   315  005DB6  1437               	andwf	main@tempLedColour,w,c
+   316  005DB8  6E35               	movwf	main@curBit,c
+   317  005DBA  6A36               	clrf	main@curBit+1,c
+   318                           
+   319                           ;newmain.c: 109: ledState0[bitIndex] = curBit;
+   320  005DBC  90D8               	bcf	status,0,c
+   321  005DBE  3443               	rlcf	main@bitIndex,w,c
+   322  005DC0  6ED9               	movwf	fsr2l,c
+   323  005DC2  3444               	rlcf	main@bitIndex+1,w,c
+   324  005DC4  6EDA               	movwf	fsr2h,c
+   325  005DC6  0E05               	movlw	low main@ledState0
+   326  005DC8  26D9               	addwf	fsr2l,f,c
+   327  005DCA  0E00               	movlw	high main@ledState0
+   328  005DCC  22DA               	addwfc	fsr2h,f,c
+   329  005DCE  C035  FFDE         	movff	main@curBit,postinc2
+   330  005DD2  C036  FFDD         	movff	main@curBit+1,postdec2
+   331                           
+   332                           ;newmain.c: 111: tempLedColour = (tempLedColour >> 1);
+   333  005DD6  C037  F001         	movff	main@tempLedColour,??_main
+   334  005DDA  C038  F002         	movff	main@tempLedColour+1,??_main+1
+   335  005DDE  C039  F003         	movff	main@tempLedColour+2,??_main+2
+   336  005DE2  C03A  F004         	movff	main@tempLedColour+3,??_main+3
+   337  005DE6  3404               	rlcf	??_main+3,w,c
+   338  005DE8  3204               	rrcf	??_main+3,f,c
+   339  005DEA  3203               	rrcf	??_main+2,f,c
+   340  005DEC  3202               	rrcf	??_main+1,f,c
+   341  005DEE  3201               	rrcf	??_main,f,c
+   342  005DF0  C001  F037         	movff	??_main,main@tempLedColour
+   343  005DF4  C002  F038         	movff	??_main+1,main@tempLedColour+1
+   344  005DF8  C003  F039         	movff	??_main+2,main@tempLedColour+2
+   345  005DFC  C004  F03A         	movff	??_main+3,main@tempLedColour+3
+   346  005E00  4A43               	infsnz	main@bitIndex,f,c
+   347  005E02  2A44               	incf	main@bitIndex+1,f,c
+   348  005E04  D7CF               	goto	l989
+   349  005E06                     l1003:
+   350                           
+   351                           ;newmain.c: 112: }
+   352                           ;newmain.c: 114: for(int ledCount = 0; ledCount < 12; ledCount++) {
+   353  005E06  0E00               	movlw	0
+   354  005E08  6E3C               	movwf	main@ledCount+1,c
+   355  005E0A  0E00               	movlw	0
+   356  005E0C  6E3B               	movwf	main@ledCount,c
+   357  005E0E  BE3C               	btfsc	main@ledCount+1,7,c
+   358  005E10  D008               	goto	l1009
+   359  005E12  503C               	movf	main@ledCount+1,w,c
+   360  005E14  E105               	bnz	u380
+   361  005E16  0E0C               	movlw	12
+   362  005E18  5C3B               	subwf	main@ledCount,w,c
+   363  005E1A  B0D8               	btfsc	status,0,c
+   364  005E1C  D0E1               	goto	l1157
+   365  005E1E  D001               	goto	l1009
+   366  005E20                     u380:
+   367  005E20  D0DF               	goto	l1157
+   368  005E22                     l1009:
+   369                           
+   370                           ;newmain.c: 115: (ledState0[0] == 0) ? zero() : one();
+   371  005E22  5005               	movf	main@ledState0,w,c
+   372  005E24  1006               	iorwf	main@ledState0+1,w,c
+   373  005E26  A4D8               	btfss	status,2,c
+   374  005E28  D003               	goto	l1013
+   375  005E2A  EC52  F02E         	call	_zero	;wreg free
+   376  005E2E  D002               	goto	l1015
+   377  005E30                     l1013:
+   378  005E30  EC41  F02E         	call	_one	;wreg free
+   379  005E34                     l1015:
+   380                           
+   381                           ;newmain.c: 116: (ledState0[1] == 0) ? zero() : one();
+   382  005E34  5007               	movf	main@ledState0+2,w,c
+   383  005E36  1008               	iorwf	main@ledState0+3,w,c
+   384  005E38  A4D8               	btfss	status,2,c
+   385  005E3A  D003               	goto	l1019
+   386  005E3C  EC52  F02E         	call	_zero	;wreg free
+   387  005E40  D002               	goto	l1021
+   388  005E42                     l1019:
+   389  005E42  EC41  F02E         	call	_one	;wreg free
+   390  005E46                     l1021:
+   391                           
+   392                           ;newmain.c: 117: (ledState0[2] == 0) ? zero() : one();
+   393  005E46  5009               	movf	main@ledState0+4,w,c
+   394  005E48  100A               	iorwf	main@ledState0+5,w,c
+   395  005E4A  A4D8               	btfss	status,2,c
+   396  005E4C  D003               	goto	l1025
+   397  005E4E  EC52  F02E         	call	_zero	;wreg free
+   398  005E52  D002               	goto	l1027
+   399  005E54                     l1025:
+   400  005E54  EC41  F02E         	call	_one	;wreg free
+   401  005E58                     l1027:
+   402                           
+   403                           ;newmain.c: 118: (ledState0[3] == 0) ? zero() : one();
+   404  005E58  500B               	movf	main@ledState0+6,w,c
+   405  005E5A  100C               	iorwf	main@ledState0+7,w,c
+   406  005E5C  A4D8               	btfss	status,2,c
+   407  005E5E  D003               	goto	l1031
+   408  005E60  EC52  F02E         	call	_zero	;wreg free
+   409  005E64  D002               	goto	l1033
+   410  005E66                     l1031:
+   411  005E66  EC41  F02E         	call	_one	;wreg free
+   412  005E6A                     l1033:
+   413                           
+   414                           ;newmain.c: 119: (ledState0[4] == 0) ? zero() : one();
+   415  005E6A  500D               	movf	main@ledState0+8,w,c
+   416  005E6C  100E               	iorwf	main@ledState0+9,w,c
+   417  005E6E  A4D8               	btfss	status,2,c
+   418  005E70  D003               	goto	l1037
+   419  005E72  EC52  F02E         	call	_zero	;wreg free
+   420  005E76  D002               	goto	l1039
+   421  005E78                     l1037:
+   422  005E78  EC41  F02E         	call	_one	;wreg free
+   423  005E7C                     l1039:
+   424                           
+   425                           ;newmain.c: 120: (ledState0[5] == 0) ? zero() : one();
+   426  005E7C  500F               	movf	main@ledState0+10,w,c
+   427  005E7E  1010               	iorwf	main@ledState0+11,w,c
+   428  005E80  A4D8               	btfss	status,2,c
+   429  005E82  D003               	goto	l1043
+   430  005E84  EC52  F02E         	call	_zero	;wreg free
+   431  005E88  D002               	goto	l1045
+   432  005E8A                     l1043:
+   433  005E8A  EC41  F02E         	call	_one	;wreg free
+   434  005E8E                     l1045:
+   435                           
+   436                           ;newmain.c: 121: (ledState0[6] == 0) ? zero() : one();
+   437  005E8E  5011               	movf	main@ledState0+12,w,c
+   438  005E90  1012               	iorwf	main@ledState0+13,w,c
+   439  005E92  A4D8               	btfss	status,2,c
+   440  005E94  D003               	goto	l1049
+   441  005E96  EC52  F02E         	call	_zero	;wreg free
+   442  005E9A  D002               	goto	l1051
+   443  005E9C                     l1049:
+   444  005E9C  EC41  F02E         	call	_one	;wreg free
+   445  005EA0                     l1051:
+   446                           
+   447                           ;newmain.c: 122: (ledState0[7] == 0) ? zero() : one();
+   448  005EA0  5013               	movf	main@ledState0+14,w,c
+   449  005EA2  1014               	iorwf	main@ledState0+15,w,c
+   450  005EA4  A4D8               	btfss	status,2,c
+   451  005EA6  D003               	goto	l1055
+   452  005EA8  EC52  F02E         	call	_zero	;wreg free
+   453  005EAC  D002               	goto	l1057
+   454  005EAE                     l1055:
+   455  005EAE  EC41  F02E         	call	_one	;wreg free
+   456  005EB2                     l1057:
+   457                           
+   458                           ;newmain.c: 123: (ledState0[8] == 0) ? zero() : one();
+   459  005EB2  5015               	movf	main@ledState0+16,w,c
+   460  005EB4  1016               	iorwf	main@ledState0+17,w,c
+   461  005EB6  A4D8               	btfss	status,2,c
+   462  005EB8  D003               	goto	l1061
+   463  005EBA  EC52  F02E         	call	_zero	;wreg free
+   464  005EBE  D002               	goto	l1063
+   465  005EC0                     l1061:
+   466  005EC0  EC41  F02E         	call	_one	;wreg free
+   467  005EC4                     l1063:
+   468                           
+   469                           ;newmain.c: 124: (ledState0[9] == 0) ? zero() : one();
+   470  005EC4  5017               	movf	main@ledState0+18,w,c
+   471  005EC6  1018               	iorwf	main@ledState0+19,w,c
+   472  005EC8  A4D8               	btfss	status,2,c
+   473  005ECA  D003               	goto	l1067
+   474  005ECC  EC52  F02E         	call	_zero	;wreg free
+   475  005ED0  D002               	goto	l1069
+   476  005ED2                     l1067:
+   477  005ED2  EC41  F02E         	call	_one	;wreg free
+   478  005ED6                     l1069:
+   479                           
+   480                           ;newmain.c: 125: (ledState0[10] == 0) ? zero() : one();
+   481  005ED6  5019               	movf	main@ledState0+20,w,c
+   482  005ED8  101A               	iorwf	main@ledState0+21,w,c
+   483  005EDA  A4D8               	btfss	status,2,c
+   484  005EDC  D003               	goto	l1073
+   485  005EDE  EC52  F02E         	call	_zero	;wreg free
+   486  005EE2  D002               	goto	l1075
+   487  005EE4                     l1073:
+   488  005EE4  EC41  F02E         	call	_one	;wreg free
+   489  005EE8                     l1075:
+   490                           
+   491                           ;newmain.c: 126: (ledState0[11] == 0) ? zero() : one();
+   492  005EE8  501B               	movf	main@ledState0+22,w,c
+   493  005EEA  101C               	iorwf	main@ledState0+23,w,c
+   494  005EEC  A4D8               	btfss	status,2,c
+   495  005EEE  D003               	goto	l1079
+   496  005EF0  EC52  F02E         	call	_zero	;wreg free
+   497  005EF4  D002               	goto	l1081
+   498  005EF6                     l1079:
+   499  005EF6  EC41  F02E         	call	_one	;wreg free
+   500  005EFA                     l1081:
+   501                           
+   502                           ;newmain.c: 127: (ledState0[12] == 0) ? zero() : one();
+   503  005EFA  501D               	movf	main@ledState0+24,w,c
+   504  005EFC  101E               	iorwf	main@ledState0+25,w,c
+   505  005EFE  A4D8               	btfss	status,2,c
+   506  005F00  D003               	goto	l1085
+   507  005F02  EC52  F02E         	call	_zero	;wreg free
+   508  005F06  D002               	goto	l1087
+   509  005F08                     l1085:
+   510  005F08  EC41  F02E         	call	_one	;wreg free
+   511  005F0C                     l1087:
+   512                           
+   513                           ;newmain.c: 128: (ledState0[13] == 0) ? zero() : one();
+   514  005F0C  501F               	movf	main@ledState0+26,w,c
+   515  005F0E  1020               	iorwf	main@ledState0+27,w,c
+   516  005F10  A4D8               	btfss	status,2,c
+   517  005F12  D003               	goto	l1091
+   518  005F14  EC52  F02E         	call	_zero	;wreg free
+   519  005F18  D002               	goto	l1093
+   520  005F1A                     l1091:
+   521  005F1A  EC41  F02E         	call	_one	;wreg free
+   522  005F1E                     l1093:
+   523                           
+   524                           ;newmain.c: 129: (ledState0[14] == 0) ? zero() : one();
+   525  005F1E  5021               	movf	main@ledState0+28,w,c
+   526  005F20  1022               	iorwf	main@ledState0+29,w,c
+   527  005F22  A4D8               	btfss	status,2,c
+   528  005F24  D003               	goto	l1097
+   529  005F26  EC52  F02E         	call	_zero	;wreg free
+   530  005F2A  D002               	goto	l1099
+   531  005F2C                     l1097:
+   532  005F2C  EC41  F02E         	call	_one	;wreg free
+   533  005F30                     l1099:
+   534                           
+   535                           ;newmain.c: 130: (ledState0[15] == 0) ? zero() : one();
+   536  005F30  5023               	movf	main@ledState0+30,w,c
+   537  005F32  1024               	iorwf	main@ledState0+31,w,c
+   538  005F34  A4D8               	btfss	status,2,c
+   539  005F36  D003               	goto	l1103
+   540  005F38  EC52  F02E         	call	_zero	;wreg free
+   541  005F3C  D002               	goto	l1105
+   542  005F3E                     l1103:
+   543  005F3E  EC41  F02E         	call	_one	;wreg free
+   544  005F42                     l1105:
+   545                           
+   546                           ;newmain.c: 131: (ledState0[16] == 0) ? zero() : one();
+   547  005F42  5025               	movf	main@ledState0+32,w,c
+   548  005F44  1026               	iorwf	main@ledState0+33,w,c
+   549  005F46  A4D8               	btfss	status,2,c
+   550  005F48  D003               	goto	l1109
+   551  005F4A  EC52  F02E         	call	_zero	;wreg free
+   552  005F4E  D002               	goto	l1111
+   553  005F50                     l1109:
+   554  005F50  EC41  F02E         	call	_one	;wreg free
+   555  005F54                     l1111:
+   556                           
+   557                           ;newmain.c: 132: (ledState0[17] == 0) ? zero() : one();
+   558  005F54  5027               	movf	main@ledState0+34,w,c
+   559  005F56  1028               	iorwf	main@ledState0+35,w,c
+   560  005F58  A4D8               	btfss	status,2,c
+   561  005F5A  D003               	goto	l1115
+   562  005F5C  EC52  F02E         	call	_zero	;wreg free
+   563  005F60  D002               	goto	l1117
+   564  005F62                     l1115:
+   565  005F62  EC41  F02E         	call	_one	;wreg free
+   566  005F66                     l1117:
+   567                           
+   568                           ;newmain.c: 133: (ledState0[18] == 0) ? zero() : one();
+   569  005F66  5029               	movf	main@ledState0+36,w,c
+   570  005F68  102A               	iorwf	main@ledState0+37,w,c
+   571  005F6A  A4D8               	btfss	status,2,c
+   572  005F6C  D003               	goto	l1121
+   573  005F6E  EC52  F02E         	call	_zero	;wreg free
+   574  005F72  D002               	goto	l1123
+   575  005F74                     l1121:
+   576  005F74  EC41  F02E         	call	_one	;wreg free
+   577  005F78                     l1123:
    578                           
-   579                           ;newmain.c: 66: PORTAbits.RA0=1;
-   580                           
-   581                           ;incstack = 0
-   582  005D62  8080               	bsf	3968,0,c	;volatile
-   583                           
-   584                           ;newmain.c: 67: PORTAbits.RA0=1;
-   585  005D64  8080               	bsf	3968,0,c	;volatile
-   586                           
-   587                           ;newmain.c: 68: PORTAbits.RA0=1;
-   588  005D66  8080               	bsf	3968,0,c	;volatile
+   579                           ;newmain.c: 134: (ledState0[19] == 0) ? zero() : one();
+   580  005F78  502B               	movf	main@ledState0+38,w,c
+   581  005F7A  102C               	iorwf	main@ledState0+39,w,c
+   582  005F7C  A4D8               	btfss	status,2,c
+   583  005F7E  D003               	goto	l1127
+   584  005F80  EC52  F02E         	call	_zero	;wreg free
+   585  005F84  D002               	goto	l1129
+   586  005F86                     l1127:
+   587  005F86  EC41  F02E         	call	_one	;wreg free
+   588  005F8A                     l1129:
    589                           
-   590                           ;newmain.c: 69: PORTAbits.RA0=1;
-   591  005D68  8080               	bsf	3968,0,c	;volatile
-   592                           
-   593                           ;newmain.c: 70: PORTAbits.RA0=1;
-   594  005D6A  8080               	bsf	3968,0,c	;volatile
-   595                           
-   596                           ;newmain.c: 71: PORTAbits.RA0=0;
-   597  005D6C  9080               	bcf	3968,0,c	;volatile
-   598                           
-   599                           ;newmain.c: 72: PORTAbits.RA0=0;
-   600  005D6E  9080               	bcf	3968,0,c	;volatile
-   601                           
-   602                           ;newmain.c: 73: PORTAbits.RA0=0;
-   603  005D70  9080               	bcf	3968,0,c	;volatile
-   604                           
-   605                           ;newmain.c: 74: PORTAbits.RA0=0;
-   606  005D72  9080               	bcf	3968,0,c	;volatile
-   607                           
-   608                           ;newmain.c: 75: PORTAbits.RA0=0;
-   609  005D74  9080               	bcf	3968,0,c	;volatile
-   610                           
-   611                           ;newmain.c: 76: PORTAbits.RA0=0;
-   612  005D76  9080               	bcf	3968,0,c	;volatile
-   613                           
-   614                           ;newmain.c: 77: PORTAbits.RA0=0;
-   615  005D78  9080               	bcf	3968,0,c	;volatile
-   616                           
-   617                           ;newmain.c: 78: PORTAbits.RA0=0;
-   618  005D7A  9080               	bcf	3968,0,c	;volatile
-   619                           
-   620                           ;newmain.c: 79: PORTAbits.RA0=0;
-   621  005D7C  9080               	bcf	3968,0,c	;volatile
+   590                           ;newmain.c: 135: (ledState0[20] == 0) ? zero() : one();
+   591  005F8A  502D               	movf	main@ledState0+40,w,c
+   592  005F8C  102E               	iorwf	main@ledState0+41,w,c
+   593  005F8E  A4D8               	btfss	status,2,c
+   594  005F90  D003               	goto	l1133
+   595  005F92  EC52  F02E         	call	_zero	;wreg free
+   596  005F96  D002               	goto	l1135
+   597  005F98                     l1133:
+   598  005F98  EC41  F02E         	call	_one	;wreg free
+   599  005F9C                     l1135:
+   600                           
+   601                           ;newmain.c: 136: (ledState0[21] == 0) ? zero() : one();
+   602  005F9C  502F               	movf	main@ledState0+42,w,c
+   603  005F9E  1030               	iorwf	main@ledState0+43,w,c
+   604  005FA0  A4D8               	btfss	status,2,c
+   605  005FA2  D003               	goto	l1139
+   606  005FA4  EC52  F02E         	call	_zero	;wreg free
+   607  005FA8  D002               	goto	l1141
+   608  005FAA                     l1139:
+   609  005FAA  EC41  F02E         	call	_one	;wreg free
+   610  005FAE                     l1141:
+   611                           
+   612                           ;newmain.c: 137: (ledState0[22] == 0) ? zero() : one();
+   613  005FAE  5031               	movf	main@ledState0+44,w,c
+   614  005FB0  1032               	iorwf	main@ledState0+45,w,c
+   615  005FB2  A4D8               	btfss	status,2,c
+   616  005FB4  D003               	goto	l1145
+   617  005FB6  EC52  F02E         	call	_zero	;wreg free
+   618  005FBA  D002               	goto	l1147
+   619  005FBC                     l1145:
+   620  005FBC  EC41  F02E         	call	_one	;wreg free
+   621  005FC0                     l1147:
    622                           
-   623                           ;newmain.c: 80: PORTAbits.RA0=0;
-   624  005D7E  9080               	bcf	3968,0,c	;volatile
-   625                           
-   626                           ;newmain.c: 81: PORTAbits.RA0=0;
-   627  005D80  9080               	bcf	3968,0,c	;volatile
-   628  005D82  0012               	return		;funcret
-   629  005D84                     __end_of_zero:
-   630                           	opt stack 0
-   631                           tblptru	equ	0xFF8
-   632                           tblptrh	equ	0xFF7
-   633                           tblptrl	equ	0xFF6
-   634                           tablat	equ	0xFF5
-   635                           postinc0	equ	0xFEE
-   636                           wreg	equ	0xFE8
-   637                           postdec1	equ	0xFE5
-   638                           plusw1	equ	0xFE3
-   639                           fsr1l	equ	0xFE1
-   640                           plusw2	equ	0xFDB
-   641                           status	equ	0xFD8
-   642                           
-   643 ;; *************** function _one *****************
-   644 ;; Defined at:
-   645 ;;		line 30 in file "newmain.c"
-   646 ;; Parameters:    Size  Location     Type
-   647 ;;		None
-   648 ;; Auto vars:     Size  Location     Type
-   649 ;;		None
-   650 ;; Return value:  Size  Location     Type
-   651 ;;		None               void
-   652 ;; Registers used:
-   653 ;;		None
-   654 ;; Tracked objects:
-   655 ;;		On entry : 0/0
-   656 ;;		On exit  : 0/0
-   657 ;;		Unchanged: 0/0
-   658 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
-   659 ;;      Params:         0       0       0       0       0       0       0       0       0
-   660 ;;      Locals:         0       0       0       0       0       0       0       0       0
-   661 ;;      Temps:          0       0       0       0       0       0       0       0       0
-   662 ;;      Totals:         0       0       0       0       0       0       0       0       0
-   663 ;;Total ram usage:        0 bytes
-   664 ;; Hardware stack levels used:    1
-   665 ;; This function calls:
-   666 ;;		Nothing
-   667 ;; This function is called by:
-   668 ;;		_main
-   669 ;; This function uses a non-reentrant model
-   670 ;;
-   671                           
-   672                           	psect	text2
-   673  005D40                     __ptext2:
-   674                           	opt stack 0
-   675  005D40                     _one:
-   676                           	opt stack 30
-   677                           
-   678                           ;newmain.c: 32: PORTAbits.RA0=1;
-   679                           
-   680                           ;incstack = 0
-   681  005D40  8080               	bsf	3968,0,c	;volatile
-   682                           
-   683                           ;newmain.c: 33: PORTAbits.RA0=1;
-   684  005D42  8080               	bsf	3968,0,c	;volatile
-   685                           
-   686                           ;newmain.c: 34: PORTAbits.RA0=1;
-   687  005D44  8080               	bsf	3968,0,c	;volatile
-   688                           
-   689                           ;newmain.c: 35: PORTAbits.RA0=1;
-   690  005D46  8080               	bsf	3968,0,c	;volatile
-   691                           
-   692                           ;newmain.c: 36: PORTAbits.RA0=1;
-   693  005D48  8080               	bsf	3968,0,c	;volatile
-   694                           
-   695                           ;newmain.c: 37: PORTAbits.RA0=1;
-   696  005D4A  8080               	bsf	3968,0,c	;volatile
-   697                           
-   698                           ;newmain.c: 38: PORTAbits.RA0=1;
-   699  005D4C  8080               	bsf	3968,0,c	;volatile
-   700                           
-   701                           ;newmain.c: 39: PORTAbits.RA0=1;
-   702  005D4E  8080               	bsf	3968,0,c	;volatile
-   703                           
-   704                           ;newmain.c: 40: PORTAbits.RA0=1;
-   705  005D50  8080               	bsf	3968,0,c	;volatile
-   706                           
-   707                           ;newmain.c: 41: PORTAbits.RA0=1;
-   708  005D52  8080               	bsf	3968,0,c	;volatile
-   709                           
-   710                           ;newmain.c: 42: PORTAbits.RA0=0;
-   711  005D54  9080               	bcf	3968,0,c	;volatile
-   712                           
-   713                           ;newmain.c: 43: PORTAbits.RA0=0;
-   714  005D56  9080               	bcf	3968,0,c	;volatile
-   715                           
-   716                           ;newmain.c: 44: PORTAbits.RA0=0;
-   717  005D58  9080               	bcf	3968,0,c	;volatile
+   623                           ;newmain.c: 138: (ledState0[23] == 0) ? zero() : one();
+   624  005FC0  5033               	movf	main@ledState0+46,w,c
+   625  005FC2  1034               	iorwf	main@ledState0+47,w,c
+   626  005FC4  A4D8               	btfss	status,2,c
+   627  005FC6  D003               	goto	l1151
+   628  005FC8  EC52  F02E         	call	_zero	;wreg free
+   629  005FCC  D002               	goto	l1153
+   630  005FCE                     l1151:
+   631  005FCE  EC41  F02E         	call	_one	;wreg free
+   632  005FD2                     l1153:
+   633  005FD2  4A3B               	infsnz	main@ledCount,f,c
+   634  005FD4  2A3C               	incf	main@ledCount+1,f,c
+   635  005FD6  BE3C               	btfsc	main@ledCount+1,7,c
+   636  005FD8  D724               	goto	l1009
+   637  005FDA  503C               	movf	main@ledCount+1,w,c
+   638  005FDC  E101               	bnz	l1157
+   639  005FDE  D71B               	goto	L1
+   640  005FE0                     l1157:
+   641                           
+   642                           ;newmain.c: 139: }
+   643                           ;newmain.c: 141: for(int i = 0; i < 1000; i++) {
+   644  005FE0  0E00               	movlw	0
+   645  005FE2  6E3E               	movwf	main@i+1,c
+   646  005FE4  0E00               	movlw	0
+   647  005FE6  6E3D               	movwf	main@i,c
+   648  005FE8                     l1159:
+   649  005FE8  BE3E               	btfsc	main@i+1,7,c
+   650  005FEA  D006               	goto	l143
+   651  005FEC  0EE8               	movlw	232
+   652  005FEE  5C3D               	subwf	main@i,w,c
+   653  005FF0  0E03               	movlw	3
+   654  005FF2  583E               	subwfb	main@i+1,w,c
+   655  005FF4  B0D8               	btfsc	status,0,c
+   656  005FF6  D6B0               	goto	l981
+   657  005FF8                     l143:
+   658                           
+   659                           ;newmain.c: 142: PORTAbits.RA0=0;
+   660  005FF8  9080               	bcf	3968,0,c	;volatile
+   661  005FFA  4A3D               	infsnz	main@i,f,c
+   662  005FFC  2A3E               	incf	main@i+1,f,c
+   663  005FFE  D7F4               	goto	l1159
+   664  006000                     __end_of_main:
+   665                           	opt stack 0
+   666                           tblptru	equ	0xFF8
+   667                           tblptrh	equ	0xFF7
+   668                           tblptrl	equ	0xFF6
+   669                           tablat	equ	0xFF5
+   670                           postinc0	equ	0xFEE
+   671                           wreg	equ	0xFE8
+   672                           postdec1	equ	0xFE5
+   673                           plusw1	equ	0xFE3
+   674                           fsr1l	equ	0xFE1
+   675                           postinc2	equ	0xFDE
+   676                           postdec2	equ	0xFDD
+   677                           plusw2	equ	0xFDB
+   678                           fsr2h	equ	0xFDA
+   679                           fsr2l	equ	0xFD9
+   680                           status	equ	0xFD8
+   681                           
+   682 ;; *************** function _zero *****************
+   683 ;; Defined at:
+   684 ;;		line 64 in file "newmain.c"
+   685 ;; Parameters:    Size  Location     Type
+   686 ;;		None
+   687 ;; Auto vars:     Size  Location     Type
+   688 ;;		None
+   689 ;; Return value:  Size  Location     Type
+   690 ;;		None               void
+   691 ;; Registers used:
+   692 ;;		None
+   693 ;; Tracked objects:
+   694 ;;		On entry : 0/0
+   695 ;;		On exit  : 0/0
+   696 ;;		Unchanged: 0/0
+   697 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   698 ;;      Params:         0       0       0       0       0       0       0       0       0
+   699 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   700 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   701 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   702 ;;Total ram usage:        0 bytes
+   703 ;; Hardware stack levels used:    1
+   704 ;; This function calls:
+   705 ;;		Nothing
+   706 ;; This function is called by:
+   707 ;;		_main
+   708 ;; This function uses a non-reentrant model
+   709 ;;
+   710                           
+   711                           	psect	text1
+   712  005CA4                     __ptext1:
+   713                           	opt stack 0
+   714  005CA4                     _zero:
+   715                           	opt stack 30
+   716                           
+   717                           ;newmain.c: 66: PORTAbits.RA0=1;
    718                           
-   719                           ;newmain.c: 45: PORTAbits.RA0=0;
-   720  005D5A  9080               	bcf	3968,0,c	;volatile
+   719                           ;incstack = 0
+   720  005CA4  8080               	bsf	3968,0,c	;volatile
    721                           
-   722                           ;newmain.c: 46: PORTAbits.RA0=0;
-   723  005D5C  9080               	bcf	3968,0,c	;volatile
+   722                           ;newmain.c: 67: PORTAbits.RA0=1;
+   723  005CA6  8080               	bsf	3968,0,c	;volatile
    724                           
-   725                           ;newmain.c: 47: PORTAbits.RA0=0;
-   726  005D5E  9080               	bcf	3968,0,c	;volatile
-   727  005D60  0012               	return		;funcret
-   728  005D62                     __end_of_one:
-   729                           	opt stack 0
-   730  0000                     tblptru	equ	0xFF8
-   731                           tblptrh	equ	0xFF7
-   732                           tblptrl	equ	0xFF6
-   733                           tablat	equ	0xFF5
-   734                           postinc0	equ	0xFEE
-   735                           wreg	equ	0xFE8
-   736                           postdec1	equ	0xFE5
-   737                           plusw1	equ	0xFE3
-   738                           fsr1l	equ	0xFE1
-   739                           plusw2	equ	0xFDB
-   740                           status	equ	0xFD8
-   741                           tblptru	equ	0xFF8
-   742                           tblptrh	equ	0xFF7
-   743                           tblptrl	equ	0xFF6
-   744                           tablat	equ	0xFF5
-   745                           postinc0	equ	0xFEE
-   746                           wreg	equ	0xFE8
-   747                           postdec1	equ	0xFE5
-   748                           plusw1	equ	0xFE3
-   749                           fsr1l	equ	0xFE1
-   750                           plusw2	equ	0xFDB
-   751                           status	equ	0xFD8
-   752                           
-   753                           	psect	rparam
-   754  0000                     tblptru	equ	0xFF8
-   755                           tblptrh	equ	0xFF7
-   756                           tblptrl	equ	0xFF6
-   757                           tablat	equ	0xFF5
-   758                           postinc0	equ	0xFEE
-   759                           wreg	equ	0xFE8
-   760                           postdec1	equ	0xFE5
-   761                           plusw1	equ	0xFE3
-   762                           fsr1l	equ	0xFE1
-   763                           plusw2	equ	0xFDB
-   764                           status	equ	0xFD8
+   725                           ;newmain.c: 68: PORTAbits.RA0=1;
+   726  005CA8  8080               	bsf	3968,0,c	;volatile
+   727                           
+   728                           ;newmain.c: 69: PORTAbits.RA0=1;
+   729  005CAA  8080               	bsf	3968,0,c	;volatile
+   730                           
+   731                           ;newmain.c: 70: PORTAbits.RA0=1;
+   732  005CAC  8080               	bsf	3968,0,c	;volatile
+   733                           
+   734                           ;newmain.c: 71: PORTAbits.RA0=0;
+   735  005CAE  9080               	bcf	3968,0,c	;volatile
+   736                           
+   737                           ;newmain.c: 72: PORTAbits.RA0=0;
+   738  005CB0  9080               	bcf	3968,0,c	;volatile
+   739                           
+   740                           ;newmain.c: 73: PORTAbits.RA0=0;
+   741  005CB2  9080               	bcf	3968,0,c	;volatile
+   742                           
+   743                           ;newmain.c: 74: PORTAbits.RA0=0;
+   744  005CB4  9080               	bcf	3968,0,c	;volatile
+   745                           
+   746                           ;newmain.c: 75: PORTAbits.RA0=0;
+   747  005CB6  9080               	bcf	3968,0,c	;volatile
+   748                           
+   749                           ;newmain.c: 76: PORTAbits.RA0=0;
+   750  005CB8  9080               	bcf	3968,0,c	;volatile
+   751                           
+   752                           ;newmain.c: 77: PORTAbits.RA0=0;
+   753  005CBA  9080               	bcf	3968,0,c	;volatile
+   754                           
+   755                           ;newmain.c: 78: PORTAbits.RA0=0;
+   756  005CBC  9080               	bcf	3968,0,c	;volatile
+   757                           
+   758                           ;newmain.c: 79: PORTAbits.RA0=0;
+   759  005CBE  9080               	bcf	3968,0,c	;volatile
+   760                           
+   761                           ;newmain.c: 80: PORTAbits.RA0=0;
+   762  005CC0  9080               	bcf	3968,0,c	;volatile
+   763                           
+   764                           ;newmain.c: 81: PORTAbits.RA0=0;
+   765  005CC2  9080               	bcf	3968,0,c	;volatile
+   766  005CC4  0012               	return		;funcret
+   767  005CC6                     __end_of_zero:
+   768                           	opt stack 0
+   769                           tblptru	equ	0xFF8
+   770                           tblptrh	equ	0xFF7
+   771                           tblptrl	equ	0xFF6
+   772                           tablat	equ	0xFF5
+   773                           postinc0	equ	0xFEE
+   774                           wreg	equ	0xFE8
+   775                           postdec1	equ	0xFE5
+   776                           plusw1	equ	0xFE3
+   777                           fsr1l	equ	0xFE1
+   778                           postinc2	equ	0xFDE
+   779                           postdec2	equ	0xFDD
+   780                           plusw2	equ	0xFDB
+   781                           fsr2h	equ	0xFDA
+   782                           fsr2l	equ	0xFD9
+   783                           status	equ	0xFD8
+   784                           
+   785 ;; *************** function _one *****************
+   786 ;; Defined at:
+   787 ;;		line 30 in file "newmain.c"
+   788 ;; Parameters:    Size  Location     Type
+   789 ;;		None
+   790 ;; Auto vars:     Size  Location     Type
+   791 ;;		None
+   792 ;; Return value:  Size  Location     Type
+   793 ;;		None               void
+   794 ;; Registers used:
+   795 ;;		None
+   796 ;; Tracked objects:
+   797 ;;		On entry : 0/0
+   798 ;;		On exit  : 0/0
+   799 ;;		Unchanged: 0/0
+   800 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   801 ;;      Params:         0       0       0       0       0       0       0       0       0
+   802 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   803 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   804 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   805 ;;Total ram usage:        0 bytes
+   806 ;; Hardware stack levels used:    1
+   807 ;; This function calls:
+   808 ;;		Nothing
+   809 ;; This function is called by:
+   810 ;;		_main
+   811 ;; This function uses a non-reentrant model
+   812 ;;
+   813                           
+   814                           	psect	text2
+   815  005C82                     __ptext2:
+   816                           	opt stack 0
+   817  005C82                     _one:
+   818                           	opt stack 30
+   819                           
+   820                           ;newmain.c: 32: PORTAbits.RA0=1;
+   821                           
+   822                           ;incstack = 0
+   823  005C82  8080               	bsf	3968,0,c	;volatile
+   824                           
+   825                           ;newmain.c: 33: PORTAbits.RA0=1;
+   826  005C84  8080               	bsf	3968,0,c	;volatile
+   827                           
+   828                           ;newmain.c: 34: PORTAbits.RA0=1;
+   829  005C86  8080               	bsf	3968,0,c	;volatile
+   830                           
+   831                           ;newmain.c: 35: PORTAbits.RA0=1;
+   832  005C88  8080               	bsf	3968,0,c	;volatile
+   833                           
+   834                           ;newmain.c: 36: PORTAbits.RA0=1;
+   835  005C8A  8080               	bsf	3968,0,c	;volatile
+   836                           
+   837                           ;newmain.c: 37: PORTAbits.RA0=1;
+   838  005C8C  8080               	bsf	3968,0,c	;volatile
+   839                           
+   840                           ;newmain.c: 38: PORTAbits.RA0=1;
+   841  005C8E  8080               	bsf	3968,0,c	;volatile
+   842                           
+   843                           ;newmain.c: 39: PORTAbits.RA0=1;
+   844  005C90  8080               	bsf	3968,0,c	;volatile
+   845                           
+   846                           ;newmain.c: 40: PORTAbits.RA0=1;
+   847  005C92  8080               	bsf	3968,0,c	;volatile
+   848                           
+   849                           ;newmain.c: 41: PORTAbits.RA0=1;
+   850  005C94  8080               	bsf	3968,0,c	;volatile
+   851                           
+   852                           ;newmain.c: 42: PORTAbits.RA0=0;
+   853  005C96  9080               	bcf	3968,0,c	;volatile
+   854                           
+   855                           ;newmain.c: 43: PORTAbits.RA0=0;
+   856  005C98  9080               	bcf	3968,0,c	;volatile
+   857                           
+   858                           ;newmain.c: 44: PORTAbits.RA0=0;
+   859  005C9A  9080               	bcf	3968,0,c	;volatile
+   860                           
+   861                           ;newmain.c: 45: PORTAbits.RA0=0;
+   862  005C9C  9080               	bcf	3968,0,c	;volatile
+   863                           
+   864                           ;newmain.c: 46: PORTAbits.RA0=0;
+   865  005C9E  9080               	bcf	3968,0,c	;volatile
+   866                           
+   867                           ;newmain.c: 47: PORTAbits.RA0=0;
+   868  005CA0  9080               	bcf	3968,0,c	;volatile
+   869  005CA2  0012               	return		;funcret
+   870  005CA4                     __end_of_one:
+   871                           	opt stack 0
+   872  0000                     tblptru	equ	0xFF8
+   873                           tblptrh	equ	0xFF7
+   874                           tblptrl	equ	0xFF6
+   875                           tablat	equ	0xFF5
+   876                           postinc0	equ	0xFEE
+   877                           wreg	equ	0xFE8
+   878                           postdec1	equ	0xFE5
+   879                           plusw1	equ	0xFE3
+   880                           fsr1l	equ	0xFE1
+   881                           postinc2	equ	0xFDE
+   882                           postdec2	equ	0xFDD
+   883                           plusw2	equ	0xFDB
+   884                           fsr2h	equ	0xFDA
+   885                           fsr2l	equ	0xFD9
+   886                           status	equ	0xFD8
+   887                           tblptru	equ	0xFF8
+   888                           tblptrh	equ	0xFF7
+   889                           tblptrl	equ	0xFF6
+   890                           tablat	equ	0xFF5
+   891                           postinc0	equ	0xFEE
+   892                           wreg	equ	0xFE8
+   893                           postdec1	equ	0xFE5
+   894                           plusw1	equ	0xFE3
+   895                           fsr1l	equ	0xFE1
+   896                           postinc2	equ	0xFDE
+   897                           postdec2	equ	0xFDD
+   898                           plusw2	equ	0xFDB
+   899                           fsr2h	equ	0xFDA
+   900                           fsr2l	equ	0xFD9
+   901                           status	equ	0xFD8
+   902                           
+   903                           	psect	rparam
+   904  0000                     tblptru	equ	0xFF8
+   905                           tblptrh	equ	0xFF7
+   906                           tblptrl	equ	0xFF6
+   907                           tablat	equ	0xFF5
+   908                           postinc0	equ	0xFEE
+   909                           wreg	equ	0xFE8
+   910                           postdec1	equ	0xFE5
+   911                           plusw1	equ	0xFE3
+   912                           fsr1l	equ	0xFE1
+   913                           postinc2	equ	0xFDE
+   914                           postdec2	equ	0xFDD
+   915                           plusw2	equ	0xFDB
+   916                           fsr2h	equ	0xFDA
+   917                           fsr2l	equ	0xFD9
+   918                           status	equ	0xFD8
 
 
 Data Sizes:
@@ -781,7 +935,7 @@ Data Sizes:
 
 Auto Spaces:
     Space          Size  Autos    Used
-    COMRAM           95     52      52
+    COMRAM           95     68      68
     BANK0           160      0      48
     BANK1           256      0       0
     BANK2           256      0       0
@@ -836,8 +990,8 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
- (0) _main                                                52    52      0     644
-                                              0 COMRAM    52    52      0
+ (0) _main                                                68    68      0     852
+                                              0 COMRAM    68    68      0
                                 _one
                                _zero
  ---------------------------------------------------------------------------------
@@ -875,66 +1029,71 @@ BANK1              100      0       0       7        0.0%
 BITBANK0            A0      0       0       4        0.0%
 BANK0               A0      0      30       5       30.0%
 BITCOMRAM           5F      0       0       0        0.0%
-COMRAM              5F     34      34       1       54.7%
+COMRAM              5F     44      44       1       71.6%
 BITSFR               0      0       0      40        0.0%
 SFR                  0      0       0      40        0.0%
 STACK                0      0       0       2        0.0%
 NULL                 0      0       0       0        0.0%
-ABS                  0      0      64      20        0.0%
-DATA                 0      0      64       3        0.0%
+ABS                  0      0      74      20        0.0%
+DATA                 0      0      74       3        0.0%
 CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.35 build -356382666 
-Symbol Table                                                                                   Wed Mar 30 23:40:16 2016
+Symbol Table                                                                                   Wed Mar 30 23:47:50 2016
 
             __CFG_BOR$ON 000000              __CFG_BORV$3 000000             __CFG_CP0$OFF 000000  
-           __CFG_CP1$OFF 000000             __CFG_CP2$OFF 000000                      l140 5FF8  
-                    l952 5E06                      l970 5E46                      l962 5E30  
-                    l980 5E66                      l964 5E34                      l982 5E6A  
-                    l974 5E54                      l958 5E22                      l992 5E8A  
-                    l976 5E58                      l968 5E42                      l994 5E8E  
-                    l986 5E78                      l988 5E7C                      l998 5E9C  
-           __CFG_CPB$OFF 000000                      u311 5DFE                      u320 5E20  
-           __CFG_CPD$OFF 000000                      _one 5D40                      wreg 000FE8  
-           __CFG_LVP$OFF 000000             __CFG_WDT$OFF 000000                     l1000 5EA0  
-                   l1010 5EC0                     l1100 5FCE                     l1012 5EC4  
-                   l1004 5EAE                     l1102 5FD2                     l1030 5EFA  
-                   l1022 5EE4                     l1006 5EB2                     l1040 5F1A  
-                   l1024 5EE8                     l1016 5ED2                     l1042 5F1E  
-                   l1034 5F08                     l1018 5ED6                     l1106 5FE0  
-                   l1108 5FE8                     l1060 5F54                     l1052 5F3E  
-                   l1036 5F0C                     l1028 5EF6                     l1070 5F74  
-                   l1054 5F42                     l1046 5F2C                     l1072 5F78  
-                   l1064 5F62                     l1048 5F30                     l1090 5FAE  
-                   l1082 5F98                     l1066 5F66                     l1058 5F50  
-                   l1084 5F9C                     l1076 5F86                     l1094 5FBC  
-                   l1078 5F8A                     l1096 5FC0                     l1088 5FAA  
-                   ?_one 0001                     _main 5DDA                     fsr1l 000FE1  
-                   _zero 5D62                     start 0000            __CFG_IESO$OFF 000000  
-          __CFG_MCLRE$ON 000000             ___param_bank 000010                    ??_one 0001  
-           main@ledCount 0031            __CFG_PLLDIV$5 000000           __CFG_CCP2MX$ON 000000  
-                  ?_main 0001                    ?_zero 0001                    _PORTA 000F80  
-                  _PORTB 000F81                    _PORTC 000F82            __CFG_USBDIV$1 000000  
-                  _TRISA 000F92                    _TRISB 000F93                    _TRISC 000F94  
-          __CFG_PWRT$OFF 000000            __CFG_WRT0$OFF 000000            __CFG_WRT1$OFF 000000  
-          __CFG_WRT2$OFF 000000           __CFG_EBTR0$OFF 000000           __CFG_FCMEN$OFF 000000  
-         __CFG_EBTR1$OFF 000000           __CFG_EBTR2$OFF 000000            __CFG_WRTB$OFF 000000  
-          __CFG_WRTC$OFF 000000            __CFG_WRTD$OFF 000000           __CFG_EBTRB$OFF 000000  
-                  main@i 0033                    tablat 000FF5                    plusw1 000FE3  
-                  plusw2 000FDB                    status 000FD8          __initialization 5D84  
-           __end_of_main 6000             __end_of_zero 5D84                   ??_main 0001  
-                 ??_zero 0001            __activetblptr 000000            main@ledState0 0001  
+           __CFG_CP1$OFF 000000             __CFG_CP2$OFF 000000                      l143 5FF8  
+                    l981 5D58                      l993 5DB4                      l987 5D8C  
+                    l989 5DA4             __CFG_CPB$OFF 000000                      u341 5D40  
+                    u350 5D7C             __CFG_CPD$OFF 000000                      u380 5E20  
+                    _one 5C82                      wreg 000FE8             __CFG_LVP$OFF 000000  
+           __CFG_WDT$OFF 000000                     l1003 5E06                     l1021 5E46  
+                   l1013 5E30                     l1111 5F54                     l1103 5F3E  
+                   l1031 5E66                     l1015 5E34                     l1121 5F74  
+                   l1105 5F42                     l1033 5E6A                     l1025 5E54  
+                   l1009 5E22                     l1123 5F78                     l1115 5F62  
+                   l1051 5EA0                     l1043 5E8A                     l1027 5E58  
+                   l1019 5E42                     l1141 5FAE                     l1133 5F98  
+                   l1117 5F66                     l1109 5F50                     l1061 5EC0  
+                   l1045 5E8E                     l1037 5E78                     l1151 5FCE  
+                   l1135 5F9C                     l1127 5F86                     l1063 5EC4  
+                   l1055 5EAE                     l1039 5E7C                     l1153 5FD2  
+                   l1145 5FBC                     l1129 5F8A                     l1081 5EFA  
+                   l1073 5EE4                     l1057 5EB2                     l1049 5E9C  
+                   l1147 5FC0                     l1139 5FAA                     l1091 5F1A  
+                   l1075 5EE8                     l1067 5ED2                     l1093 5F1E  
+                   l1085 5F08                     l1069 5ED6                     l1157 5FE0  
+                   l1159 5FE8                     l1087 5F0C                     l1079 5EF6  
+                   l1097 5F2C                     l1099 5F30                     ?_one 0001  
+                   _main 5D1C                     fsr2h 000FDA                     fsr1l 000FE1  
+                   fsr2l 000FD9                     _zero 5CA4                     start 0000  
+          __CFG_IESO$OFF 000000            __CFG_MCLRE$ON 000000             ___param_bank 000010  
+           main@bitIndex 0043                    ??_one 0001             main@ledCount 003B  
+          __CFG_PLLDIV$5 000000           __CFG_CCP2MX$ON 000000                    ?_main 0001  
+                  ?_zero 0001                    _PORTA 000F80                    _PORTB 000F81  
+                  _PORTC 000F82            __CFG_USBDIV$1 000000                    _TRISA 000F92  
+                  _TRISB 000F93                    _TRISC 000F94            __CFG_PWRT$OFF 000000  
+          __CFG_WRT0$OFF 000000            __CFG_WRT1$OFF 000000            __CFG_WRT2$OFF 000000  
+         __CFG_EBTR0$OFF 000000           __CFG_FCMEN$OFF 000000           __CFG_EBTR1$OFF 000000  
+         __CFG_EBTR2$OFF 000000            __CFG_WRTB$OFF 000000            __CFG_WRTC$OFF 000000  
+          __CFG_WRTD$OFF 000000           __CFG_EBTRB$OFF 000000                    main@i 003D  
+                  tablat 000FF5                    plusw1 000FE3                    plusw2 000FDB  
+                  status 000FD8          __initialization 5CC6             __end_of_main 6000  
+           __end_of_zero 5CC6                   ??_main 0001                   ??_zero 0001  
+          __activetblptr 000000            main@ledColour 003F            main@ledState0 0005  
                  _ADCON1 000FC1           __CFG_XINST$OFF 000000           __CFG_STVREN$ON 000000  
                  tblptrh 000FF7                   tblptrl 000FF6                   tblptru 000FF8  
-             __accesstop 0060  __end_of__initialization 5DA4          __CFG_PBADEN$OFF 000000  
-          ___rparam_used 000001           __pcstackCOMRAM 0001             __pidataBANK0 5DAA  
-        __CFG_VREGEN$OFF 000000                  __Hparam 0000                  __Lparam 0000  
-                __pcinit 5D84                  __ramtop 0800                  __ptext0 5DDA  
-                __ptext1 5D62                  __ptext2 5D40                _T1CONbits 000FCD  
-           __size_of_one 0022     end_of_initialization 5DA4                  postdec1 000FE5  
-                postinc0 000FEE                _PORTAbits 000F80      start_initialization 5D84  
-            __end_of_one 5D62              __pdataBANK0 0060         __CFG_LPT1OSC$OFF 000000  
-       __CFG_WDTPS$32768 000000                main@F3971 0060                copy_data0 5D98  
-               __Hrparam 0000                 __Lrparam 0000            __size_of_main 0226  
-          __size_of_zero 0022    __CFG_CPUDIV$OSC1_PLL2 000000       __CFG_FOSC$HSPLL_HS 000000  
+             __accesstop 0060  __end_of__initialization 5CE6          __CFG_PBADEN$OFF 000000  
+          ___rparam_used 000001           __pcstackCOMRAM 0001             __pidataBANK0 5CEC  
+        __CFG_VREGEN$OFF 000000                  __Hparam 0000        main@tempLedColour 0037  
+                __Lparam 0000                  __pcinit 5CC6                  __ramtop 0800  
+                __ptext0 5D1C                  __ptext1 5CA4                  __ptext2 5C82  
+              _T1CONbits 000FCD             __size_of_one 0022     end_of_initialization 5CE6  
+                postdec1 000FE5                  postdec2 000FDD                  postinc0 000FEE  
+                postinc2 000FDE                _PORTAbits 000F80               main@curBit 0035  
+    start_initialization 5CC6              __end_of_one 5CA4              __pdataBANK0 0060  
+       __CFG_LPT1OSC$OFF 000000         __CFG_WDTPS$32768 000000                main@F3971 0060  
+              copy_data0 5CDA                 __Hrparam 0000                 __Lrparam 0000  
+          __size_of_main 02E4            __size_of_zero 0022    __CFG_CPUDIV$OSC1_PLL2 000000  
+     __CFG_FOSC$HSPLL_HS 000000  

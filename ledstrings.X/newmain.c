@@ -95,7 +95,22 @@ void main(void) {
     
     short ledState0[24] = { 0, 1, 0, 1,  0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 }; 
     
+    long ledColour = 0;
+    
     while(1) {
+        ledColour++;
+        if(ledColour > 0b010101010101010101010101) {
+            ledColour = 0;
+        }
+        
+        long tempLedColour = ledColour;
+        for(int bitIndex = 0; bitIndex < 24; bitIndex++) {
+           int curBit = tempLedColour & 0b1;
+           ledState0[bitIndex] = curBit;
+           
+           tempLedColour = (tempLedColour >> 1);
+        }
+        
         for(int ledCount = 0; ledCount < 12; ledCount++) {
             (ledState0[0] == 0) ? zero() : one();
             (ledState0[1] == 0) ? zero() : one();
@@ -126,6 +141,8 @@ void main(void) {
         for(int i = 0; i < 1000; i++) {
             PORTAbits.RA0=0;
         }
+        
+        
     }
  
     return;
