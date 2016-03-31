@@ -108,23 +108,47 @@
 "84 /home/mike/source/ledpoi/ledstrings.X/newmain.c
 [v _main main `(v  1 e 0 0 ]
 {
-"108
-[v main@curBit curBit `i  1 a 2 52 ]
+"136
+[v main@curBit_195 curBit `i  1 a 2 148 ]
+"128
+[v main@curBit_192 curBit `i  1 a 2 146 ]
+"120
+[v main@curBit curBit `i  1 a 2 144 ]
+"218
+[v main@i i `i  1 a 2 164 ]
 "141
-[v main@i i `i  1 a 2 60 ]
-"114
-[v main@ledCount ledCount `i  1 a 2 58 ]
-"107
-[v main@bitIndex bitIndex `i  1 a 2 66 ]
-"106
-[v main@tempLedColour tempLedColour `l  1 a 4 54 ]
-"96
-[v main@ledState0 ledState0 `[24]s  1 a 48 4 ]
+[v main@ledCount ledCount `i  1 a 2 162 ]
+"135
+[v main@bitIndex_194 bitIndex `i  1 a 2 182 ]
+"127
+[v main@bitIndex_191 bitIndex `i  1 a 2 180 ]
+"119
+[v main@bitIndex bitIndex `i  1 a 2 178 ]
+"134
+[v main@tempLedColour2 tempLedColour2 `l  1 a 4 158 ]
+"126
+[v main@tempLedColour1 tempLedColour1 `l  1 a 4 154 ]
+"118
+[v main@tempLedColour0 tempLedColour0 `l  1 a 4 150 ]
 "98
-[v main@ledColour ledColour `l  1 a 4 62 ]
+[v main@ledState2 ledState2 `[24]s  1 a 48 96 ]
+"97
+[v main@ledState1 ledState1 `[24]s  1 a 48 48 ]
+"96
+[v main@ledState0 ledState0 `[24]s  1 a 48 0 ]
+"102
+[v main@ledColour2 ledColour2 `l  1 a 4 174 ]
+"101
+[v main@ledColour1 ledColour1 `l  1 a 4 170 ]
+"100
+[v main@ledColour0 ledColour0 `l  1 a 4 166 ]
 "94
 [v main@F3971 F3971 `[24]s  1 s 48 F3971 ]
-"149
+"96
+[v main@F3973 F3973 `[24]s  1 s 48 F3973 ]
+"97
+[v main@F3975 F3975 `[24]s  1 s 48 F3975 ]
+"226
 } 0
 "64
 [v _zero zero `(v  1 e 0 0 ]
