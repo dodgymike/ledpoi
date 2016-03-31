@@ -4095,525 +4095,264 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;newmain.c: 94: T1CONbits.T1OSCEN = 0;
 "94
 [e = . . _T1CONbits 1 3 -> -> 0 `i `uc ]
-[v F3971 `s ~T0 @X0 -> 24 `i s ]
+[v F3971 `l ~T0 @X0 -> 12 `i s ]
 [i F3971
 :U ..
 "96
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
+-> -> 31 `i `l
+-> -> 7936 `i `l
+-> 2031616 `l
+-> -> 31 `i `l
+-> -> 31 `i `l
+-> -> 31 `i `l
+-> -> 31 `i `l
+-> -> 31 `i `l
+-> -> 31 `i `l
+-> -> 31 `i `l
+-> -> 31 `i `l
+-> -> 31 `i `l
 ..
 ]
-[v _ledState0 `s ~T0 @X0 -> 24 `i a ]
-[; ;newmain.c: 96: short ledState0[24] = { 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 };
-[e = _ledState0 F3971 ]
-[v F3973 `s ~T0 @X0 -> 24 `i s ]
-[i F3973
-:U ..
-"97
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
-..
-]
-[v _ledState1 `s ~T0 @X0 -> 24 `i a ]
-[; ;newmain.c: 97: short ledState1[24] = { 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 };
-[e = _ledState1 F3973 ]
-[v F3975 `s ~T0 @X0 -> 24 `i s ]
-[i F3975
-:U ..
+[v _ledColour `l ~T0 @X0 -> 12 `i a ]
+[; ;newmain.c: 96: long ledColour[12] = {0x00001f, 0x001f00, 0x1f0000, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f};
+[e = _ledColour F3971 ]
+[; ;newmain.c: 98: for(int i = 0; i < 12; i++) {
 "98
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
-..
-]
-[v _ledState2 `s ~T0 @X0 -> 24 `i a ]
-[; ;newmain.c: 98: short ledState2[24] = { 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 };
-[e = _ledState2 F3975 ]
-"100
-[v _ledColour0 `l ~T0 @X0 1 a ]
-[; ;newmain.c: 100: long ledColour0 = 0x00ff00;
-[e = _ledColour0 -> -> 65280 `ui `l ]
-"101
-[v _ledColour1 `l ~T0 @X0 1 a ]
-[; ;newmain.c: 101: long ledColour1 = 0xff0000;
-[e = _ledColour1 -> 16711680 `l ]
-"102
-[v _ledColour2 `l ~T0 @X0 1 a ]
-[; ;newmain.c: 102: long ledColour2 = 0x0000ff;
-[e = _ledColour2 -> -> 255 `i `l ]
-[; ;newmain.c: 104: while(1) {
-"104
-[e :U 515 ]
-{
-[; ;newmain.c: 105: ledColour0++;
-"105
-[e ++ _ledColour0 -> -> 1 `i `l ]
-[; ;newmain.c: 106: ledColour1++;
-"106
-[e ++ _ledColour1 -> -> 1 `i `l ]
-[; ;newmain.c: 107: ledColour2++;
-"107
-[e ++ _ledColour2 -> -> 1 `i `l ]
-[; ;newmain.c: 108: if(ledColour0 > 0x1f1f1f) {
-"108
-[e $ ! > _ledColour0 -> 2039583 `l 517  ]
-{
-[; ;newmain.c: 109: ledColour0 = 0x00ff00;
-"109
-[e = _ledColour0 -> -> 65280 `ui `l ]
-"110
-}
-[e :U 517 ]
-[; ;newmain.c: 110: }
-[; ;newmain.c: 111: if(ledColour1 > 0x1f1f1f) {
-"111
-[e $ ! > _ledColour1 -> 2039583 `l 518  ]
-{
-[; ;newmain.c: 112: ledColour1 = 0xff0000;
-"112
-[e = _ledColour1 -> 16711680 `l ]
-"113
-}
-[e :U 518 ]
-[; ;newmain.c: 113: }
-[; ;newmain.c: 114: if(ledColour2 > 0x1f1f1f) {
-"114
-[e $ ! > _ledColour2 -> 2039583 `l 519  ]
-{
-[; ;newmain.c: 115: ledColour2 = 0x0000ff;
-"115
-[e = _ledColour2 -> -> 255 `i `l ]
-"116
-}
-[e :U 519 ]
-"118
-[v _tempLedColour0 `l ~T0 @X0 1 a ]
-[; ;newmain.c: 116: }
-[; ;newmain.c: 118: long tempLedColour0 = ledColour0;
-[e = _tempLedColour0 _ledColour0 ]
-[; ;newmain.c: 119: for(int bitIndex = 0; bitIndex < 24; bitIndex++) {
-"119
-{
-[v _bitIndex `i ~T0 @X0 1 a ]
-[e = _bitIndex -> 0 `i ]
-[e $ < _bitIndex -> 24 `i 520  ]
-[e $U 521  ]
-[e :U 520 ]
-{
-"120
-[v _curBit `i ~T0 @X0 1 a ]
-[; ;newmain.c: 120: int curBit = tempLedColour0 & 0b1;
-[e = _curBit -> & _tempLedColour0 -> -> 1 `i `l `i ]
-[; ;newmain.c: 121: ledState0[bitIndex] = curBit;
-"121
-[e = *U + &U _ledState0 * -> -> _bitIndex `ui `ux -> -> # *U &U _ledState0 `ui `ux -> _curBit `s ]
-[; ;newmain.c: 123: tempLedColour0 = (tempLedColour0 >> 1);
-"123
-[e = _tempLedColour0 >> _tempLedColour0 -> 1 `i ]
-"124
-}
-"119
-[e ++ _bitIndex -> 1 `i ]
-[e $ < _bitIndex -> 24 `i 520  ]
-[e :U 521 ]
-"124
-}
-"126
-[v _tempLedColour1 `l ~T0 @X0 1 a ]
-[; ;newmain.c: 124: }
-[; ;newmain.c: 126: long tempLedColour1 = ledColour1;
-[e = _tempLedColour1 _ledColour1 ]
-[; ;newmain.c: 127: for(int bitIndex = 0; bitIndex < 24; bitIndex++) {
-"127
-{
-[v _bitIndex `i ~T0 @X0 1 a ]
-[e = _bitIndex -> 0 `i ]
-[e $ < _bitIndex -> 24 `i 523  ]
-[e $U 524  ]
-[e :U 523 ]
-{
-"128
-[v _curBit `i ~T0 @X0 1 a ]
-[; ;newmain.c: 128: int curBit = tempLedColour1 & 0b1;
-[e = _curBit -> & _tempLedColour1 -> -> 1 `i `l `i ]
-[; ;newmain.c: 129: ledState1[bitIndex] = curBit;
-"129
-[e = *U + &U _ledState1 * -> -> _bitIndex `ui `ux -> -> # *U &U _ledState1 `ui `ux -> _curBit `s ]
-[; ;newmain.c: 131: tempLedColour1 = (tempLedColour1 >> 1);
-"131
-[e = _tempLedColour1 >> _tempLedColour1 -> 1 `i ]
-"132
-}
-"127
-[e ++ _bitIndex -> 1 `i ]
-[e $ < _bitIndex -> 24 `i 523  ]
-[e :U 524 ]
-"132
-}
-"134
-[v _tempLedColour2 `l ~T0 @X0 1 a ]
-[; ;newmain.c: 132: }
-[; ;newmain.c: 134: long tempLedColour2 = ledColour2;
-[e = _tempLedColour2 _ledColour2 ]
-[; ;newmain.c: 135: for(int bitIndex = 0; bitIndex < 24; bitIndex++) {
-"135
-{
-[v _bitIndex `i ~T0 @X0 1 a ]
-[e = _bitIndex -> 0 `i ]
-[e $ < _bitIndex -> 24 `i 526  ]
-[e $U 527  ]
-[e :U 526 ]
-{
-"136
-[v _curBit `i ~T0 @X0 1 a ]
-[; ;newmain.c: 136: int curBit = tempLedColour2 & 0b1;
-[e = _curBit -> & _tempLedColour2 -> -> 1 `i `l `i ]
-[; ;newmain.c: 137: ledState2[bitIndex] = curBit;
-"137
-[e = *U + &U _ledState2 * -> -> _bitIndex `ui `ux -> -> # *U &U _ledState2 `ui `ux -> _curBit `s ]
-[; ;newmain.c: 139: tempLedColour2 = (tempLedColour2 >> 1);
-"139
-[e = _tempLedColour2 >> _tempLedColour2 -> 1 `i ]
-"140
-}
-"135
-[e ++ _bitIndex -> 1 `i ]
-[e $ < _bitIndex -> 24 `i 526  ]
-[e :U 527 ]
-"140
-}
-[; ;newmain.c: 140: }
-[; ;newmain.c: 141: for(int ledCount = 0; ledCount < 4; ledCount++) {
-"141
-{
-[v _ledCount `i ~T0 @X0 1 a ]
-[e = _ledCount -> 0 `i ]
-[e $ < _ledCount -> 4 `i 529  ]
-[e $U 530  ]
-[e :U 529 ]
-{
-[; ;newmain.c: 142: (ledState0[0] == 0) ? zero() : one();
-"142
-[e ? == -> *U + &U _ledState0 * -> -> -> 0 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 143: (ledState0[1] == 0) ? zero() : one();
-"143
-[e ? == -> *U + &U _ledState0 * -> -> -> 1 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 144: (ledState0[2] == 0) ? zero() : one();
-"144
-[e ? == -> *U + &U _ledState0 * -> -> -> 2 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 145: (ledState0[3] == 0) ? zero() : one();
-"145
-[e ? == -> *U + &U _ledState0 * -> -> -> 3 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 146: (ledState0[4] == 0) ? zero() : one();
-"146
-[e ? == -> *U + &U _ledState0 * -> -> -> 4 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 147: (ledState0[5] == 0) ? zero() : one();
-"147
-[e ? == -> *U + &U _ledState0 * -> -> -> 5 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 148: (ledState0[6] == 0) ? zero() : one();
-"148
-[e ? == -> *U + &U _ledState0 * -> -> -> 6 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 149: (ledState0[7] == 0) ? zero() : one();
-"149
-[e ? == -> *U + &U _ledState0 * -> -> -> 7 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 150: (ledState0[8] == 0) ? zero() : one();
-"150
-[e ? == -> *U + &U _ledState0 * -> -> -> 8 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 151: (ledState0[9] == 0) ? zero() : one();
-"151
-[e ? == -> *U + &U _ledState0 * -> -> -> 9 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 152: (ledState0[10] == 0) ? zero() : one();
-"152
-[e ? == -> *U + &U _ledState0 * -> -> -> 10 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 153: (ledState0[11] == 0) ? zero() : one();
-"153
-[e ? == -> *U + &U _ledState0 * -> -> -> 11 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 154: (ledState0[12] == 0) ? zero() : one();
-"154
-[e ? == -> *U + &U _ledState0 * -> -> -> 12 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 155: (ledState0[13] == 0) ? zero() : one();
-"155
-[e ? == -> *U + &U _ledState0 * -> -> -> 13 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 156: (ledState0[14] == 0) ? zero() : one();
-"156
-[e ? == -> *U + &U _ledState0 * -> -> -> 14 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 157: (ledState0[15] == 0) ? zero() : one();
-"157
-[e ? == -> *U + &U _ledState0 * -> -> -> 15 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 158: (ledState0[16] == 0) ? zero() : one();
-"158
-[e ? == -> *U + &U _ledState0 * -> -> -> 16 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 159: (ledState0[17] == 0) ? zero() : one();
-"159
-[e ? == -> *U + &U _ledState0 * -> -> -> 17 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 160: (ledState0[18] == 0) ? zero() : one();
-"160
-[e ? == -> *U + &U _ledState0 * -> -> -> 18 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 161: (ledState0[19] == 0) ? zero() : one();
-"161
-[e ? == -> *U + &U _ledState0 * -> -> -> 19 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 162: (ledState0[20] == 0) ? zero() : one();
-"162
-[e ? == -> *U + &U _ledState0 * -> -> -> 20 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 163: (ledState0[21] == 0) ? zero() : one();
-"163
-[e ? == -> *U + &U _ledState0 * -> -> -> 21 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 164: (ledState0[22] == 0) ? zero() : one();
-"164
-[e ? == -> *U + &U _ledState0 * -> -> -> 22 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 165: (ledState0[23] == 0) ? zero() : one();
-"165
-[e ? == -> *U + &U _ledState0 * -> -> -> 23 `i `ui `ux -> -> # *U &U _ledState0 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 167: (ledState1[0] == 0) ? zero() : one();
-"167
-[e ? == -> *U + &U _ledState1 * -> -> -> 0 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 168: (ledState1[1] == 0) ? zero() : one();
-"168
-[e ? == -> *U + &U _ledState1 * -> -> -> 1 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 169: (ledState1[2] == 0) ? zero() : one();
-"169
-[e ? == -> *U + &U _ledState1 * -> -> -> 2 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 170: (ledState1[3] == 0) ? zero() : one();
-"170
-[e ? == -> *U + &U _ledState1 * -> -> -> 3 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 171: (ledState1[4] == 0) ? zero() : one();
-"171
-[e ? == -> *U + &U _ledState1 * -> -> -> 4 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 172: (ledState1[5] == 0) ? zero() : one();
-"172
-[e ? == -> *U + &U _ledState1 * -> -> -> 5 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 173: (ledState1[6] == 0) ? zero() : one();
-"173
-[e ? == -> *U + &U _ledState1 * -> -> -> 6 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 174: (ledState1[7] == 0) ? zero() : one();
-"174
-[e ? == -> *U + &U _ledState1 * -> -> -> 7 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 175: (ledState1[8] == 0) ? zero() : one();
-"175
-[e ? == -> *U + &U _ledState1 * -> -> -> 8 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 176: (ledState1[9] == 0) ? zero() : one();
-"176
-[e ? == -> *U + &U _ledState1 * -> -> -> 9 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 177: (ledState1[10] == 0) ? zero() : one();
-"177
-[e ? == -> *U + &U _ledState1 * -> -> -> 10 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 178: (ledState1[11] == 0) ? zero() : one();
-"178
-[e ? == -> *U + &U _ledState1 * -> -> -> 11 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 179: (ledState1[12] == 0) ? zero() : one();
-"179
-[e ? == -> *U + &U _ledState1 * -> -> -> 12 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 180: (ledState1[13] == 0) ? zero() : one();
-"180
-[e ? == -> *U + &U _ledState1 * -> -> -> 13 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 181: (ledState1[14] == 0) ? zero() : one();
-"181
-[e ? == -> *U + &U _ledState1 * -> -> -> 14 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 182: (ledState1[15] == 0) ? zero() : one();
-"182
-[e ? == -> *U + &U _ledState1 * -> -> -> 15 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 183: (ledState1[16] == 0) ? zero() : one();
-"183
-[e ? == -> *U + &U _ledState1 * -> -> -> 16 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 184: (ledState1[17] == 0) ? zero() : one();
-"184
-[e ? == -> *U + &U _ledState1 * -> -> -> 17 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 185: (ledState1[18] == 0) ? zero() : one();
-"185
-[e ? == -> *U + &U _ledState1 * -> -> -> 18 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 186: (ledState1[19] == 0) ? zero() : one();
-"186
-[e ? == -> *U + &U _ledState1 * -> -> -> 19 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 187: (ledState1[20] == 0) ? zero() : one();
-"187
-[e ? == -> *U + &U _ledState1 * -> -> -> 20 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 188: (ledState1[21] == 0) ? zero() : one();
-"188
-[e ? == -> *U + &U _ledState1 * -> -> -> 21 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 189: (ledState1[22] == 0) ? zero() : one();
-"189
-[e ? == -> *U + &U _ledState1 * -> -> -> 22 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 190: (ledState1[23] == 0) ? zero() : one();
-"190
-[e ? == -> *U + &U _ledState1 * -> -> -> 23 `i `ui `ux -> -> # *U &U _ledState1 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 192: (ledState2[0] == 0) ? zero() : one();
-"192
-[e ? == -> *U + &U _ledState2 * -> -> -> 0 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 193: (ledState2[1] == 0) ? zero() : one();
-"193
-[e ? == -> *U + &U _ledState2 * -> -> -> 1 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 194: (ledState2[2] == 0) ? zero() : one();
-"194
-[e ? == -> *U + &U _ledState2 * -> -> -> 2 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 195: (ledState2[3] == 0) ? zero() : one();
-"195
-[e ? == -> *U + &U _ledState2 * -> -> -> 3 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 196: (ledState2[4] == 0) ? zero() : one();
-"196
-[e ? == -> *U + &U _ledState2 * -> -> -> 4 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 197: (ledState2[5] == 0) ? zero() : one();
-"197
-[e ? == -> *U + &U _ledState2 * -> -> -> 5 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 198: (ledState2[6] == 0) ? zero() : one();
-"198
-[e ? == -> *U + &U _ledState2 * -> -> -> 6 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 199: (ledState2[7] == 0) ? zero() : one();
-"199
-[e ? == -> *U + &U _ledState2 * -> -> -> 7 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 200: (ledState2[8] == 0) ? zero() : one();
-"200
-[e ? == -> *U + &U _ledState2 * -> -> -> 8 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 201: (ledState2[9] == 0) ? zero() : one();
-"201
-[e ? == -> *U + &U _ledState2 * -> -> -> 9 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 202: (ledState2[10] == 0) ? zero() : one();
-"202
-[e ? == -> *U + &U _ledState2 * -> -> -> 10 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 203: (ledState2[11] == 0) ? zero() : one();
-"203
-[e ? == -> *U + &U _ledState2 * -> -> -> 11 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 204: (ledState2[12] == 0) ? zero() : one();
-"204
-[e ? == -> *U + &U _ledState2 * -> -> -> 12 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 205: (ledState2[13] == 0) ? zero() : one();
-"205
-[e ? == -> *U + &U _ledState2 * -> -> -> 13 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 206: (ledState2[14] == 0) ? zero() : one();
-"206
-[e ? == -> *U + &U _ledState2 * -> -> -> 14 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 207: (ledState2[15] == 0) ? zero() : one();
-"207
-[e ? == -> *U + &U _ledState2 * -> -> -> 15 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 208: (ledState2[16] == 0) ? zero() : one();
-"208
-[e ? == -> *U + &U _ledState2 * -> -> -> 16 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 209: (ledState2[17] == 0) ? zero() : one();
-"209
-[e ? == -> *U + &U _ledState2 * -> -> -> 17 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 210: (ledState2[18] == 0) ? zero() : one();
-"210
-[e ? == -> *U + &U _ledState2 * -> -> -> 18 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 211: (ledState2[19] == 0) ? zero() : one();
-"211
-[e ? == -> *U + &U _ledState2 * -> -> -> 19 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 212: (ledState2[20] == 0) ? zero() : one();
-"212
-[e ? == -> *U + &U _ledState2 * -> -> -> 20 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 213: (ledState2[21] == 0) ? zero() : one();
-"213
-[e ? == -> *U + &U _ledState2 * -> -> -> 21 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 214: (ledState2[22] == 0) ? zero() : one();
-"214
-[e ? == -> *U + &U _ledState2 * -> -> -> 22 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 215: (ledState2[23] == 0) ? zero() : one();
-"215
-[e ? == -> *U + &U _ledState2 * -> -> -> 23 `i `ui `ux -> -> # *U &U _ledState2 `ui `ux `i -> 0 `i : ( _zero ..  ( _one ..  ]
-"216
-}
-"141
-[e ++ _ledCount -> 1 `i ]
-[e $ < _ledCount -> 4 `i 529  ]
-[e :U 530 ]
-"216
-}
-[; ;newmain.c: 216: }
-[; ;newmain.c: 218: for(int i = 0; i < 1000; i++) {
-"218
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 1000 `i 532  ]
-[e $U 533  ]
-[e :U 532 ]
-{
-[; ;newmain.c: 219: PORTAbits.RA0=0;
-"219
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-"220
-}
-"218
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 1000 `i 532  ]
-[e :U 533 ]
-"220
-}
-"223
-}
-[e :U 514 ]
-"104
+[e $ < _i -> 12 `i 514  ]
 [e $U 515  ]
-[e :U 516 ]
-[; ;newmain.c: 220: }
-[; ;newmain.c: 223: }
-[; ;newmain.c: 225: return;
-"225
+[e :U 514 ]
+{
+[; ;newmain.c: 99: ledColour[i] = 0;
+"99
+[e = *U + &U _ledColour * -> -> _i `ui `ux -> -> # *U &U _ledColour `ui `ux -> -> 0 `i `l ]
+"100
+}
+"98
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 12 `i 514  ]
+[e :U 515 ]
+"100
+}
+[; ;newmain.c: 100: }
+[; ;newmain.c: 101: ledColour[0] = 0x00ff01;
+"101
+[e = *U + &U _ledColour * -> -> -> 0 `i `ui `ux -> -> # *U &U _ledColour `ui `ux -> -> 65281 `ui `l ]
+[; ;newmain.c: 103: while(1) {
+"103
+[e :U 518 ]
+{
+[; ;newmain.c: 113: for(int i = 0; i < 12; i++) {
+"113
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 12 `i 520  ]
+[e $U 521  ]
+[e :U 520 ]
+{
+[; ;newmain.c: 114: if(ledColour[i] > 0) {
+"114
+[e $ ! > *U + &U _ledColour * -> -> _i `ui `ux -> -> # *U &U _ledColour `ui `ux -> -> 0 `i `l 523  ]
+{
+[; ;newmain.c: 115: ledColour[i]++;
+"115
+[e ++ *U + &U _ledColour * -> -> _i `ui `ux -> -> # *U &U _ledColour `ui `ux -> -> 1 `i `l ]
+"116
+}
+[e :U 523 ]
+[; ;newmain.c: 116: }
+[; ;newmain.c: 118: if(ledColour[i] >= 0xffff) {
+"118
+[e $ ! >= *U + &U _ledColour * -> -> _i `ui `ux -> -> # *U &U _ledColour `ui `ux -> -> 65535 `ui `l 524  ]
+{
+[; ;newmain.c: 119: ledColour[i] = 0;
+"119
+[e = *U + &U _ledColour * -> -> _i `ui `ux -> -> # *U &U _ledColour `ui `ux -> -> 0 `i `l ]
+[; ;newmain.c: 120: if(i < 11) {
+"120
+[e $ ! < _i -> 11 `i 525  ]
+{
+[; ;newmain.c: 121: ledColour[i + 1] = 0x00ff01;
+"121
+[e = *U + &U _ledColour * -> -> + _i -> 1 `i `ui `ux -> -> # *U &U _ledColour `ui `ux -> -> 65281 `ui `l ]
+"122
+}
+[; ;newmain.c: 122: } else {
+[e $U 526  ]
+[e :U 525 ]
+{
+[; ;newmain.c: 123: ledColour[0] = 0x00ff01;
+"123
+[e = *U + &U _ledColour * -> -> -> 0 `i `ui `ux -> -> # *U &U _ledColour `ui `ux -> -> 65281 `ui `l ]
+"124
+}
+[e :U 526 ]
+"125
+}
+[e :U 524 ]
+"126
+}
+"113
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 12 `i 520  ]
+[e :U 521 ]
+"126
+}
+[; ;newmain.c: 124: }
+[; ;newmain.c: 125: }
+[; ;newmain.c: 126: }
+[; ;newmain.c: 128: for(int ledCount = 0; ledCount < 12; ledCount++) {
+"128
+{
+[v _ledCount `i ~T0 @X0 1 a ]
+[e = _ledCount -> 0 `i ]
+[e $ < _ledCount -> 12 `i 527  ]
+[e $U 528  ]
+[e :U 527 ]
+{
+"129
+[v _tempColour `l ~T0 @X0 1 a ]
+[; ;newmain.c: 129: long tempColour = ledColour[ledCount];
+[e = _tempColour *U + &U _ledColour * -> -> _ledCount `ui `ux -> -> # *U &U _ledColour `ui `ux ]
+[; ;newmain.c: 130: ((tempColour & 1) == 0) ? zero() : one();
+"130
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 131: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"131
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 132: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"132
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 133: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"133
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 135: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"135
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 136: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"136
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 137: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"137
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 138: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"138
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 140: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"140
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 141: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"141
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 142: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"142
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 143: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"143
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 145: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"145
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 146: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"146
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 147: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"147
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 148: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"148
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 150: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"150
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 151: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"151
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 152: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"152
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 153: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"153
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 155: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"155
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 156: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"156
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 157: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"157
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 158: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"158
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+"159
+}
+"128
+[e ++ _ledCount -> 1 `i ]
+[e $ < _ledCount -> 12 `i 527  ]
+[e :U 528 ]
+"159
+}
+[; ;newmain.c: 159: }
+[; ;newmain.c: 161: for(int i = 0; i < 1000; i++) {
+"161
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 1000 `i 530  ]
+[e $U 531  ]
+[e :U 530 ]
+{
+[; ;newmain.c: 162: PORTAbits.RA0=0;
+"162
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+"163
+}
+"161
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 1000 `i 530  ]
+[e :U 531 ]
+"163
+}
+"166
+}
+[e :U 517 ]
+"103
+[e $U 518  ]
+[e :U 519 ]
+[; ;newmain.c: 163: }
+[; ;newmain.c: 166: }
+[; ;newmain.c: 168: return;
+"168
 [e $UE 513  ]
-[; ;newmain.c: 226: }
-"226
+[; ;newmain.c: 169: }
+"169
 [e :UE 513 ]
 }
