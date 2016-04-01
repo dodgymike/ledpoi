@@ -81,6 +81,7 @@ void zero() {
             PORTAbits.RA0=0;
 }
 
+#define LED_COUNT 30
 void main(void) {
     TRISA=0;
     TRISB=0;
@@ -93,16 +94,20 @@ void main(void) {
     T1CONbits.TMR1CS = 0;
     T1CONbits.T1OSCEN = 0;
     
-    long ledColour[12] = {0x00001f, 0x001f00, 0x1f0000, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f};
+    const int ledCount = LED_COUNT;
+    long ledColour[LED_COUNT];// = {0x00001f, 0x001f00, 0x1f0000, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f};
     
-    for(int i = 0; i < 12; i++) {
+    for(int i = 0; i < ledCount; i++) {
         ledColour[i] = 0;
     }
-    ledColour[0] = 0x00ff01;
+    //ledColour[0] = 0x00ff01;
     
+    int currentLed = 0;
+    long changeDelay = 1;
+    long changeDelayCounter = changeDelay;
     while(1) {
         /*
-        for(int i = 0; i < 12; i++) {
+        for(int i = 0; i < ledCount; i++) {
 //            ledColour[i]++;
             if(ledColour[i] > 0x1f1f1f) {
                 ledColour[i] = 0x00ff00;
@@ -110,7 +115,8 @@ void main(void) {
         }
         */
         
-        for(int i = 0; i < 12; i++) {
+        /*
+        for(int i = 0; i < ledCount; i++) {
             if(ledColour[i] > 0) {
                 ledColour[i]++;
             }
@@ -124,9 +130,25 @@ void main(void) {
                 }
             }
         }
+         */
+        
+    
+        if(changeDelayCounter-- <= 0) {
+            //ledColour[0]++;
+            ledColour[currentLed] <<= 1;
+            ledColour[currentLed] += 1;
+            changeDelayCounter = changeDelay;
+        }
+        if(ledColour[currentLed] >= 0xffffff) {
+            ledColour[currentLed] = 0;
+            currentLed++;
+            if(currentLed >= ledCount) {
+                currentLed = 0;
+            }
+        }
 
-        for(int ledCount = 0; ledCount < 12; ledCount++) {
-            long tempColour = ledColour[ledCount];
+        for(int ledIndex = 0; ledIndex < 30; ledIndex++) {
+            long tempColour = ledColour[ledIndex];
             ((tempColour & 1) == 0) ? zero() : one();
             tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
             tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();

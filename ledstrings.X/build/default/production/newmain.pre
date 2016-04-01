@@ -4974,6 +4974,7 @@ PORTAbits.RA0=0;
 PORTAbits.RA0=0;
 }
 
+
 void main(void) {
 TRISA=0;
 TRISB=0;
@@ -4986,33 +4987,36 @@ ADCON1=0b00001111;
 T1CONbits.TMR1CS = 0;
 T1CONbits.T1OSCEN = 0;
 
-long ledColour[12] = {0x00001f, 0x001f00, 0x1f0000, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f};
+const int ledCount = 30;
+long ledColour[30];
 
-for(int i = 0; i < 12; i++) {
+for(int i = 0; i < ledCount; i++) {
 ledColour[i] = 0;
 }
-ledColour[0] = 0x00ff01;
 
+
+int currentLed = 0;
+long changeDelay = 1;
+long changeDelayCounter = changeDelay;
 while(1) {
 
-# 113
-for(int i = 0; i < 12; i++) {
-if(ledColour[i] > 0) {
-ledColour[i]++;
+# 136
+if(changeDelayCounter-- <= 0) {
+
+ledColour[currentLed] <<= 1;
+ledColour[currentLed] += 1;
+changeDelayCounter = changeDelay;
+}
+if(ledColour[currentLed] >= 0xffffff) {
+ledColour[currentLed] = 0;
+currentLed++;
+if(currentLed >= ledCount) {
+currentLed = 0;
+}
 }
 
-if(ledColour[i] >= 0xffff) {
-ledColour[i] = 0;
-if(i < 11) {
-ledColour[i + 1] = 0x00ff01;
-} else {
-ledColour[0] = 0x00ff01;
-}
-}
-}
-
-for(int ledCount = 0; ledCount < 12; ledCount++) {
-long tempColour = ledColour[ledCount];
+for(int ledIndex = 0; ledIndex < 30; ledIndex++) {
+long tempColour = ledColour[ledIndex];
 ((tempColour & 1) == 0) ? zero() : one();
 tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
 tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();

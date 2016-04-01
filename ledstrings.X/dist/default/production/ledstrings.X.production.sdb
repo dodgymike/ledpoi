@@ -27,7 +27,7 @@
 [v _one one `(v  1 e 0 0 ]
 "64
 [v _zero zero `(v  1 e 0 0 ]
-"84
+"85
 [v _main main `(v  1 e 0 0 ]
 "2378 /opt/microchip/xc8/v1.35/include/pic18f2455.h
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
@@ -105,24 +105,28 @@
 ]
 [u S126 . 1 `S103 1 . 1 0 `S106 1 . 1 0 `S114 1 . 1 0 `S120 1 . 1 0 `S123 1 . 1 0 ]
 [v _T1CONbits T1CONbits `VES126  1 e 1 @4045 ]
-"84 /home/mike/source/ledpoi/ledstrings.X/newmain.c
+"85 /home/mike/source/ledpoi/ledstrings.X/newmain.c
 [v _main main `(v  1 e 0 0 ]
 {
-"129
-[v main@tempColour tempColour `l  1 a 4 62 ]
-"161
-[v main@i_186 i `i  1 a 2 54 ]
-"128
-[v main@ledCount ledCount `i  1 a 2 58 ]
-"113
-[v main@i_181 i `i  1 a 2 60 ]
+"151
+[v main@tempColour tempColour `l  1 a 4 138 ]
+"183
+[v main@i_188 i `i  1 a 2 128 ]
+"150
+[v main@ledIndex ledIndex `i  1 a 2 134 ]
+"100
+[v main@i i `i  1 a 2 132 ]
 "98
-[v main@i i `i  1 a 2 56 ]
-"96
-[v main@ledColour ledColour `[12]l  1 a 48 6 ]
-"94
-[v main@F3971 F3971 `[12]l  1 s 48 F3971 ]
-"169
+[v main@ledColour ledColour `[30]l  1 a 120 0 ]
+"106
+[v main@changeDelay changeDelay `l  1 a 4 124 ]
+"107
+[v main@changeDelayCounter changeDelayCounter `l  1 a 4 120 ]
+"105
+[v main@currentLed currentLed `i  1 a 2 136 ]
+"97
+[v main@ledCount ledCount `Ci  1 a 2 130 ]
+"191
 } 0
 "64
 [v _zero zero `(v  1 e 0 0 ]
