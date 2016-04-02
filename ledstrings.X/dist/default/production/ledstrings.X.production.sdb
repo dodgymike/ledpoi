@@ -108,25 +108,25 @@
 "85 /home/mike/source/ledpoi/ledstrings.X/newmain.c
 [v _main main `(v  1 e 0 0 ]
 {
-"151
-[v main@tempColour tempColour `l  1 a 4 138 ]
-"183
-[v main@i_188 i `i  1 a 2 128 ]
-"150
-[v main@ledIndex ledIndex `i  1 a 2 134 ]
+"163
+[v main@tempColour tempColour `l  1 a 4 194 ]
+"195
+[v main@i_188 i `i  1 a 2 184 ]
+"162
+[v main@ledIndex ledIndex `i  1 a 2 188 ]
 "100
-[v main@i i `i  1 a 2 132 ]
+[v main@i i `i  1 a 2 186 ]
 "98
-[v main@ledColour ledColour `[30]l  1 a 120 0 ]
+[v main@ledColour ledColour `[44]l  1 a 176 0 ]
 "106
-[v main@changeDelay changeDelay `l  1 a 4 124 ]
+[v main@changeDelay changeDelay `l  1 a 4 180 ]
 "107
-[v main@changeDelayCounter changeDelayCounter `l  1 a 4 120 ]
-"105
-[v main@currentLed currentLed `i  1 a 2 136 ]
+[v main@changeDelayCounter changeDelayCounter `l  1 a 4 176 ]
 "97
-[v main@ledCount ledCount `Ci  1 a 2 130 ]
-"191
+[v main@ledCount ledCount `Ci  1 a 2 192 ]
+"105
+[v main@currentLed currentLed `i  1 a 2 190 ]
+"203
 } 0
 "64
 [v _zero zero `(v  1 e 0 0 ]

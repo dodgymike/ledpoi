@@ -4097,11 +4097,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _T1CONbits 1 3 -> -> 0 `i `uc ]
 "97
 [v _ledCount `Ci ~T0 @X0 1 a ]
-[; ;newmain.c: 97: const int ledCount = 30;
-[e = _ledCount -> 30 `i ]
+[; ;newmain.c: 97: const int ledCount = 44;
+[e = _ledCount -> 44 `i ]
 "98
-[v _ledColour `l ~T0 @X0 -> 30 `i a ]
-[; ;newmain.c: 98: long ledColour[30];
+[v _ledColour `l ~T0 @X0 -> 44 `i a ]
+[; ;newmain.c: 98: long ledColour[44];
 [; ;newmain.c: 100: for(int i = 0; i < ledCount; i++) {
 "100
 {
@@ -4129,8 +4129,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _currentLed -> 0 `i ]
 "106
 [v _changeDelay `l ~T0 @X0 1 a ]
-[; ;newmain.c: 106: long changeDelay = 1;
-[e = _changeDelay -> -> 1 `i `l ]
+[; ;newmain.c: 106: long changeDelay = 10;
+[e = _changeDelay -> -> 10 `i `l ]
 "107
 [v _changeDelayCounter `l ~T0 @X0 1 a ]
 [; ;newmain.c: 107: long changeDelayCounter = changeDelay;
@@ -4139,114 +4139,69 @@ Version 3.2 HI-TECH Software Intermediate Code
 "108
 [e :U 518 ]
 {
-[; ;newmain.c: 136: if(changeDelayCounter-- <= 0) {
-"136
+[; ;newmain.c: 151: if(changeDelayCounter-- <= 0) {
+"151
 [e $ ! <= -- _changeDelayCounter -> -> 1 `i `l -> -> 0 `i `l 520  ]
 {
-[; ;newmain.c: 138: ledColour[currentLed] <<= 1;
-"138
-[e =<< *U + &U _ledColour * -> -> _currentLed `ui `ux -> -> # *U &U _ledColour `ui `ux -> 1 `i ]
-[; ;newmain.c: 139: ledColour[currentLed] += 1;
-"139
-[e =+ *U + &U _ledColour * -> -> _currentLed `ui `ux -> -> # *U &U _ledColour `ui `ux -> -> 1 `i `l ]
-[; ;newmain.c: 140: changeDelayCounter = changeDelay;
-"140
-[e = _changeDelayCounter _changeDelay ]
-"141
-}
-[e :U 520 ]
-[; ;newmain.c: 141: }
-[; ;newmain.c: 142: if(ledColour[currentLed] >= 0xffffff) {
-"142
-[e $ ! >= *U + &U _ledColour * -> -> _currentLed `ui `ux -> -> # *U &U _ledColour `ui `ux -> 16777215 `l 521  ]
-{
-[; ;newmain.c: 143: ledColour[currentLed] = 0;
-"143
+[; ;newmain.c: 152: ledColour[currentLed] = 0;
+"152
 [e = *U + &U _ledColour * -> -> _currentLed `ui `ux -> -> # *U &U _ledColour `ui `ux -> -> 0 `i `l ]
-[; ;newmain.c: 144: currentLed++;
-"144
+[; ;newmain.c: 153: changeDelayCounter = changeDelay;
+"153
+[e = _changeDelayCounter _changeDelay ]
+[; ;newmain.c: 154: currentLed++;
+"154
 [e ++ _currentLed -> 1 `i ]
-[; ;newmain.c: 145: if(currentLed >= ledCount) {
-"145
-[e $ ! >= _currentLed _ledCount 522  ]
+[; ;newmain.c: 155: if(currentLed >= ledCount) {
+"155
+[e $ ! >= _currentLed _ledCount 521  ]
 {
-[; ;newmain.c: 146: currentLed = 0;
-"146
+[; ;newmain.c: 156: currentLed = 0;
+"156
 [e = _currentLed -> 0 `i ]
-"147
-}
-[e :U 522 ]
-"148
+"157
 }
 [e :U 521 ]
-[; ;newmain.c: 147: }
-[; ;newmain.c: 148: }
-[; ;newmain.c: 150: for(int ledIndex = 0; ledIndex < 30; ledIndex++) {
-"150
+"158
+}
+[; ;newmain.c: 157: }
+[; ;newmain.c: 158: } else {
+[e $U 522  ]
+[e :U 520 ]
+{
+[; ;newmain.c: 159: ledColour[currentLed] = 0x1f1f1f;
+"159
+[e = *U + &U _ledColour * -> -> _currentLed `ui `ux -> -> # *U &U _ledColour `ui `ux -> 2039583 `l ]
+"160
+}
+[e :U 522 ]
+[; ;newmain.c: 160: }
+[; ;newmain.c: 162: for(int ledIndex = 0; ledIndex < ledCount; ledIndex++) {
+"162
 {
 [v _ledIndex `i ~T0 @X0 1 a ]
 [e = _ledIndex -> 0 `i ]
-[e $ < _ledIndex -> 30 `i 523  ]
+[e $ < _ledIndex _ledCount 523  ]
 [e $U 524  ]
 [e :U 523 ]
 {
-"151
-[v _tempColour `l ~T0 @X0 1 a ]
-[; ;newmain.c: 151: long tempColour = ledColour[ledIndex];
-[e = _tempColour *U + &U _ledColour * -> -> _ledIndex `ui `ux -> -> # *U &U _ledColour `ui `ux ]
-[; ;newmain.c: 152: ((tempColour & 1) == 0) ? zero() : one();
-"152
-[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 153: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-"153
-[e =>> _tempColour -> 1 `i ]
-[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 154: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-"154
-[e =>> _tempColour -> 1 `i ]
-[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 155: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-"155
-[e =>> _tempColour -> 1 `i ]
-[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 157: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-"157
-[e =>> _tempColour -> 1 `i ]
-[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 158: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-"158
-[e =>> _tempColour -> 1 `i ]
-[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 159: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-"159
-[e =>> _tempColour -> 1 `i ]
-[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 160: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-"160
-[e =>> _tempColour -> 1 `i ]
-[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 162: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-"162
-[e =>> _tempColour -> 1 `i ]
-[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 163: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
 "163
-[e =>> _tempColour -> 1 `i ]
-[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 164: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+[v _tempColour `l ~T0 @X0 1 a ]
+[; ;newmain.c: 163: long tempColour = ledColour[ledIndex];
+[e = _tempColour *U + &U _ledColour * -> -> _ledIndex `ui `ux -> -> # *U &U _ledColour `ui `ux ]
+[; ;newmain.c: 164: ((tempColour & 1) == 0) ? zero() : one();
 "164
-[e =>> _tempColour -> 1 `i ]
 [e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
 [; ;newmain.c: 165: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
 "165
 [e =>> _tempColour -> 1 `i ]
 [e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 167: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-"167
+[; ;newmain.c: 166: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"166
 [e =>> _tempColour -> 1 `i ]
 [e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 168: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-"168
+[; ;newmain.c: 167: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"167
 [e =>> _tempColour -> 1 `i ]
 [e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
 [; ;newmain.c: 169: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
@@ -4257,12 +4212,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 "170
 [e =>> _tempColour -> 1 `i ]
 [e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 172: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-"172
+[; ;newmain.c: 171: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"171
 [e =>> _tempColour -> 1 `i ]
 [e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 173: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-"173
+[; ;newmain.c: 172: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"172
 [e =>> _tempColour -> 1 `i ]
 [e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
 [; ;newmain.c: 174: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
@@ -4273,12 +4228,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 "175
 [e =>> _tempColour -> 1 `i ]
 [e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 177: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-"177
+[; ;newmain.c: 176: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"176
 [e =>> _tempColour -> 1 `i ]
 [e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
-[; ;newmain.c: 178: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-"178
+[; ;newmain.c: 177: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"177
 [e =>> _tempColour -> 1 `i ]
 [e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
 [; ;newmain.c: 179: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
@@ -4289,17 +4244,57 @@ Version 3.2 HI-TECH Software Intermediate Code
 "180
 [e =>> _tempColour -> 1 `i ]
 [e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 181: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
 "181
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 182: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"182
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 184: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"184
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 185: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"185
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 186: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"186
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 187: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"187
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 189: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"189
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 190: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"190
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 191: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"191
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+[; ;newmain.c: 192: tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+"192
+[e =>> _tempColour -> 1 `i ]
+[e ? == & _tempColour -> -> 1 `i `l -> -> 0 `i `l : ( _zero ..  ( _one ..  ]
+"193
 }
-"150
+"162
 [e ++ _ledIndex -> 1 `i ]
-[e $ < _ledIndex -> 30 `i 523  ]
+[e $ < _ledIndex _ledCount 523  ]
 [e :U 524 ]
-"181
+"193
 }
-[; ;newmain.c: 181: }
-[; ;newmain.c: 183: for(int i = 0; i < 1000; i++) {
-"183
+[; ;newmain.c: 193: }
+[; ;newmain.c: 195: for(int i = 0; i < 1000; i++) {
+"195
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -4307,29 +4302,29 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 527  ]
 [e :U 526 ]
 {
-[; ;newmain.c: 184: PORTAbits.RA0=0;
-"184
+[; ;newmain.c: 196: PORTAbits.RA0=0;
+"196
 [e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-"185
+"197
 }
-"183
+"195
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 1000 `i 526  ]
 [e :U 527 ]
-"185
+"197
 }
-"188
+"200
 }
 [e :U 517 ]
 "108
 [e $U 518  ]
 [e :U 519 ]
-[; ;newmain.c: 185: }
-[; ;newmain.c: 188: }
-[; ;newmain.c: 190: return;
-"190
+[; ;newmain.c: 197: }
+[; ;newmain.c: 200: }
+[; ;newmain.c: 202: return;
+"202
 [e $UE 513  ]
-[; ;newmain.c: 191: }
-"191
+[; ;newmain.c: 203: }
+"203
 [e :UE 513 ]
 }

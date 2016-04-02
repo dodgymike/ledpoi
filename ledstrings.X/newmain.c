@@ -81,7 +81,7 @@ void zero() {
             PORTAbits.RA0=0;
 }
 
-#define LED_COUNT 30
+#define LED_COUNT 44
 void main(void) {
     TRISA=0;
     TRISB=0;
@@ -103,7 +103,7 @@ void main(void) {
     //ledColour[0] = 0x00ff01;
     
     int currentLed = 0;
-    long changeDelay = 1;
+    long changeDelay = 10;
     long changeDelayCounter = changeDelay;
     while(1) {
         /*
@@ -132,22 +132,34 @@ void main(void) {
         }
          */
         
-    
+        /*
         if(changeDelayCounter-- <= 0) {
             //ledColour[0]++;
             ledColour[currentLed] <<= 1;
             ledColour[currentLed] += 1;
             changeDelayCounter = changeDelay;
         }
-        if(ledColour[currentLed] >= 0xffffff) {
+        if(ledColour[currentLed] >= 0x1f) {
             ledColour[currentLed] = 0;
             currentLed++;
             if(currentLed >= ledCount) {
                 currentLed = 0;
             }
         }
+         */
+        
+        if(changeDelayCounter-- <= 0) {
+            ledColour[currentLed] = 0;
+            changeDelayCounter = changeDelay;
+            currentLed++;
+            if(currentLed >= ledCount) {
+                currentLed = 0;
+            }
+        } else {
+            ledColour[currentLed] = 0x1f1f1f;
+        }
 
-        for(int ledIndex = 0; ledIndex < 30; ledIndex++) {
+        for(int ledIndex = 0; ledIndex < ledCount; ledIndex++) {
             long tempColour = ledColour[ledIndex];
             ((tempColour & 1) == 0) ? zero() : one();
             tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
