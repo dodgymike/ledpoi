@@ -11,11 +11,11 @@
 
 #define PI 3.14159265
 
-void delay(int delay) {
-    for(int i = 0; i < delay; i++) {
-        
-    }
-}
+//void delay(int delay) {
+//    for(int i = 0; i < delay; i++) {
+//        
+//    }
+//}
 
 void one() {
                 // 1
@@ -57,8 +57,22 @@ void zero() {
             PORTAbits.RA0=0;
 }
 
-#define LED_STRING_COUNT 5
-#define LED_STRING_SIZE 47
+//char colourLevel(int level) {
+//    return (1 << (level + 1)) - 1;
+//}
+
+//short rgb(char r, char g, char b) {
+//    short rv = 0;
+//    
+//    rv += (r << 6);
+//    rv += (b << 3);
+//    rv += g;
+//    
+//    return rv;
+//}
+
+#define LED_STRING_COUNT 8
+#define LED_STRING_SIZE 49
 void main(void) {
     TRISA=0;
     TRISB=0;
@@ -73,29 +87,61 @@ void main(void) {
     
     float radiansPerDegree = PI/180.0;
     
-    int function = 6;
+    int function = 10;
     
     const int ledCount = LED_STRING_COUNT * LED_STRING_SIZE;
-    int ledColour1[LED_STRING_SIZE];// = {0x00001f, 0x001f00, 0x1f0000, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f};
-    int ledColour2[LED_STRING_SIZE];
-    int ledColour3[LED_STRING_SIZE];
-    int ledColour4[LED_STRING_SIZE];
-    int ledColour5[LED_STRING_SIZE];
+    unsigned int ledColour1[LED_STRING_SIZE];// = {0x00001f, 0x001f00, 0x1f0000, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f};
+    unsigned int ledColour2[LED_STRING_SIZE];
+    unsigned int ledColour3[LED_STRING_SIZE];
+    unsigned int ledColour4[LED_STRING_SIZE];
+    unsigned int ledColour5[LED_STRING_SIZE];
+    unsigned int ledColour6[LED_STRING_SIZE];
+    unsigned int ledColour7[LED_STRING_SIZE];
+    unsigned int ledColour8[LED_STRING_SIZE];
     
-    int* ledStringColours[5];
+    unsigned char ledColour1R[LED_STRING_SIZE];// = {0x00001f, 0x001f00, 0x1f0000, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f, 0x00001f};
+    unsigned char ledColour2R[LED_STRING_SIZE];
+    unsigned char ledColour3R[LED_STRING_SIZE];
+    unsigned char ledColour4R[LED_STRING_SIZE];
+    unsigned char ledColour5R[LED_STRING_SIZE];
+    unsigned char ledColour6R[LED_STRING_SIZE];
+    unsigned char ledColour7R[LED_STRING_SIZE];
+    unsigned char ledColour8R[LED_STRING_SIZE];
+    
+//    char sinTable[180];
+    unsigned int* ledStringColours[8];
+    unsigned char* ledStringColoursR[8];
     int ledColourIndex = 0;
-    ledStringColours[ledColourIndex++] = &ledColour1;
-    ledStringColours[ledColourIndex++] = &ledColour2;
-    ledStringColours[ledColourIndex++] = &ledColour3;
-    ledStringColours[ledColourIndex++] = &ledColour4;
-    ledStringColours[ledColourIndex++] = &ledColour5;
+    
+    ledStringColours[ledColourIndex++] = ledColour1;
+    ledStringColours[ledColourIndex++] = ledColour2;
+    ledStringColours[ledColourIndex++] = ledColour3;
+    ledStringColours[ledColourIndex++] = ledColour4;
+    ledStringColours[ledColourIndex++] = ledColour5;
+    ledStringColours[ledColourIndex++] = ledColour6;
+    ledStringColours[ledColourIndex++] = ledColour7;
+    ledStringColours[ledColourIndex++] = ledColour8;
+
+    ledStringColoursR[ledColourIndex++] = ledColour1R;
+    ledStringColoursR[ledColourIndex++] = ledColour2R;
+    ledStringColoursR[ledColourIndex++] = ledColour3R;
+    ledStringColoursR[ledColourIndex++] = ledColour4R;
+    ledStringColoursR[ledColourIndex++] = ledColour5R;
+    ledStringColoursR[ledColourIndex++] = ledColour6R;
+    ledStringColoursR[ledColourIndex++] = ledColour7R;
+    ledStringColoursR[ledColourIndex++] = ledColour8R;
     
     for(int stringIndex = 0; stringIndex < LED_STRING_COUNT; stringIndex++) {
         for(int i = 0; i < LED_STRING_SIZE; i++) {
             ledStringColours[stringIndex][i] = 0;
         }
     }
-    ledStringColours[0][0] = 0x00ff01;
+    ledStringColours[0][0] = 0xff00;
+    
+//    for(int i = 0; i < 180; i++) {
+//        sinTable[i] = (char)(24.0 * sin(radiansPerDegree * i));
+//    }
+//    int currentDegree = 0;
     
 //    int functionChangeWait = 10;
 //    int functionChangeCounter = 10;
@@ -174,25 +220,25 @@ void main(void) {
 //                    ledColour[nextLed] = 0b01111111;
 //                }
 //                break;
-            case 4: // lovesine
-//                changeDelay = 1;
-//                if(changeDelayCounter-- <= 0) {
-//                    int *ledColour;
-                    for(int stringIndex = 0; stringIndex < LED_STRING_COUNT; stringIndex++) {
-                        int* ledColour = ledStringColours[stringIndex];
-                        for(int ledIndex = 0; ledIndex < LED_STRING_SIZE; ledIndex++) {
-                            int i = (stringIndex * LED_STRING_SIZE) + ledIndex;
-                            float x = sin(radiansPerDegree * (i + currentLed));
-                            ledColour[ledIndex] = x * 0x0000ff;
-                        }
-                    }
-                    
-                    currentLed++;
-                    if(currentLed >= ledCount) {
-                        currentLed = 0;
-                    }
-//                }
-                break;
+//            case 4: // lovesine
+////                changeDelay = 1;
+////                if(changeDelayCounter-- <= 0) {
+////                    int *ledColour;
+//                    for(int stringIndex = 0; stringIndex < LED_STRING_COUNT; stringIndex++) {
+//                        int* ledColour = ledStringColours[stringIndex];
+//                        for(int ledIndex = 0; ledIndex < LED_STRING_SIZE; ledIndex++) {
+//                            int i = (stringIndex * LED_STRING_SIZE) + ledIndex;
+//                            float x = sin(radiansPerDegree * (i + currentLed));
+//                            ledColour[ledIndex] = (int)((x * 8.0) << 8);
+//                        }
+//                    }
+//                    
+//                    currentLed++;
+//                    if(currentLed >= ledCount) {
+//                        currentLed = 0;
+//                    }
+////                }
+//                break;
 //            case 5: // rainbow
 //                if(changeDelayCounter-- <= 0) {
 //                    int curColourOffset = currentLed * 10;
@@ -210,7 +256,7 @@ void main(void) {
 //                }
 //                break;
             case 6:
-                changeDelay = 10;
+                changeDelay = 4;
                 int startColour = 0x0f;
                 if(changeDelayCounter-- <= 0) {
                     int currentString = (int)(currentLed / LED_STRING_SIZE);
@@ -218,8 +264,8 @@ void main(void) {
                     int previousLedString = (int)(previousLed / LED_STRING_SIZE);
                     int previousLedStringLed = previousLed % LED_STRING_SIZE;
                     
-                    ledStringColours[currentString][currentStringLed] = 0xff;
-                    ledStringColours[previousLedString][previousLedStringLed] = 0;
+                    ledStringColours[currentString][currentStringLed] = 0x0008;
+                    ledStringColours[previousLedString][previousLedStringLed] = 0x0000;
                     
                     currentLed++;
                     if(currentLed >= ledCount) {
@@ -227,62 +273,78 @@ void main(void) {
                     }
                 }
                 break;
-            case 7:
-                changeDelay = 10;
-                int startColour = 0x0f;
-                if(changeDelayCounter-- <= 0) {
-                    int *ledColour;
-                    for(int stringIndex = 0; stringIndex < LED_STRING_COUNT; stringIndex++) {
-                        ledColour = ledStringColours[stringIndex];
-                        for(int ledIndex = 0; ledIndex < LED_STRING_SIZE; ledIndex++) {
-                            ledColour[ledIndex] = startColour++;
-                        }
-                        startColour <<= 3;
-                    }
+//            case 7:
+//                changeDelay = 10;
+//                int startColour = 1;
+//                if(changeDelayCounter-- <= 0) {
+//                    short *ledColour;
+//                    for(int stringIndex = 0; stringIndex < LED_STRING_COUNT; stringIndex++) {
+//                        ledColour = ledStringColours[stringIndex];
+//                        for(int ledIndex = 0; ledIndex < LED_STRING_SIZE; ledIndex++) {
+//                            startColour++;
+//                            startColour %= 8;
+//                            ledColour[ledIndex] = startColour, 8 - startColour);
+//                        }
+//                    }
+//                }
+//                break;
+//            case 8:
+//                changeDelay = 10;
+//                if(changeDelayCounter-- <= 0) {
+//                    short *ledColour;
+//                    int startColour = 8;
+//                    for(int stringIndex = 0; stringIndex < LED_STRING_COUNT; stringIndex++) {
+//                        ledColour = ledStringColours[stringIndex];
+//                        for(int ledIndex = 0; ledIndex < LED_STRING_SIZE; ledIndex++) {
+//                            ledColour[ledIndex] = rgb(0, startColour, 0);
+//                        }
+//                        
+//                        if(stringIndex < 4) {
+//                            startColour++;
+//                        } else {
+//                            startColour--;
+//                        }
+//                        startColour %= 8;
+//                    }
+//                }
+//                break;
+////            case 9:
+//                changeDelay = 10;
+//                if(changeDelayCounter-- <= 0) {
+//                    currentDegree++;
+//                    if(currentDegree >= 180) {
+//                        currentDegree = 0;
+//                    }
+//                    
+//                    long *ledColour;
+//                    for(int stringIndex = 0; stringIndex < LED_STRING_COUNT; stringIndex++) {
+//                        ledColour = ledStringColours[stringIndex];
+//                        
+//                        int sinLookupIndex = (stringIndex + currentDegree) * 8;
+//                        sinLookupIndex %= 180;
+//                            
+//                        startColour = sinTable[sinLookupIndex];
+//                        
+//                        for(int ledIndex = 0; ledIndex < LED_STRING_SIZE; ledIndex++) {
+//                            ledColour[ledIndex] = (1 << startColour) - 1;
+//                        }
+//                    }
+//                }
+//                break;
+            case 10:
+                for(int stringIndex = 0; stringIndex < LED_STRING_COUNT; stringIndex++) {
+                   for(int ledIndex = 0; ledIndex < LED_STRING_SIZE; ledIndex++) {
+                        ledStringColours[stringIndex][ledIndex] = 0xffff;
+                        ledStringColoursR[stringIndex][ledIndex] = 0xff;
+                   }
                 }
                 break;
         }
        
-//        int *ledColour;
-//        for(int stringIndex = 0; stringIndex < LED_STRING_COUNT; stringIndex++) {
-//            ledColour = ledStringColours[stringIndex];
-//            for(int ledIndex = 0; ledIndex < LED_STRING_SIZE; ledIndex++) {
-//                long tempColour = ledColour[ledIndex];
-//                ((tempColour & 1) == 0) ? zero() : one();
-//                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-//                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-//                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-//
-//                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-//                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-//                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-//                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-//
-//                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-//                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-//                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-//                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-//
-//                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-//                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-//                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-//                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-//
-//                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-//                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-//                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-//                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-//
-//                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-//                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-//                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-//                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-//            }
-//        }
-//        
-        
             for(int ledIndex = 0; ledIndex < LED_STRING_SIZE; ledIndex++) {
-                long tempColour = ledColour1[ledIndex];
+                unsigned int tempColour = ledColour1[ledIndex];
+                unsigned char tempColourR = ledColour1R[ledIndex];
+                
                 ((tempColour & 1) == 0) ? zero() : one();
                 tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
                 tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
@@ -303,87 +365,21 @@ void main(void) {
                 tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
                 tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
 
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
 
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-            }
-
-        
-            for(int ledIndex = 0; ledIndex < LED_STRING_SIZE; ledIndex++) {
-                long tempColour = ledColour2[ledIndex];
-                ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-            }
-
-        
-            for(int ledIndex = 0; ledIndex < LED_STRING_SIZE; ledIndex++) {
-                long tempColour = ledColour3[ledIndex];
-                ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
             }
 
             for(int ledIndex = 0; ledIndex < LED_STRING_SIZE; ledIndex++) {
-                long tempColour = ledColour4[ledIndex];
+                unsigned int tempColour = ledColour2[ledIndex];
+                unsigned char tempColourR = ledColour2R[ledIndex];
+                
                 ((tempColour & 1) == 0) ? zero() : one();
                 tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
                 tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
@@ -404,19 +400,21 @@ void main(void) {
                 tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
                 tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
 
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
 
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
-                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
             }
-        
+
             for(int ledIndex = 0; ledIndex < LED_STRING_SIZE; ledIndex++) {
-                long tempColour = ledColour5[ledIndex];
+                unsigned int tempColour = ledColour3[ledIndex];
+                unsigned char tempColourR = ledColour3R[ledIndex];
+                
                 ((tempColour & 1) == 0) ? zero() : one();
                 tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
                 tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
@@ -437,6 +435,26 @@ void main(void) {
                 tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
                 tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
 
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+            }
+
+            for(int ledIndex = 0; ledIndex < LED_STRING_SIZE; ledIndex++) {
+                unsigned int tempColour = ledColour4[ledIndex];
+                unsigned char tempColourR = ledColour4R[ledIndex];
+                
+                ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+
                 tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
                 tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
                 tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
@@ -446,6 +464,161 @@ void main(void) {
                 tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
                 tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
                 tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+            }
+
+            for(int ledIndex = 0; ledIndex < LED_STRING_SIZE; ledIndex++) {
+                unsigned int tempColour = ledColour5[ledIndex];
+                unsigned char tempColourR = ledColour5R[ledIndex];
+                
+                ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+            }
+
+            for(int ledIndex = 0; ledIndex < LED_STRING_SIZE; ledIndex++) {
+                unsigned int tempColour = ledColour6[ledIndex];
+                unsigned char tempColourR = ledColour6R[ledIndex];
+                
+                ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+            }
+
+            for(int ledIndex = 0; ledIndex < LED_STRING_SIZE; ledIndex++) {
+                unsigned int tempColour = ledColour7[ledIndex];
+                unsigned char tempColourR = ledColour7R[ledIndex];
+                
+                ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+            }
+
+            for(int ledIndex = 0; ledIndex < LED_STRING_SIZE; ledIndex++) {
+                unsigned int tempColour = ledColour8[ledIndex];
+                unsigned char tempColourR = ledColour8R[ledIndex];
+                
+                ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+                tempColour >>= 1; ((tempColour & 1) == 0) ? zero() : one();
+
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
+                tempColourR >>= 1; ((tempColourR & 1) == 0) ? zero() : one();
             }
 
         for(int i = 0; i < 1000; i++) {
